@@ -75,10 +75,19 @@ No Harmony. Nothing is patched.
 ## Building
 
 ```bash
-dotnet build ManyHappyReturns/Source
+dotnet build Source
 ```
 
-The textures are regenerated from SVG with `_tools/build.sh` (Chrome headless as rasteriser).
+Only `Mod/` is the mod: that is the folder to link into `RimWorld/Mods`, and the only one Steam
+receives. `SteamUGC.SetItemContent` takes a directory and publishes it whole, with no way to
+exclude anything, so `Source/` and `_tools/` stay outside it on purpose. The build writes to
+`Mod/Assemblies/`, and `Source/Directory.Build.props` keeps the intermediates out of the mod
+folder entirely — without it, `obj/` would carry the publicised `Assembly-CSharp.dll`, about
+6 MB of Ludeon's own code, to every subscriber.
+
+The textures are regenerated from SVG into `Mod/Textures/` with `_tools/build.sh` (Chrome
+headless as rasteriser). `_tools/art/` holds the full-resolution artwork the icon and the
+preview are downscaled from.
 
 ## Testing it
 

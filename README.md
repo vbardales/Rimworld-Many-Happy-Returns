@@ -96,3 +96,14 @@ jumped-over birthday yields a forgotten one, or nothing at all.
 ## Licence
 
 MIT. See `LICENSE` and `ATTRIBUTION.md`.
+
+## Credits
+
+- Written from scratch by nelim, with the help of Claude (Anthropic).
+- Dalrae, for *Garam, Happy Birthday* — the idea, and nothing else. See `ATTRIBUTION.md`.
+- KrukuCoB, for *Gifts and Birthdays*, which this mod deliberately stays out of the way of.
+- Ludeon Studios, for a game whose social layer is generous enough that a mod like this needs
+  no Harmony patch at all.
+
+If I do not answer within a reasonable time after being contacted, anyone may freely update this
+or any other of my mods, including publishing a continuation of it. All credit must be preserved.

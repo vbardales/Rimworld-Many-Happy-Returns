@@ -18,9 +18,9 @@
 
   <ItemGroup>
     <!--
-      Pas de Harmony : le mod ne patche rien. Le jour se detecte dans un GameComponent, les voeux
-      partent par le tirage d'interactions du jeu, et tout ce qui est compte se lit dans les
-      souvenirs du pawn. Rien a repatcher a la prochaine mise a jour.
+      No Harmony: the mod patches nothing. The day is detected in a GameComponent, the wishes are
+      drawn by the game's own interaction roulette, and everything counted is read back from the
+      pawn's memories. Nothing to re-patch at the next update.
     -->
     <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*-*" />
   </ItemGroup>

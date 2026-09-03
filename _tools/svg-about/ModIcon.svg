@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 64 64">
-  <!-- Icone de la liste des mods : meme dessin que le symbole de bulle, sans le plat, un peu
-       plus grand dans le cadre. Le fond reste transparent, la liste est sombre. -->
+  <!-- Mod list icon: the same drawing as the bubble symbol, a little larger in the frame.
+       The background stays transparent; the mod list is dark. -->
   <path d="M32 4 C33 11 38 13.5 38 18 a6 6 0 0 1 -12 0 c0 -4.5 5 -7 6 -14 z" fill="#FFFFFF"/>
   <rect x="29" y="22" width="6" height="12" fill="#BFBFBF"/>
   <path d="M6 36 H58 V54 H6 Z" fill="#BFBFBF"/>

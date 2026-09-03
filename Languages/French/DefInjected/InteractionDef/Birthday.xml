@@ -11,9 +11,9 @@
     <li>r_logentry->[INITIATOR_nameDef] wished [RECIPIENT_nameDef] many happy returns.</li>
     <li>r_logentry(p=0.5)->[INITIATOR_nameDef] asked [RECIPIENT_nameDef] how it feels to be a year older.</li>
 
-    Toutes les phrases sont au passé composé avec « avoir » et sans pronom réfléchi : le
-    participe ne s'accorde donc jamais avec le sujet, et aucune inflexion de genre n'est
-    nécessaire dans le rule pack.
+    Every sentence uses the compound past with "avoir" and no reflexive pronoun, so the French
+    participle never agrees with the subject and the rule pack needs no gender inflection at
+    all.
   -->
   <Nelim_BirthdayWish.logRulesInitiator.rulesStrings>
     <li>r_logentry->[INITIATOR_nameDef] a souhaité un bon anniversaire à [RECIPIENT_nameDef].</li>

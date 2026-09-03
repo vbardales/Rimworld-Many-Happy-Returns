@@ -1,6 +1,6 @@
 #!/bin/bash
-# Rasterise les SVG de _tools/svg vers Textures/ManyHappyReturns.
-# Chrome headless sert de rasteriseur : aucun rasteriseur SVG n'est installe sur la machine.
+# Rasterises the SVGs in _tools/svg into Textures/ManyHappyReturns.
+# Chrome headless is the rasteriser: no SVG rasteriser is installed on this machine.
 set -e
 cd "$(dirname "$0")/.."
 CH="/c/Program Files/Google/Chrome/Application/chrome.exe"

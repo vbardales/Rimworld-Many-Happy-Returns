@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ManyHappyReturns.BirthdayLetterLabel>Anniversaire : {PAWN_labelShort}</ManyHappyReturns.BirthdayLetterLabel>
+  <ManyHappyReturns.BirthdayLetterText>{PAWN_nameDef} a {AGE} ans aujourd'hui.\n\nPersonne ici n'en fera quoi que ce soit si vous ne le faites pas. Une fête, un vrai repas, un mot de ceux qui comptent pour {PAWN_objective} — {PAWN_pronoun} se souviendra de la journée qu'{PAWN_pronoun} aura passée.</ManyHappyReturns.BirthdayLetterText>
+
+  <ManyHappyReturns.Settings.Intro>Les colons remarquent leur anniversaire, et ils remarquent si quelqu'un d'autre y a pensé.</ManyHappyReturns.Settings.Intro>
+
+  <ManyHappyReturns.Settings.MorningLetter>Annoncer les anniversaires</ManyHappyReturns.Settings.MorningLetter>
+  <ManyHappyReturns.Settings.MorningLetterTip>Envoie une lettre le matin de l'anniversaire d'un colon. Le jeu de base n'en envoie aucune : il ne vous écrit que si le pawn a récolté une séquelle liée à l'âge. À décocher si vous préférez l'apprendre par le journal social.</ManyHappyReturns.Settings.MorningLetterTip>
+
+  <ManyHappyReturns.Settings.ForgottenThought>Un anniversaire oublié blesse</ManyHappyReturns.Settings.ForgottenThought>
+  <ManyHappyReturns.Settings.ForgottenThoughtTip>Un colon à qui personne n'a rien dit de la journée garde un mauvais souvenir. C'est déjà difficile à obtenir : il faut qu'il vive dans la colonie depuis au moins dix jours, qu'au moins deux autres colons aient été là pour y penser, et qu'il ait été debout et présent. À décocher pour ne garder que la moitié heureuse du mod.</ManyHappyReturns.Settings.ForgottenThoughtTip>
+
+  <ManyHappyReturns.Settings.MoodFactor>Intensité des humeurs : {0} %</ManyHappyReturns.Settings.MoodFactor>
+  <ManyHappyReturns.Settings.MoodFactorTip>Multiplie l'humeur des souvenirs propres à ce mod, les bons comme les mauvais. L'opinion entre colons n'est pas touchée, et aucun autre mod non plus. Le facteur est inscrit dans chaque souvenir au moment où il se forme : déplacer ce curseur ne modifie donc pas les souvenirs déjà en cours.</ManyHappyReturns.Settings.MoodFactorTip>
+
+  <ManyHappyReturns.Settings.Reset>Rétablir les valeurs par défaut</ManyHappyReturns.Settings.Reset>
+
+</LanguageData>

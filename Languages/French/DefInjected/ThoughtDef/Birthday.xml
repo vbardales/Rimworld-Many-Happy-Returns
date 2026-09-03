@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: wished me a happy birthday -->
+  <Nelim_BirthdayWishReceived.stages.wished_me_a_happy_birthday.label>m'a souhaité un bon anniversaire</Nelim_BirthdayWishReceived.stages.wished_me_a_happy_birthday.label>
+
+  <!-- EN: I wished them a happy birthday -->
+  <Nelim_BirthdayWishGiven.stages.I_wished_them_a_happy_birthday.label>je lui ai souhaité un bon anniversaire</Nelim_BirthdayWishGiven.stages.I_wished_them_a_happy_birthday.label>
+
+  <!-- EN: someone thought of me -->
+  <Nelim_BirthdayRemembered.stages.someone_thought_of_me.label>quelqu'un y a pensé</Nelim_BirthdayRemembered.stages.someone_thought_of_me.label>
+  <!-- EN: It was my birthday. Somebody said something, at least. -->
+  <Nelim_BirthdayRemembered.stages.someone_thought_of_me.description>C'était mon anniversaire. Au moins une personne m'a dit quelque chose.</Nelim_BirthdayRemembered.stages.someone_thought_of_me.description>
+
+  <!-- EN: quiet birthday -->
+  <Nelim_BirthdayRemembered.stages.quiet_birthday.label>anniversaire tranquille</Nelim_BirthdayRemembered.stages.quiet_birthday.label>
+  <!-- EN: It was my birthday, and a few people remembered. A quiet one, but a good one. -->
+  <Nelim_BirthdayRemembered.stages.quiet_birthday.description>C'était mon anniversaire, et quelques-uns s'en sont souvenus. Discret, mais bien.</Nelim_BirthdayRemembered.stages.quiet_birthday.description>
+
+  <!-- EN: nice birthday -->
+  <Nelim_BirthdayRemembered.stages.nice_birthday.label>bel anniversaire</Nelim_BirthdayRemembered.stages.nice_birthday.label>
+  <!-- EN: It was my birthday and people made something of it. That was kind of them. -->
+  <Nelim_BirthdayRemembered.stages.nice_birthday.description>C'était mon anniversaire et on en a fait quelque chose. C'était gentil de leur part.</Nelim_BirthdayRemembered.stages.nice_birthday.description>
+
+  <!-- EN: lovely birthday -->
+  <Nelim_BirthdayRemembered.stages.lovely_birthday.label>très bel anniversaire</Nelim_BirthdayRemembered.stages.lovely_birthday.label>
+  <!-- EN: It was my birthday, and everyone made it a real day. I keep thinking about it. -->
+  <Nelim_BirthdayRemembered.stages.lovely_birthday.description>C'était mon anniversaire, et tout le monde en a fait une vraie journée. J'y repense encore.</Nelim_BirthdayRemembered.stages.lovely_birthday.description>
+
+  <!-- EN: unforgettable birthday -->
+  <Nelim_BirthdayRemembered.stages.unforgettable_birthday.label>anniversaire inoubliable</Nelim_BirthdayRemembered.stages.unforgettable_birthday.label>
+  <!-- EN: It was my birthday, and I have never had one like it. Out here, of all places. -->
+  <Nelim_BirthdayRemembered.stages.unforgettable_birthday.description>C'était mon anniversaire, et je n'en ai jamais vécu un pareil. Et ici, en plus.</Nelim_BirthdayRemembered.stages.unforgettable_birthday.description>
+
+  <!-- EN: nobody remembered my birthday -->
+  <Nelim_BirthdayForgotten.stages.nobody_remembered_my_birthday.label>personne ne s'est souvenu de mon anniversaire</Nelim_BirthdayForgotten.stages.nobody_remembered_my_birthday.label>
+  <!-- EN: It was my birthday. Not one person said a word about it all day. -->
+  <Nelim_BirthdayForgotten.stages.nobody_remembered_my_birthday.description>C'était mon anniversaire. Pas une personne n'en a dit un mot de la journée.</Nelim_BirthdayForgotten.stages.nobody_remembered_my_birthday.description>
+
+</LanguageData>

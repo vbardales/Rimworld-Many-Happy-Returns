@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: birthday wishes -->
+  <Nelim_BirthdayWish.label>vœux d'anniversaire</Nelim_BirthdayWish.label>
+
+  <!-- EN:
+    <li>r_logentry->[INITIATOR_nameDef] wished [RECIPIENT_nameDef] a happy birthday.</li>
+    <li>r_logentry->[INITIATOR_nameDef] remembered it was [RECIPIENT_nameDef]'s birthday.</li>
+    <li>r_logentry->[INITIATOR_nameDef] told [RECIPIENT_nameDef] to have a good one.</li>
+    <li>r_logentry->[INITIATOR_nameDef] wished [RECIPIENT_nameDef] many happy returns.</li>
+    <li>r_logentry(p=0.5)->[INITIATOR_nameDef] asked [RECIPIENT_nameDef] how it feels to be a year older.</li>
+
+    Toutes les phrases sont au passé composé avec « avoir » et sans pronom réfléchi : le
+    participe ne s'accorde donc jamais avec le sujet, et aucune inflexion de genre n'est
+    nécessaire dans le rule pack.
+  -->
+  <Nelim_BirthdayWish.logRulesInitiator.rulesStrings>
+    <li>r_logentry->[INITIATOR_nameDef] a souhaité un bon anniversaire à [RECIPIENT_nameDef].</li>
+    <li>r_logentry->[INITIATOR_nameDef] a rappelé à [RECIPIENT_nameDef] que c'était son anniversaire.</li>
+    <li>r_logentry->[INITIATOR_nameDef] a dit à [RECIPIENT_nameDef] de passer une bonne journée.</li>
+    <li>r_logentry->[INITIATOR_nameDef] a souhaité à [RECIPIENT_nameDef] encore beaucoup d'années comme celle-ci.</li>
+    <li>r_logentry(p=0.5)->[INITIATOR_nameDef] a demandé à [RECIPIENT_nameDef] ce que ça fait d'avoir un an de plus.</li>
+  </Nelim_BirthdayWish.logRulesInitiator.rulesStrings>
+
+</LanguageData>

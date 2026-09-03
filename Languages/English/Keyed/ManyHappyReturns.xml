@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ManyHappyReturns.BirthdayLetterLabel>Birthday: {PAWN_labelShort}</ManyHappyReturns.BirthdayLetterLabel>
+  <ManyHappyReturns.BirthdayLetterText>{PAWN_nameDef} is {AGE} years old today.\n\nNobody out here will make anything of it unless you do. A gathering, a decent meal, a word from the people who matter to {PAWN_objective} — {PAWN_pronoun} will remember how the day went.</ManyHappyReturns.BirthdayLetterText>
+
+  <ManyHappyReturns.Settings.Intro>Colonists notice their own birthday, and they notice whether anyone else did.</ManyHappyReturns.Settings.Intro>
+
+  <ManyHappyReturns.Settings.MorningLetter>Announce birthdays</ManyHappyReturns.Settings.MorningLetter>
+  <ManyHappyReturns.Settings.MorningLetterTip>Sends a letter on the morning of a colonist's birthday. The base game sends none: it only writes to you when the pawn has gained an age-related injury. Turn this off if you would rather find out from the social log.</ManyHappyReturns.Settings.MorningLetterTip>
+
+  <ManyHappyReturns.Settings.ForgottenThought>Forgotten birthdays hurt</ManyHappyReturns.Settings.ForgottenThought>
+  <ManyHappyReturns.Settings.ForgottenThoughtTip>A colonist whom nobody wished well all day forms a negative memory. It already takes a lot to earn: the pawn must have lived in the colony for at least ten days, must have had at least two other colonists around who could have remembered, and must have been awake and present. Turn this off to keep only the good half of the mod.</ManyHappyReturns.Settings.ForgottenThoughtTip>
+
+  <ManyHappyReturns.Settings.MoodFactor>Mood scale: {0}%</ManyHappyReturns.Settings.MoodFactor>
+  <ManyHappyReturns.Settings.MoodFactorTip>Scales the mood of this mod's own memories, good and bad alike. Opinion between colonists is not affected, and neither is any other mod. The scale is baked into each memory as it forms, so moving this slider leaves memories already held exactly as they were.</ManyHappyReturns.Settings.MoodFactorTip>
+
+  <ManyHappyReturns.Settings.Reset>Reset to defaults</ManyHappyReturns.Settings.Reset>
+
+</LanguageData>

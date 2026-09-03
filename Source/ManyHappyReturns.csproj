@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>ManyHappyReturns</RootNamespace>
+    <AssemblyName>ManyHappyReturns</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <Deterministic>true</Deterministic>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>..\Assemblies\</OutputPath>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      Pas de Harmony : le mod ne patche rien. Le jour se detecte dans un GameComponent, les voeux
+      partent par le tirage d'interactions du jeu, et tout ce qui est compte se lit dans les
+      souvenirs du pawn. Rien a repatcher a la prochaine mise a jour.
+    -->
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*-*" />
+  </ItemGroup>
+
+</Project>

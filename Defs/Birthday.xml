@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--
+    The wish itself. The worker gives this a weight only on the recipient's birthday, only for a
+    pair that has not already exchanged it today, so it fires once per pair and then steps aside.
+    Deliberately no mood on either thought: when Gifts and Birthdays is installed its own
+    congratulation already pays a mood, and the mood here is the end-of-day verdict below.
+  -->
+  <InteractionDef>
+    <defName>Nelim_BirthdayWish</defName>
+    <label>birthday wishes</label>
+    <workerClass>ManyHappyReturns.InteractionWorker_BirthdayWish</workerClass>
+    <symbol>ManyHappyReturns/BirthdayWish</symbol>
+    <socialFightBaseChance>0</socialFightBaseChance>
+    <initiatorThought>Nelim_BirthdayWishGiven</initiatorThought>
+    <recipientThought>Nelim_BirthdayWishReceived</recipientThought>
+    <initiatorXpGainSkill>Social</initiatorXpGainSkill>
+    <initiatorXpGainAmount>4</initiatorXpGainAmount>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] wished [RECIPIENT_nameDef] a happy birthday.</li>
+        <li>r_logentry->[INITIATOR_nameDef] remembered it was [RECIPIENT_nameDef]'s birthday.</li>
+        <li>r_logentry->[INITIATOR_nameDef] told [RECIPIENT_nameDef] to have a good one.</li>
+        <li>r_logentry->[INITIATOR_nameDef] wished [RECIPIENT_nameDef] many happy returns.</li>
+        <li>r_logentry(p=0.5)->[INITIATOR_nameDef] asked [RECIPIENT_nameDef] how it feels to be a year older.</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <ThoughtDef>
+    <defName>Nelim_BirthdayWishReceived</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <showBubble>true</showBubble>
+    <durationDays>5</durationDays>
+    <stackLimit>30</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stackedEffectMultiplier>1</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>wished me a happy birthday</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Nelim_BirthdayWishGiven</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>30</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stackedEffectMultiplier>1</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>I wished them a happy birthday</label>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!--
+    The verdict, formed once at the end of the birthday. One def, five stages, the stage picked in
+    code from the day's score. stackLimit 1: a birthday happens once a year, there is nothing to
+    stack with.
+  -->
+  <ThoughtDef>
+    <defName>Nelim_BirthdayRemembered</defName>
+    <durationDays>5</durationDays>
+    <stackLimit>1</stackLimit>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>someone thought of me</label>
+        <description>It was my birthday. Somebody said something, at least.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>quiet birthday</label>
+        <description>It was my birthday, and a few people remembered. A quiet one, but a good one.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>nice birthday</label>
+        <description>It was my birthday and people made something of it. That was kind of them.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+      <li>
+        <label>lovely birthday</label>
+        <description>It was my birthday, and everyone made it a real day. I keep thinking about it.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+      <li>
+        <label>unforgettable birthday</label>
+        <description>It was my birthday, and I have never had one like it. Out here, of all places.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!--
+    Not a low stage of the def above: it needs its own nullifying traits, and a psychopath must
+    still be able to enjoy a good birthday. nullifyingTraits is a def-level field, so the two
+    sentiments cannot share a def.
+  -->
+  <ThoughtDef>
+    <defName>Nelim_BirthdayForgotten</defName>
+    <durationDays>5</durationDays>
+    <stackLimit>1</stackLimit>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>nobody remembered my birthday</label>
+        <description>It was my birthday. Not one person said a word about it all day.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

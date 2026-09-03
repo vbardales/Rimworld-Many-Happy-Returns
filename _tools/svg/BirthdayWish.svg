@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Symbole de bulle sociale : gateau d'anniversaire. Deux tons seulement, comme les
+       symboles vanilla : blanc pour ce qui porte la silhouette, gris pour le remplissage.
+       L'ordre compte : le corps du gateau se peint AVANT le glacage, sinon il recouvre
+       les coulures et elles se lisent comme des trous. -->
+
+  <!-- flamme -->
+  <path d="M32 5 C33 11 37 13 37 17 a5 5 0 0 1 -10 0 c0 -4 4 -6 5 -12 z" fill="#FFFFFF"/>
+
+  <!-- bougie -->
+  <rect x="29.5" y="21" width="5" height="11" fill="#BFBFBF"/>
+
+  <!-- corps du gateau, qui remonte sous le glacage pour que les coulures retombent sur lui -->
+  <path d="M11 34 H53 V51 H11 Z" fill="#BFBFBF"/>
+
+  <!-- glacage a coulures -->
+  <path d="M11 29 H53 V37 q-5.25 5 -10.5 0 q-5.25 5 -10.5 0 q-5.25 5 -10.5 0 q-5.25 5 -10.5 0 Z" fill="#FFFFFF"/>
+
+  <!-- plat -->
+  <rect x="6" y="51" width="52" height="5" rx="2.5" fill="#FFFFFF"/>
+</svg>

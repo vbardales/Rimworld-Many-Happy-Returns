@@ -48,6 +48,12 @@ Three: the morning letter on or off, the forgotten-birthday memory on or off, an
 from 50 % to 200 %. The scale is written into each memory as it forms, so moving the slider
 never rewrites memories a pawn already holds.
 
+Open **Mod options → Many Happy Returns**. These settings are global across saves and are
+saved when the native dialog closes. The announcement switch applies when a birthday is
+first detected; memory settings apply at the end of the day. RIMMSQOL and compatible tools
+can reveal an optional main-bar shortcut, hidden by default, to the same settings dialog.
+No customization mod is required for the primary route. Integration testing is still pending.
+
 ## Compatibility
 
 **Gifts and Birthdays** (`KrukuCoB.rout`) owns the party, the guests and the presents; this mod
@@ -86,10 +92,14 @@ folder entirely — without it, `obj/` would carry the publicised `Assembly-CSha
 6 MB of Ludeon's own code, to every subscriber.
 
 The textures are regenerated from SVG into `Mod/Textures/` with `_tools/build.sh` (Chrome
-headless as rasteriser). `_tools/art/` holds the full-resolution artwork the icon and the
+headless as rasteriser). `Art/` holds the full-resolution artwork the icon and the
 preview are downscaled from.
 
 ## Testing it
+
+Automated checks: `powershell -ExecutionPolicy Bypass -File Tests/Run.ps1`.
+See `Tests/RESULTS.md` for results and limits, and `TEST_SCENARIOS.md` for the pending
+functional validation in game. Successful automated tests do not certify in-game behavior.
 
 Dev mode, `Debug actions → Many Happy Returns`:
 

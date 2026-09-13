@@ -24,11 +24,13 @@ namespace ManyHappyReturns
         public override void DoSettingsWindowContents(Rect inRect)
         {
             ManyHappyReturnsSettings s = Settings;
+            s.moodFactor = s.ClampedMoodFactor;
 
             Listing_Standard listing = new Listing_Standard();
             listing.Begin(inRect);
 
             listing.Label("ManyHappyReturns.Settings.Intro".Translate());
+            listing.Label("ManyHappyReturns.Settings.Scope".Translate());
             listing.GapLine();
 
             listing.CheckboxLabeled(

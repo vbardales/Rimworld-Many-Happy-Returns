@@ -31,11 +31,14 @@ The morning letter and the forgotten-birthday thought can each be switched off, 
 
 No Harmony patches. No save data on pawns; the mod's own state is a single day-long list that is safe to remove at any time.
 
-Source and changelog: https://github.com/vbardales/Rimworld-Many-Happy-Returns
+
 
 Written from scratch, with the help of an AI assistant (Claude, by Anthropic). Thanks to KrukuCoB, whose Gifts and Birthdays covers the logistics this mod deliberately leaves alone.
 
-If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.</description>
+If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
+
+[url=https://github.com/vbardales/Rimworld-Many-Happy-Returns]Source code on GitHub[/url]</description>
+  <url>https://github.com/vbardales/Rimworld-Many-Happy-Returns</url>
   <loadAfter>
     <li>Ludeon.RimWorld</li>
     <li>KrukuCoB.rout</li>

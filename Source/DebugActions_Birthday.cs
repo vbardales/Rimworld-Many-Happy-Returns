@@ -18,12 +18,37 @@ namespace ManyHappyReturns
     {
         private const string Category = "Many Happy Returns";
 
+        // Attribute names cannot be translated at runtime. Native yielded nodes can,
+        // including their tool cursor labels, without patching the debug menu.
+        [DebugActionYielder]
+        private static IEnumerable<DebugActionNode> Actions()
+        {
+            yield return new DebugActionNode("ManyHappyReturns.Debug.Today".Translate(),
+                DebugActionType.ToolMapForPawns, pawnAction: MakeBirthdayToday)
+            {
+                category = Category,
+                labelGetter = () => "ManyHappyReturns.Debug.Today".Translate(),
+                sourceAttribute = new DebugActionAttribute { allowedGameStates = AllowedGameStates.PlayingOnMap }
+            };
+            yield return new DebugActionNode("ManyHappyReturns.Debug.End".Translate(), action: EndBirthdaysNow)
+            {
+                category = Category,
+                labelGetter = () => "ManyHappyReturns.Debug.End".Translate(),
+                sourceAttribute = new DebugActionAttribute { allowedGameStates = AllowedGameStates.PlayingOnMap }
+            };
+            yield return new DebugActionNode("ManyHappyReturns.Debug.Tally".Translate(),
+                DebugActionType.ToolMapForPawns, pawnAction: LogTally)
+            {
+                category = Category,
+                labelGetter = () => "ManyHappyReturns.Debug.Tally".Translate(),
+                sourceAttribute = new DebugActionAttribute { allowedGameStates = AllowedGameStates.PlayingOnMap }
+            };
+        }
+
         /// <summary>
         /// Moves the pawn's birth date so that today is their birthday, keeping their chronological
         /// age at a whole number of years. Biological age is stored separately and is untouched.
         /// </summary>
-        [DebugAction(Category, "Birthday is today", actionType = DebugActionType.ToolMapForPawns,
-            allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void MakeBirthdayToday(Pawn p)
         {
             if (p?.ageTracker == null)
@@ -37,7 +62,7 @@ namespace ManyHappyReturns
             Current.Game?.GetComponent<GameComponent_Birthdays>()?.DebugRescanNow();
 
             Messages.Message(
-                $"{p.LabelShortCap}: birthday moved to today (day {p.ageTracker.BirthDayOfYear} of the year).",
+                "ManyHappyReturns.Debug.Moved".Translate(p.Named("PAWN"), p.ageTracker.BirthDayOfYear.Named("DAY")),
                 p, MessageTypeDefOf.NeutralEvent, historical: false);
         }
 
@@ -45,8 +70,6 @@ namespace ManyHappyReturns
         /// Closes the books immediately instead of waiting for midnight, so the whole loop can be
         /// checked inside one game hour.
         /// </summary>
-        [DebugAction(Category, "End today's birthdays now",
-            allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void EndBirthdaysNow()
         {
             GameComponent_Birthdays component = Current.Game?.GetComponent<GameComponent_Birthdays>();
@@ -56,13 +79,11 @@ namespace ManyHappyReturns
             }
 
             int closed = component.DebugCloseOutNow();
-            Messages.Message($"Many Happy Returns: {closed} birthday(s) closed out.",
+            Messages.Message("ManyHappyReturns.Debug.Closed".Translate(closed.Named("COUNT")),
                 MessageTypeDefOf.NeutralEvent, historical: false);
         }
 
         /// <summary>Prints the day's tally for one pawn, the way the verdict will read it.</summary>
-        [DebugAction(Category, "Log birthday tally", actionType = DebugActionType.ToolMapForPawns,
-            allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void LogTally(Pawn p)
         {
             if (p?.ageTracker == null)

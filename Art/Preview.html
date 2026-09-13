@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Many Happy Returns preview composition</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 896px; height: 504px; overflow: hidden; }
+  body { font-family: "Segoe UI", system-ui, sans-serif; }
+  .scene, .veil { position: absolute; inset: 0; width: 896px; height: 504px; }
+  .scene { object-fit: cover; }
+  .veil { background: radial-gradient(circle at 0% 0%, rgb(var(--veil-rgb) / .86) 0%, rgb(var(--veil-rgb) / 0) 74%); }
+  .copy { position: absolute; left: 50px; top: 54px; color: var(--inkPrimary); text-shadow: 0 3px 10px rgba(0,0,0,.75); }
+  h1 { margin: 0; font-size: 52px; font-weight: 600; line-height: 1.1; letter-spacing: 0; }
+  .rule { width: 58px; height: 3px; margin-top: 20px; margin-bottom: 16px; background: var(--accent); }
+  p { width: 430px; margin: 0; font-size: 21px; font-weight: 400; line-height: 1.45; letter-spacing: 0; }
+  .badge { position: absolute; top: 0; right: 0; width: 80px; height: 80px; background: var(--accent); clip-path: polygon(0 0,100% 0,100% 100%); }
+  .version { position: absolute; left: 869px; top: 27px; transform: translate(-50%,-50%) rotate(45deg); color: var(--badgeInk); font-size: 26px; font-weight: 700; line-height: 1; }
+</style>
+<img class="scene" src="Preview-source.png" alt="A colonist alone at a dark table opposite a birthday meal shared under a warm lamp.">
+<div class="veil"></div>
+<div class="copy"><h1>Many Happy Returns</h1><div class="rule"></div><p>Colonists notice their birthday, and whether anyone else did.</p></div>
+<div class="badge"></div><div class="version"></div>
+<script>
+// Injected from preview-palette.json and About.xml by build-art.cjs.
+window.configurePreview = async (palette, version) => {
+  for (const [key, value] of Object.entries(palette)) document.documentElement.style.setProperty('--' + key, value);
+  document.documentElement.style.setProperty('--veil-rgb', palette.veil.slice(1).match(/../g).map(x => parseInt(x,16)).join(' '));
+  document.querySelector('.version').textContent = version;
+  await document.fonts.ready;
+};
+</script>
+</html>

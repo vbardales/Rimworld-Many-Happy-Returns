@@ -22,7 +22,7 @@
       drawn by the game's own interaction roulette, and everything counted is read back from the
       pawn's memories. Nothing to re-patch at the next update.
     -->
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*-*" />
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4871" />
   </ItemGroup>
 
 </Project>

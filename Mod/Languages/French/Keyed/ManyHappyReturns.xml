@@ -7,7 +7,7 @@
   <ManyHappyReturns.Settings.Intro>Les colons remarquent leur anniversaire, et ils remarquent si quelqu'un d'autre y a pensé.</ManyHappyReturns.Settings.Intro>
 
   <ManyHappyReturns.Settings.MorningLetter>Annoncer les anniversaires</ManyHappyReturns.Settings.MorningLetter>
-  <ManyHappyReturns.Settings.MorningLetterTip>Envoie une lettre le matin de l'anniversaire d'un colon. Le jeu de base n'en envoie aucune : il ne vous écrit que si le pawn a récolté une séquelle liée à l'âge. À décocher si vous préférez l'apprendre par le journal social.</ManyHappyReturns.Settings.MorningLetterTip>
+  <ManyHappyReturns.Settings.MorningLetterTip>Envoie une lettre le matin de l'anniversaire d'un colon. Le jeu de base n'en envoie aucune : il ne vous écrit que si le colon a récolté une séquelle liée à l'âge. À décocher si vous préférez l'apprendre par le journal social.</ManyHappyReturns.Settings.MorningLetterTip>
 
   <ManyHappyReturns.Settings.ForgottenThought>Un anniversaire oublié blesse</ManyHappyReturns.Settings.ForgottenThought>
   <ManyHappyReturns.Settings.ForgottenThoughtTip>Un colon à qui personne n'a rien dit de la journée garde un mauvais souvenir. C'est déjà difficile à obtenir : il faut qu'il vive dans la colonie depuis au moins dix jours, qu'au moins deux autres colons aient été là pour y penser, et qu'il ait été debout et présent. À décocher pour ne garder que la moitié heureuse du mod.</ManyHappyReturns.Settings.ForgottenThoughtTip>
@@ -17,4 +17,10 @@
 
   <ManyHappyReturns.Settings.Reset>Rétablir les valeurs par défaut</ManyHappyReturns.Settings.Reset>
 
+  <ManyHappyReturns.Settings.Scope>Réglages globaux pour toutes les sauvegardes. L'annonce s'applique à la première détection d'un anniversaire ; les réglages des souvenirs s'appliquent en fin de journée. Les souvenirs existants restent inchangés.</ManyHappyReturns.Settings.Scope>
+  <ManyHappyReturns.Debug.Today>L'anniversaire est aujourd'hui</ManyHappyReturns.Debug.Today>
+  <ManyHappyReturns.Debug.End>Terminer les anniversaires du jour</ManyHappyReturns.Debug.End>
+  <ManyHappyReturns.Debug.Tally>Consigner le bilan d'anniversaire</ManyHappyReturns.Debug.Tally>
+  <ManyHappyReturns.Debug.Moved>{PAWN_labelShort} : anniversaire déplacé à aujourd'hui (jour {DAY} de l'année).</ManyHappyReturns.Debug.Moved>
+  <ManyHappyReturns.Debug.Closed>Many Happy Returns : anniversaires terminés : {COUNT}.</ManyHappyReturns.Debug.Closed>
 </LanguageData>

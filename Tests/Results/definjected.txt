@@ -1,0 +1,5 @@
+Command: ../scripts/Check-DefInjected.ps1 -TransMod <repository>/Mod
+Executed: 2026-09-13; exit 0
+Patch operations applied: 29
+Defs indexed: 11592
+Keys checked: 18 - errors: 0

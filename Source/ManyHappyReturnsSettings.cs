@@ -27,6 +27,10 @@ namespace ManyHappyReturns
             Scribe_Values.Look(ref morningLetter, "morningLetter", true);
             Scribe_Values.Look(ref forgottenThought, "forgottenThought", true);
             Scribe_Values.Look(ref moodFactor, "moodFactor", 1f);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                moodFactor = ClampedMoodFactor;
+            }
         }
 
         public void Reset()
@@ -36,6 +40,8 @@ namespace ManyHappyReturns
             moodFactor = 1f;
         }
 
-        public float ClampedMoodFactor => Mathf.Clamp(moodFactor, MinMoodFactor, MaxMoodFactor);
+        public float ClampedMoodFactor => float.IsNaN(moodFactor) || float.IsInfinity(moodFactor)
+            ? 1f
+            : Mathf.Clamp(moodFactor, MinMoodFactor, MaxMoodFactor);
     }
 }

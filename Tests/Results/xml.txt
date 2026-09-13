@@ -1,0 +1,4 @@
+PASS: 8 distributed XML files parse
+PASS: 16 source keys covered in EN/FR, nonempty, unique, with matching parameters
+PASS: 18 French injection paths and native English source strings covered
+PASS: shortcut defaults, metadata, optional DLC guard, distribution notices and image formats

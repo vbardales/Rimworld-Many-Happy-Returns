@@ -17,4 +17,10 @@
 
   <ManyHappyReturns.Settings.Reset>Reset to defaults</ManyHappyReturns.Settings.Reset>
 
+  <ManyHappyReturns.Settings.Scope>Global settings for all saves. The announcement switch applies when a birthday is first detected; memory settings apply at the end of the day. Existing memories stay unchanged.</ManyHappyReturns.Settings.Scope>
+  <ManyHappyReturns.Debug.Today>Birthday is today</ManyHappyReturns.Debug.Today>
+  <ManyHappyReturns.Debug.End>End today's birthdays now</ManyHappyReturns.Debug.End>
+  <ManyHappyReturns.Debug.Tally>Log birthday tally</ManyHappyReturns.Debug.Tally>
+  <ManyHappyReturns.Debug.Moved>{PAWN_labelShort}: birthday moved to today (day {DAY} of the year).</ManyHappyReturns.Debug.Moved>
+  <ManyHappyReturns.Debug.Closed>Many Happy Returns: birthdays closed out: {COUNT}.</ManyHappyReturns.Debug.Closed>
 </LanguageData>

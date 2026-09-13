@@ -1,0 +1,18 @@
+Runtime assembly: C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll
+Mod assembly: C:\Users\nelim\Documents\rimworld\ManyHappyReturns\.build\tests\bin\ManyHappyReturns.dll
+PASS: Clean settings defaults
+PASS: Reset restores all settings
+PASS: Finite mood boundaries
+PASS: Non-finite mood values recover to default
+PASS: Actual Scribe settings round-trip
+PASS: Old empty settings use defaults
+PASS: Old partial settings retain stored toggle and default new fields
+PASS: Out-of-range saved factor is normalized after loading
+PASS: NaN saved factor is normalized after loading
+PASS: Score thresholds produce documented five grades
+PASS: Wish points follow documented count bands
+PASS: Null pawns safely decline birthday eligibility
+PASS: Invalid interaction pairs have no weight
+PASS: Shortcut leaves native visibility available for customization
+PASS: New memories capture mood scale without changing existing memories
+RESULT: 15 passed, 0 failed

@@ -1,0 +1,8 @@
+Command: ../scripts/Check-DefRefs.ps1 -ModPath <repository>/Mod
+Executed: 2026-09-13; exit 0
+Reference fields read from installed assembly: 1186 tags (28 manually specified), 22 typed.
+Mod defs: 6; mod parents: 0.
+All XML well-formed.
+No unresolved Def references.
+All references have the correct Def type.
+All ParentName references resolve.

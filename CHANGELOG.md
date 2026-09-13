@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+- Establish an autonomous repository using the existing published history.
+- Add an optional main-bar settings shortcut, hidden by default, opening the native mod dialog.
+- Explain global settings scope and application timing; recover invalid stored mood factors.
+- Localize debug actions and confirmations in English and French.
+- Add the source link and 1.6 preview badge with reproducible composition; retain the original icon style.
+- Add automated settings/scoring/XML checks and explicit in-game validation scenarios.
+- Keep build intermediates inside this repository and pin the 1.6 compilation reference.
+
 ## 1.0.0 — 2026-09-03
 
 First release. RimWorld 1.6.

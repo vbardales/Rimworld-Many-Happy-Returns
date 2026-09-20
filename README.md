@@ -118,7 +118,7 @@ MIT. See `LICENSE` and `ATTRIBUTION.md`.
 
 ## Credits
 
-- Written from scratch by nelim, with the help of Claude (Anthropic).
+- Written from scratch by Nelim, with the help of Claude (Anthropic).
 - Dalrae, for *Garam, Happy Birthday* — the idea, and nothing else. See `ATTRIBUTION.md`.
 - KrukuCoB, for *Gifts and Birthdays*, which this mod deliberately stays out of the way of.
 - Ludeon Studios, for a game whose social layer is generous enough that a mod like this needs

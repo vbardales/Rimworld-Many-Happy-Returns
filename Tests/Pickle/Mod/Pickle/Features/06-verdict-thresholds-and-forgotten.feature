@@ -9,11 +9,8 @@
 # scenarios assert that the real memory formed carries the stage the mod's own function already
 # computed, not a hand-picked number.
 #
-# Left manual, per TEST_SCENARIOS.md S10: a Downed celebrant, a caravan celebrant, and fewer than
-# two witnesses. Each is reachable in principle, but forcing them means either disturbing the
-# health system of a shared fixture pawn or temporarily removing other colonists from a played
-# map - both riskier to a shared fixture than the tenure and trait mutations here, which touch
-# only the celebrant and are reverted by VerdictSteps' own [AfterScenario] hook.
+# The Downed, caravan and witness-floor exemptions of S10 are in 13-exemptions.feature and the newborn in
+# 14-newborn.feature; the tenure and trait ones stay here because they touch only the celebrant.
 Feature: the end-of-day verdict and the forgotten-birthday exemptions
 
   Background:
@@ -38,7 +35,7 @@ Feature: the end-of-day verdict and the forgotten-birthday exemptions
 
   # TEST_SCENARIOS.md S09: the toggle controls formation, not merely the UI.
   Scenario: switching the forgotten-thought setting off suppresses the memory
-    Given the announce-birthdays setting is switched off
+    Given the forgotten-birthday setting is switched off
     When Many Happy Returns closes out today's birthdays
     Then the celebrant holds no birthday-forgotten memory
 

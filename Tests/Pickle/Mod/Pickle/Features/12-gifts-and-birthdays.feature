@@ -44,6 +44,7 @@ Feature: Gifts and Birthdays' congratulation and party count towards the verdict
   Scenario: its party raises the day's bonus by the party's two points
     Given Gifts and Birthdays congratulates the celebrant from the wisher
     And a Gifts and Birthdays party is held for the celebrant, organised by the wisher
+    And I wait 2 ticks
     Then the party's attendee thought is the one Many Happy Returns reads as a party
     Given Many Happy Returns notes the celebrant's day-quality bonus
     When the Gifts and Birthdays party is played out with everyone present throughout

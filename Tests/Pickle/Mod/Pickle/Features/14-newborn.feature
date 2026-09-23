@@ -2,7 +2,7 @@
 # (BirthdayUtility.CanCelebrate) still turns it down: nobody wishes a newborn happy birthday and a baby
 # cannot be forgotten. Babies only exist with Biotech, so this is a conditional feature: it is played in
 # every pass that stages the DLC, which is the default one, and skips where it is left out.
-@requires:ludeon.rimworld.biotech
+@requires:Biotech
 Feature: a newborn is never counted as a birthday
 
   Background:

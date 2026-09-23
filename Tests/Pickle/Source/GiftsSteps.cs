@@ -31,6 +31,9 @@ namespace ManyHappyReturns.PickleSteps
         private sealed class DayBonusNote
         {
             public int Value;
+
+            /// <summary>The celebrant already held a party memory today: the party's two points are then in the baseline.</summary>
+            public bool AlreadyHadParty;
         }
 
         [When("Gifts and Birthdays congratulates the celebrant from the wisher")]
@@ -124,16 +127,37 @@ namespace ManyHappyReturns.PickleSteps
         }
 
         [Given("Many Happy Returns notes the celebrant's day-quality bonus")]
-        public void NoteBonus(PickleContext ctx) =>
-            ctx.Set(new DayBonusNote { Value = BirthdayUtility.DayQualityBonus(Driver.Celebrant(ctx)) });
+        public void NoteBonus(PickleContext ctx)
+        {
+            Pawn celebrant = Driver.Celebrant(ctx);
+            ThoughtDef party = DefDatabase<ThoughtDef>.GetNamedSilentFail("AttendedParty");
+            ctx.Set(new DayBonusNote
+            {
+                Value = BirthdayUtility.DayQualityBonus(celebrant),
+                AlreadyHadParty = party != null && Driver.HasMemoryOfDef(celebrant, party)
+            });
+        }
 
+        /// <summary>
+        /// A fixture is a played colony: the celebrant may already carry a party memory from earlier that
+        /// day, and the bonus counts a party once. Then the rise is zero and what is asserted is that the
+        /// two points are in the bonus at all.
+        /// </summary>
         [Then("the celebrant's day-quality bonus is {int} higher than noted")]
         public void AssertBonusRose(PickleContext ctx, int expected)
         {
-            int before = ctx.Get<DayBonusNote>().Value;
+            var note = ctx.Get<DayBonusNote>();
             int now = BirthdayUtility.DayQualityBonus(Driver.Celebrant(ctx));
-            ctx.Assert(now - before == expected,
-                $"the day-quality bonus went from {before} to {now}, a rise of {now - before}, expected {expected}");
+
+            if (note.AlreadyHadParty)
+            {
+                ctx.Assert(now >= expected,
+                    $"the celebrant already held a party memory and the bonus is {now}, below the party's {expected}");
+                return;
+            }
+
+            ctx.Assert(now - note.Value == expected,
+                $"the day-quality bonus went from {note.Value} to {now}, a rise of {now - note.Value}, expected {expected}");
         }
 
         /// <summary>

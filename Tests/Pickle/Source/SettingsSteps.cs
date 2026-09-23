@@ -24,6 +24,9 @@ namespace ManyHappyReturns.PickleSteps
         [When("the announce-birthdays setting is switched off")]
         public void SwitchOffAnnounce(PickleContext ctx) => Driver.Settings(ctx).morningLetter = false;
 
+        [When("the forgotten-birthday setting is switched off")]
+        public void SwitchOffForgotten(PickleContext ctx) => Driver.Settings(ctx).forgottenThought = false;
+
         [When("the settings dialog is closed")]
         public void CloseDialog(PickleContext ctx)
         {

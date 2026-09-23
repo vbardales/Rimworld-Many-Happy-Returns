@@ -85,7 +85,8 @@ namespace ManyHappyReturns.PickleSteps
         }
 
         /// <summary>
-        /// The awake, present, humanlike free colonists of the current map, in the game's own
+        /// The present, non-downed, humanlike free colonists of the current map (asleep ones included: a fixture
+        /// loaded at night must not fail every Background, so the steps that need two pawns awake wake them), in the game's own
         /// enumeration order (stable within a scenario, not across a reload). TEST_SCENARIOS.md's
         /// common setup asks for at least three; every scenario that needs a celebrant, a wisher or
         /// a witness reads from this list rather than a fixed name the fixture might not carry.
@@ -94,11 +95,11 @@ namespace ManyHappyReturns.PickleSteps
         {
             List<Pawn> colonists = Map(ctx).mapPawns.FreeColonistsSpawned
                 .Where(BirthdayUtility.CanCelebrate)
-                .Where(p => !p.Downed && p.Awake())
+                .Where(p => !p.Downed)
                 .ToList();
 
             ctx.Require(colonists.Count >= atLeast,
-                $"the map has {colonists.Count} awake, eligible free colonists; this scenario needs "
+                $"the map has {colonists.Count} eligible, non-downed free colonists; this scenario needs "
                 + $"at least {atLeast}. TEST_SCENARIOS.md's common setup asks for three");
             return colonists;
         }
@@ -166,6 +167,15 @@ namespace ManyHappyReturns.PickleSteps
                 $"no walkable cell in line of sight of {target.LabelShortCap} was found within 4 "
                 + "tiles: the fixture's map layout does not leave room for this scenario");
             mover.Position = cell;
+
+            // TryInteractWith refuses a sleeping initiator or recipient; a fixture may be saved at night.
+            foreach (Pawn pawn in new[] { mover, target })
+            {
+                if (!pawn.Awake())
+                {
+                    RestUtility.WakeUp(pawn);
+                }
+            }
         }
 
         // --- Scenario roles -------------------------------------------------------------------

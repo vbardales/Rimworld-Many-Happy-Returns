@@ -159,3 +159,9 @@ step text carries "Many Happy Returns" or names the neighbour it drives.
 `exitReason` first, before any number. A run killed in flight leaves a report that looks like a
 result. Then the count of scenarios played against the count discovered: this suite has no
 `@requires:` gating and no `@wip` scenarios, so a clean run should play all of it in both passes.
+
+## Evidence
+
+The launcher is given `-EvidenceDir ManyHappyReturns/Tests/Pickle/Evidence/<run>` and copies the report, log
+and captures there before it releases the lock. That folder stays on disk and is ignored by git; a text
+summary of each run is committed under [docs/runs/](../../docs/runs/README.md).

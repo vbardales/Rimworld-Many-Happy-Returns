@@ -8,6 +8,7 @@ Feature: the morning letter
     Given the save "test-colony" is loaded
     And Many Happy Returns settings are at their defaults
     And the celebrant is the map's first eligible colonist
+    And the local hour at the celebrant is set to 8
 
   Scenario: moving the celebrant's birthday to today queues exactly one letter
     When the celebrant's birthday is moved to today

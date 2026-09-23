@@ -24,3 +24,7 @@ desktop.ini
 # DDS copies of the textures, written into the published folder by the game's Workshop upload;
 # they are regenerated at every upload, so the PNG stays the only source.
 *.dds
+
+# Pickle evidence (reports, logs, captures) stays on disk: too heavy for git, and rewritten by every run.
+# A text summary of each run is committed under docs/runs/ instead.
+Tests/Pickle/Evidence/

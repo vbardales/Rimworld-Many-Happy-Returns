@@ -1,6 +1,6 @@
 ﻿{
-    "executed_at":  "2026-09-23T13:34:03.8629713+02:00",
-    "base_revision":  "f3d075bb0cbf8cfd9e1ac90c7537ab8b63bc7d30",
+    "executed_at":  "2026-09-23T13:44:39.7554105+02:00",
+    "base_revision":  "5576748967828f005fb6d1f1d861e301e0ea113b",
     "scope":  "Working tree; behavior and XML checks, not in-game validation",
     "game_assembly":  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\RimWorldWin64_Data\\Managed",
     "game_assembly_sha256":  "5CF1B5BE399D5B1C9C56CA72C9D35B4ECF307FEACF5859D04AC5A1AA5926356A",

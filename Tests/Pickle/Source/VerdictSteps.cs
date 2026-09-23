@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections.Generic;
 using RimWorld;
 using RimWorks.Pickle;
@@ -41,8 +42,21 @@ namespace ManyHappyReturns.PickleSteps
         [Then("the celebrant holds a birthday-forgotten memory")]
         public void AssertForgotten(PickleContext ctx)
         {
-            var memory = Driver.MemoryOfDef(ctx, Driver.Celebrant(ctx), MHRDefOf.Nelim_BirthdayForgotten);
-            AssertScaledByMoodFactor(ctx, memory);
+            Pawn pawn = Driver.Celebrant(ctx);
+            if (!Driver.HasMemoryOfDef(pawn, MHRDefOf.Nelim_BirthdayForgotten))
+            {
+                // Say why, rather than leaving the reader to guess which of the mod's conditions failed.
+                float days = pawn.records.GetValue(RecordDefOf.TimeAsColonistOrColonyAnimal) / GenDate.TicksPerDay;
+                int others = pawn.Map == null ? 0 : pawn.Map.mapPawns.FreeColonistsSpawned
+                    .Count(p => p != pawn && !p.DevelopmentalStage.Baby());
+                ctx.Assert(false,
+                    $"{pawn.LabelShortCap} holds no Nelim_BirthdayForgotten memory. The conditions: forgottenThought="
+                    + $"{Driver.Settings(ctx).forgottenThought}, {days:0.0} days as a colonist (needs 10), {others} other "
+                    + $"colonists on the map (needs 2), spawned={pawn.Spawned}, downed={pawn.Downed}. Today's memories: "
+                    + string.Join(", ", Driver.TodaysMemories(pawn).Select(m => m.def.defName).ToArray()));
+            }
+
+            AssertScaledByMoodFactor(ctx, Driver.MemoryOfDef(ctx, pawn, MHRDefOf.Nelim_BirthdayForgotten));
         }
 
         [Then("the celebrant holds no birthday-forgotten memory")]
@@ -60,18 +74,19 @@ namespace ManyHappyReturns.PickleSteps
         }
 
         /// <summary>
-        /// Forces the celebrant's TimeAsColonistOrColonyAnimal below the ten-day floor
-        /// BirthdayUtility.MinTicksAsColonistForForgotten names, so the "recruit from yesterday"
-        /// exemption (TEST_SCENARIOS.md S10) is exercised without waiting real days. Reverted after
-        /// the scenario: see RestoreMutations.
+        /// Sets the celebrant's TimeAsColonistOrColonyAnimal to a number of days. Below ten it is the
+        /// "recruit from yesterday" exemption (TEST_SCENARIOS.md S10); at or above it is the precondition
+        /// S09 states ("long-established target") that the test-colony fixture does NOT satisfy on its
+        /// own: the first run showed no forgotten memory for a celebrant nobody had wished, because
+        /// the fixture is a young colony. Reverted after the scenario, newest change first.
         /// </summary>
-        [Given("the celebrant has been a colonist for one day")]
-        public void MakeRecruit(PickleContext ctx)
+        [Given("the celebrant has been a colonist for {int} day(s)")]
+        public void SetTenure(PickleContext ctx, int days)
         {
             Pawn pawn = Driver.Celebrant(ctx);
             float original = pawn.records.GetValue(RecordDefOf.TimeAsColonistOrColonyAnimal);
             mutatedRecords.Add(new RestoreRecord { pawn = pawn, original = original });
-            Driver.SetRecordValue(ctx, pawn, RecordDefOf.TimeAsColonistOrColonyAnimal, GenDate.TicksPerDay);
+            Driver.SetRecordValue(ctx, pawn, RecordDefOf.TimeAsColonistOrColonyAnimal, days * GenDate.TicksPerDay);
         }
 
         /// <summary>
@@ -100,7 +115,7 @@ namespace ManyHappyReturns.PickleSteps
         [AfterScenario]
         public void RestoreMutations(PickleContext ctx)
         {
-            foreach (RestoreRecord entry in mutatedRecords)
+            foreach (RestoreRecord entry in Enumerable.Reverse(mutatedRecords))
             {
                 Driver.SetRecordValue(ctx, entry.pawn, RecordDefOf.TimeAsColonistOrColonyAnimal, entry.original);
             }

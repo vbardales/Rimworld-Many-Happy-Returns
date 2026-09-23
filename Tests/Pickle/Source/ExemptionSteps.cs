@@ -95,7 +95,7 @@ namespace ManyHappyReturns.PickleSteps
         {
             Pawn celebrant = Driver.Celebrant(ctx);
             var request = new PawnGenerationRequest(PawnKindDefOf.Colonist, Faction.OfPlayer,
-                forceGenerateNewPawn: true, fixedBiologicalAge: 0f, fixedChronologicalAge: 0f,
+                forceGenerateNewPawn: true, allowDowned: true, fixedBiologicalAge: 0f, fixedChronologicalAge: 0f,
                 developmentalStages: DevelopmentalStage.Baby);
             Pawn baby = PawnGenerator.GeneratePawn(request);
 

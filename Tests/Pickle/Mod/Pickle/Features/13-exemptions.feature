@@ -14,6 +14,7 @@ Feature: nobody is judged who could not have been remembered or forgotten
     And the celebrant is the map's first eligible colonist
     And at least a third eligible colonist is present
     And the celebrant's birthday is moved to today
+    And the celebrant has been a colonist for 20 days
 
   Scenario: a Downed celebrant is not judged, unwished
     Given the celebrant is downed

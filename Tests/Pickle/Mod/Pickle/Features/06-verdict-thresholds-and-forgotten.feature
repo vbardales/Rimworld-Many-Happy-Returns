@@ -29,19 +29,21 @@ Feature: the end-of-day verdict and the forgotten-birthday exemptions
     And no errors were logged
 
   Scenario: an unwished birthday forms the forgotten memory, scaled by the real mood setting
+    Given the celebrant has been a colonist for 20 days
     When Many Happy Returns closes out today's birthdays
     Then the celebrant holds a birthday-forgotten memory
     And the celebrant holds no birthday-remembered memory
 
   # TEST_SCENARIOS.md S09: the toggle controls formation, not merely the UI.
   Scenario: switching the forgotten-thought setting off suppresses the memory
-    Given the forgotten-birthday setting is switched off
+    Given the celebrant has been a colonist for 20 days
+    And the forgotten-birthday setting is switched off
     When Many Happy Returns closes out today's birthdays
     Then the celebrant holds no birthday-forgotten memory
 
   # TEST_SCENARIOS.md S10: a recruit from yesterday expects nothing from anyone yet.
   Scenario: a colonist of one day's tenure is exempt from the forgotten memory
-    Given the celebrant has been a colonist for one day
+    Given the celebrant has been a colonist for 1 day
     When Many Happy Returns closes out today's birthdays
     Then the celebrant holds no birthday-forgotten memory
 
@@ -49,7 +51,8 @@ Feature: the end-of-day verdict and the forgotten-birthday exemptions
   # birthday" - the nullifying trait sits only on Nelim_BirthdayForgotten, never on
   # Nelim_BirthdayRemembered, so the two halves of that sentence are two different scenarios.
   Scenario: a psychopath is exempt from the forgotten memory on an unwished birthday
-    Given the celebrant is a psychopath
+    Given the celebrant has been a colonist for 20 days
+    And the celebrant is a psychopath
     When Many Happy Returns closes out today's birthdays
     Then the celebrant holds no birthday-forgotten memory
 

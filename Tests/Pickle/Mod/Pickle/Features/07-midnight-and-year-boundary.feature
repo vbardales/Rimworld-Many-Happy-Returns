@@ -31,7 +31,8 @@ Feature: the birthday is judged when the day turns, and only once
     And no errors were logged
 
   Scenario: an unwished birthday is judged at midnight too, and the next day tracks nothing
-    Given the game clock is set to 400 ticks before midnight
+    Given the celebrant has been a colonist for 20 days
+    And the game clock is set to 400 ticks before midnight
     And I wait 5 ticks
     And the celebrant's birthday is moved to today
     When I wait 450 ticks

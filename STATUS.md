@@ -20,8 +20,10 @@ remaining:
     TESTING.md (minimal, with Gifts and Birthdays, with RIMMSQOL, without Anomaly, French), and review its @review
     captures. Written and offline-verified on 2026-09-23 (builds 0 warnings/0 errors against the real
     game assembly; Check-Steps.ps1: 59 patterns compiling, none ambiguous against 746 other
-    expressions, all 267 step lines resolved). The minimal English and French passes were queued
-    that evening, on the owner's instruction; nothing below was played yet.
+    expressions, all 274 step lines resolved). The minimal passes ran on 2026-09-23: English 25 passed,
+    4 failed, 10 skipped; French 24 passed, 5 failed, 10 skipped (docs/runs/). The failures were the suite's:
+    a fixture too young for the forgotten memory, the newborn generation, and in French one wish refused.
+    Fixed since, not yet replayed. Not run: the RIMMSQOL, Gifts and Birthdays and Anomaly-less passes.
   - not applicable, by rule: the engine's own refusal of a memory for an inhumanized pawn (S14, second
     half). The mod declares `nullifyingHediffs`; feature 01 proves the declaration follows the DLC in
     the default and the Anomaly-less passes; the enforcement is the game's, which AUDIT.md leaves to it.

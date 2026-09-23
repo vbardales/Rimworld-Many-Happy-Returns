@@ -25,11 +25,12 @@ remaining:
   - unverified: native settings opening and persistence across full game restart and save loading
   - unverified: RIMMSQOL reveal/open/hide persistence and optional dependency combinations, recording exact versions
   - unverified: new colony and existing save regressions
-  - recommendation: the description names "Birthday Variety" without the Workshop-link convention
-    PUBLISHING.md added on 2026-09-22 (`[url=...]name[/url]` on every citation). The item is not
-    yet on Steam, so this is still a free edit. Not resolved here: which Workshop listing is that
-    mod's exact item was not looked up.
-session:      2026-09-23, the Pickle suite requested and written, then Gifts and Birthdays' Workshop id confirmed
+  - unverified: Wing's Meaningful Parties (Workshop id 3504909699) is not named anywhere in this
+    mod. Read-only reasoning, not tested in game: it retextures the vanilla party event without
+    replacing its mechanism (GatheringWorker_SendLetter.cs patches the letter text; PartyCauseDef
+    carries no separate lord job), so a party it causes should still grant vanilla AttendedParty
+    and count toward DayQualityBonus like any other party. Not confirmed live.
+session:      2026-09-23, Birthday Variety's Workshop id confirmed; Wing's Meaningful Parties surfaced
 updated:      2026-09-23, Workshop id 3625791734 confirmed for KrukuCoB.rout from its own downloaded About.xml; the optional Pickle pass and the description's Workshop link are no longer blocked
 ---
 

@@ -1,6 +1,6 @@
 ﻿{
-    "executed_at":  "2026-09-23T13:19:47.9697248+02:00",
-    "base_revision":  "274dec9d1587a85781c2a9419f09f50cf1bcdbaa",
+    "executed_at":  "2026-09-23T13:30:42.0269255+02:00",
+    "base_revision":  "0c3ba7b0a6cae0650d70b66fc45b0c25d1f5ce7f",
     "scope":  "Working tree; behavior and XML checks, not in-game validation",
     "game_assembly":  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\RimWorldWin64_Data\\Managed",
     "game_assembly_sha256":  "5CF1B5BE399D5B1C9C56CA72C9D35B4ECF307FEACF5859D04AC5A1AA5926356A",
@@ -8,7 +8,7 @@
     "files":  [
                   {
                       "path":  "Mod/About/About.xml",
-                      "sha256":  "133087EADF0BAF80F046BCDC53A410B9622F81C7852E81CBC6BF533252963B37"
+                      "sha256":  "78522297AE15E07428CD7B03C1EBAB1AE72B7041AFEB113EE51AD0AA1D982A6B"
                   },
                   {
                       "path":  "Mod/About/ModIcon.png",

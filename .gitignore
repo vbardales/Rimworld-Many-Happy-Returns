@@ -20,3 +20,7 @@ desktop.ini
 
 # Local agent working files.
 .claude/
+
+# DDS copies of the textures, written into the published folder by the game's Workshop upload;
+# they are regenerated at every upload, so the PNG stays the only source.
+*.dds

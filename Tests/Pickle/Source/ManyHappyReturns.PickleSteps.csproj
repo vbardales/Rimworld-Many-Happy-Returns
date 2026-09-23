@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Step definitions for the Pickle suite in ../Mod/Pickle/Features. Only Pickle loads this
+    assembly: it lives in the companion test mod, never in the Mod/ folder that goes to the
+    Workshop. Mirrors BillAutopilot/Tests/Pickle/Source and SkillIcons/Tests/Pickle/Source.
+
+    No Harmony, no Publicizer: this mod patches nothing, and every private member these steps
+    reach (DebugActions_Birthday.MakeBirthdayToday, Pawn_RecordsTracker's records field,
+    Dialog_ModSettings' mod/selMod field, ManyHappyReturnsMod's static settings field) is read
+    through plain runtime reflection, guarded and named on a miss by Driver.Field/Method/Property.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>ManyHappyReturns.PickleSteps</AssemblyName>
+    <RootNamespace>ManyHappyReturns.PickleSteps</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <Deterministic>true</Deterministic>
+    <DebugType>none</DebugType>
+    <OutputPath>..\Mod\Pickle\Assemblies\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Compile-time stubs only: the game and the Pickle mod supply the real assemblies. -->
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*-*" ExcludeAssets="runtime" PrivateAssets="all" />
+    <PackageReference Include="RimWorks.Pickle.Ref" Version="4.*" ExcludeAssets="runtime" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Bound by name at run time: RimWorld loads Many Happy Returns before Pickle loads this
+         assembly. The shipped assembly is referenced, not a copy, so a step that names a member
+         the mod has since renamed fails at build rather than in a WSL run. -->
+    <Reference Include="ManyHappyReturns">
+      <HintPath>..\..\..\Mod\Assemblies\ManyHappyReturns.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

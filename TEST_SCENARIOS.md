@@ -4,6 +4,12 @@ Status: **not executed in game**. Automated evidence is separate in Tests/RESULT
 Record date, game version, language, mod versions/load order, save name, observed result
 and Player.log for every run. Back up an existing save before these scenarios.
 
+A Pickle (Gherkin) suite covering part of this manual scope now exists at
+[Tests/Pickle/](Tests/Pickle/README.md), written 2026-09-23 and also not yet run — it automates a
+subset of S04–S10, but this document remains the full human-run reference: it covers RIMMSQOL
+integration (S12), dependency combinations (S13), Anomaly (S14) and the interface/log review
+(S15–S16), which stay manual for the reasons Tests/Pickle/README.md gives.
+
 Common setup: development mode, Core and Many Happy Returns, optional dependencies absent,
 three awake adult humanlike free colonists on the same map, one with at least ten days as a
 colonist. Use a disposable colony/save. Do not use Increment time: it skips simulation ticks.

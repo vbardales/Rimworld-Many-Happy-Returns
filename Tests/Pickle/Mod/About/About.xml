@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Many Happy Returns - Pickle tests</name>
+  <author>Nelim</author>
+  <packageId>nelim.manyhappyreturns.pickletests</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <description>In-game functional tests for Many Happy Returns, run by Pickle. Development only: never published, never part of the distributed Mod/ folder.
+
+Written, not yet run. The suite deliberately holds only what a running game can show: the morning letter and its translated text, the hidden settings shortcut and its real Dialog_ModSettings, an actual Scribe write/read of the settings file through the game's own PreClose, the wish exchanged between two real colonists through Pawn_InteractionsTracker.TryInteractWith and its own duplicate-protecting selection weight, and the graded end-of-day memory formed through MemoryThoughtHandler.TryGainMemory, including its nullifying-trait and short-tenure exemptions. The pure scoring arithmetic underneath - which grade a score maps to, how wishers are weighted, the settings' clamping - is proven out of game by Tests/ManyHappyReturns.Tests.csproj and is not replayed here.
+
+The name Pickle's -pickle-run filter wants is the display name above, not the folder.
+
+See TESTING.md for the scenarios this suite comes from, and Tests/Pickle/README.md for what is covered here, what stays manual, and how many passes a verdict needs.</description>
+  <modDependencies>
+    <li>
+      <packageId>nelim.manyhappyreturns</packageId>
+      <displayName>Many Happy Returns</displayName>
+    </li>
+    <li>
+      <packageId>rimworks.pickle</packageId>
+      <displayName>Pickle</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3791648678</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>nelim.manyhappyreturns</li>
+    <li>rimworks.pickle</li>
+    <li>KrukuCoB.rout</li>
+  </loadAfter>
+</ModMetaData>

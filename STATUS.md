@@ -8,7 +8,7 @@ packageId:    nelim.manyhappyreturns
 repo:         Rimworld-Many-Happy-Returns
 visibility:   public
 detached:     yes
-stage:        preTest
+stage:        done
 licence:      original
 licence_at:   written from scratch, MIT; only the general idea is shared
 dependencies: none
@@ -16,23 +16,66 @@ showcase:     complete
 tested_on:
 workshop:
 remaining:
-  - defect: no Pickle (Gherkin) scenarios exist anywhere in the repository, and no not_applicable
-    justification is recorded for their absence; AUDIT.md's preTest -> done gate requires them
-    written (not executed) for whatever only a running game can show. TEST_SCENARIOS.md is a
-    manual, human-run equivalent, not the required Pickle artifact.
+  - unverified: run the Pickle suite (Tests/Pickle/), all three passes named in TESTING.md, and
+    review its @review captures. Written and offline-verified on 2026-09-23 (builds 0 warnings/0
+    errors against the real game assembly; Check-Steps.ps1 reports all 35 patterns compiling, none
+    ambiguous against 732 other expressions in the collection, all 92 step lines resolved) but
+    never launched in a game: no ticket was taken for this suite, on explicit instruction.
   - unverified: execute TEST_SCENARIOS.md in game, including EN/FR interface and logs
   - unverified: native settings opening and persistence across full game restart and save loading
   - unverified: RIMMSQOL reveal/open/hide persistence and optional dependency combinations, recording exact versions
   - unverified: new colony and existing save regressions
+  - blocked: the optional Gifts and Birthdays Pickle pass (wsl-deps.avec-gifts-and-birthdays.map)
+    needs KrukuCoB's Workshop id confirmed before it can be staged; two Steam lookups hit the rate
+    limit while writing the suite. Confirm the id, then uncomment the map's one dependency line.
   - recommendation: the description names "Gifts and Birthdays" and "Birthday Variety" without
     the Workshop-link convention PUBLISHING.md added on 2026-09-22 (`[url=...]name[/url]` on every
     citation). The item is not yet on Steam, so this is still a free edit; not verified here
     which of the two live "Gifts and Birthdays" Workshop listings is KrukuCoB's exact item.
-session:      2026-09-23, re-audit against the current AUDIT.md workflow
-updated:      2026-09-23, re-audit: preTest confirmed, done blocked on missing Pickle scenarios
+session:      2026-09-23, the Pickle suite requested and written
+updated:      2026-09-23, done restored: the Pickle scenarios preTest -> done required are now written
 ---
 
 # Many Happy Returns — status
+
+## The Pickle suite — 2026-09-23
+
+Requested after the audit below identified its absence as the sole blocker to `done`. Six feature
+files under `Tests/Pickle/`, scope and design in [Tests/Pickle/README.md](Tests/Pickle/README.md),
+the pass matrix in [TESTING.md](TESTING.md). Written and checked offline only, **on explicit
+instruction not to take the Pickle run lock**: no game was launched, no WSL run attempted.
+
+What was actually run, both read-only or local-compile, no ticket involved:
+- `dotnet build Tests/Pickle/Source/ManyHappyReturns.PickleSteps.csproj -c Release` against the
+  real installed `Assembly-CSharp.dll` and `RimWorks.Pickle.Ref`: 0 warnings, 0 errors.
+- `Tests/Pickle/Check-Steps.ps1` against the installed Pickle's own assemblies and every other
+  suite in the collection: 35 patterns declared, all 35 compile, none ambiguous against 732 other
+  expressions (205 from Pickle itself, 527 from 29 other step sources), all 92 step lines across
+  the six features resolve to a declared expression.
+
+Neither check starts a game or requires the machine-wide Pickle lock; both are the same kind of
+offline verification the authoring guide asks for before ever queuing a run.
+
+Design choices worth recording: scenarios name **the celebrant** and **the wisher** rather than a
+fixture pawn name, resolved fresh each call by persistent in-game name rather than a held `Pawn`
+reference, so the same steps survive a mid-scenario save/reload without a separate reacquisition
+step. The duplicate-protection scenario reads `InteractionWorker_BirthdayWish.RandomSelectionWeight`
+directly rather than exchanging the wish twice, because `Pawn_InteractionsTracker.TryInteractWith`
+does not consult that weight at all — exchanging it twice would prove nothing about the guard the
+mod actually relies on. Two mutations needed for the forgotten-birthday exemptions (a forced short
+tenure, the Psychopath trait) are reverted in `[AfterScenario]`, following the collection's
+`SettingsSandbox` pattern for the settings file itself.
+
+Left explicitly unstaged: the optional pass with Gifts and Birthdays, because its Workshop id could
+not be confirmed here (two lookups hit Steam's rate limit; a third returned a "Gifts and Birthdays"
+credited to "KrikiCoB", close enough to be the same author mistyped, too close to stage on a
+guess). `wsl-deps.avec-gifts-and-birthdays.map` documents this and needs the id confirmed before
+its one dependency line is uncommented.
+
+This restores `stage: done`: every criterion of `preTest -> done` the prior audit checked still
+holds (re-verified nothing changed under it), and the missing Pickle criterion it found is now
+met — written, with a justified account of what stays manual and why. `done -> tested` remains
+exactly as unverified as before; writing a suite is not running one.
 
 ## Audit — 2026-09-23
 

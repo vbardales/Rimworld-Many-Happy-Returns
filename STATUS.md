@@ -8,7 +8,7 @@ packageId:    nelim.manyhappyreturns
 repo:         Rimworld-Many-Happy-Returns
 visibility:   public
 detached:     yes
-stage:        done
+stage:        preTest
 licence:      original
 licence_at:   written from scratch, MIT; only the general idea is shared
 dependencies: none
@@ -16,15 +16,82 @@ showcase:     complete
 tested_on:
 workshop:
 remaining:
+  - defect: no Pickle (Gherkin) scenarios exist anywhere in the repository, and no not_applicable
+    justification is recorded for their absence; AUDIT.md's preTest -> done gate requires them
+    written (not executed) for whatever only a running game can show. TEST_SCENARIOS.md is a
+    manual, human-run equivalent, not the required Pickle artifact.
   - unverified: execute TEST_SCENARIOS.md in game, including EN/FR interface and logs
   - unverified: native settings opening and persistence across full game restart and save loading
   - unverified: RIMMSQOL reveal/open/hide persistence and optional dependency combinations, recording exact versions
   - unverified: new colony and existing save regressions
-session:      2026-09-13, audit fixes after the preserved automatic sweep
-updated:      2026-09-13, audit fixes and technical revalidation
+  - recommendation: the description names "Gifts and Birthdays" and "Birthday Variety" without
+    the Workshop-link convention PUBLISHING.md added on 2026-09-22 (`[url=...]name[/url]` on every
+    citation). The item is not yet on Steam, so this is still a free edit; not verified here
+    which of the two live "Gifts and Birthdays" Workshop listings is KrukuCoB's exact item.
+session:      2026-09-23, re-audit against the current AUDIT.md workflow
+updated:      2026-09-23, re-audit: preTest confirmed, done blocked on missing Pickle scenarios
 ---
 
 # Many Happy Returns — status
+
+## Audit — 2026-09-23
+
+Applied the current `AUDIT.md` workflow: files, artifacts and re-run results, not the status
+this document already declared. Audited revision: `933fe40a19d5eeb6c35358263fed121b475a2113`
+(HEAD of `origin/main`, working tree clean before the audit; the only writes made here are
+this section, the front matter and the refreshed `Tests/Results/*`). Read `PUBLISHING.md`,
+`STYLE_RIMWORLD.md`, `MOD_SETTINGS.md` and `TRANSLATIONS.md` in full. RimWorld was not
+launched, on Windows or in the WSL; all checks below are headless (compilation, a managed-DLL
+reference, static analysis) or direct file inspection.
+
+### What changed since the last recorded evidence
+
+The 2026-09-13 test manifest was pinned to commit `68154e0`. HEAD had since moved one commit
+further, `933fe40` ("write the maintainer name as Nelim"), which only recases `nelim` to
+`Nelim` in `About.xml`'s `<author>`, both `LICENSE` copies and `README.md` — no source, Def,
+language resource or image changed. Not a pertinent modification to behavior, settings or
+translation evidence; re-run anyway rather than trusting a five-day-old manifest, since the
+point of this audit is not to take the declared state on faith.
+
+### Gates re-verified, with fresh commands
+
+| Gate | Result |
+| --- | --- |
+| horsMonoRepo | **Validated.** Own `.git`, `origin` at `https://github.com/vbardales/Rimworld-Many-Happy-Returns.git`, working tree clean, HEAD tracks `origin/main`. `packageId`/folder/repo name coherent; no literal-identity requirement applies to an original title. `LICENSE`, `ATTRIBUTION.md`, `README.md`, `CHANGELOG.md` present and in English. `diff` confirms `Mod/ATTRIBUTION.md` and `Mod/LICENSE` are byte-identical to their root copies. |
+| ModIcon generated | **Validated.** `Mod/About/ModIcon.png` is 128x128, 23,544 bytes (within the 20-30 KB guidance), directly viewed. It carries a text ribbon ("MANY HAPPY RETURNS"), against the general no-text guideline in `STYLE_RIMWORLD.md` — but this is an explicit, already-recorded user preference (see "Icon preference — 2026-09-13" below) that the workflow itself says takes precedence and that no audit may override or regenerate. Not re-opened. |
+| Preview generated | **Validated.** `Mod/About/Preview.png` is 896x504, 693,827 bytes, under both the 900 KB guidance and the 1 MB hard limit. Directly viewed: high oblique camera, tiled floor, warm lamp pool against a cool ambient, faceless silhouettes, readable title/tagline/1.6 badge, no clipping or overlap with the scene. |
+| preOptions | **Validated.** `<description>` ends, after the credits, with `[url=https://github.com/vbardales/Rimworld-Many-Happy-Returns]Source code on GitHub[/url]`, matching `<url>` and the `origin` remote. No prefix/suffix applies to this original title. **Recommendation, not a defect:** PUBLISHING.md's 2026-09-22 addition asks every named mod with its own Workshop page to carry `[url=...]name[/url]` on each citation; "Gifts and Birthdays" and "Birthday Variety" are currently named without it. The item is not yet on Steam (no `PublishedFileId.txt` anywhere in the tree), so `SetItemDescription`'s one-shot rule has not fired yet and this is still free to fix. Not applied here: a Steam search surfaced a "Gifts and Birthdays" listing at `id=3625791734`, but two live listings share that title and the fetch needed to confirm KrukuCoB's own item hit Steam's rate limit twice: recorded as unverified rather than guessed into the file. |
+| options | **Validated**, re-run. `Source/ManyHappyReturnsMod.cs` and `ManyHappyReturnsSettings.cs` implement the primary `Mod options -> Many Happy Returns` route: three useful controls (letter toggle, forgotten-thought toggle, 50-200% mood slider), scope/timing text, reset, NaN/Infinity/out-of-range recovery. `Mod/Defs/MainButton.xml` declares `Nelim_ManyHappyReturnsSettings` with `buttonVisible=false`, `workerClass=ManyHappyReturns.MainButtonWorker_Settings`, which opens the same `Dialog_ModSettings` over the same loaded `Mod` instance — a hidden-by-default shortcut, not a forced-invisible one. |
+| l10n | **Validated.** `Source/DebugActions_Birthday.cs` now routes every displayed label, tool cursor name and confirmation through `.Translate()` (`ManyHappyReturns.Debug.*` keys); the one remaining hardcoded string is the technical `Log.Message` tally, correctly left in English. `ran ../scripts/Check-DefInjected.ps1 -TransMod <Mod>`: 29 patch operations, 11,592 defs indexed, 18 keys checked, 0 errors. `ran ../scripts/Check-XmlFields.ps1 -ModPath <Mod> -ExtraAssemblies <dll>`: 3 files checked, no unknown field. |
+| preTest | **Validated.** `About.xml` declares no `modDependencies`; `loadAfter` names only `Ludeon.RimWorld` and the optional `KrukuCoB.rout`. `BirthdayUtility`'s lookup of `GetNamedSilentFail("BirthdayCongratulationReceived")` is null-safe and unconditional in code, matching the optional declaration. The two `MayRequire="Ludeon.RimWorld.Anomaly"` entries in `Mod/Defs/Birthday.xml` guard the only DLC-specific content (`Inhumanized`). No Harmony, no `LoadFolders.xml` (single-version mod). `ran ../scripts/Check-DefRefs.ps1 -ModPath <Mod>`: 6 mod defs, well-formed XML, every def reference resolved to the right type, every `ParentName` resolved. |
+| **preTest -> done** | **Defect, blocking.** Re-ran the automated suite fresh (`powershell -File Tests/Run.ps1`, no RimWorld process running before or during): 15/15 behavior cases pass, 8 XML documents parse, 16 Keyed keys and 18 DefInjected paths check out, and the tested DLL's SHA-256 matches the distributed `Mod/Assemblies/ManyHappyReturns.dll` — this satisfies "tests automatisés écrits, exécutés et au vert" and "tests XML écrits, exécutés et au vert." `TEST_SCENARIOS.md` satisfies "scénarios de tests fonctionnels écrits." But **no Pickle (Gherkin) suite exists**: no `Tests/Pickle/`, no `*.feature` file, no `TESTING.md`, no mention of Pickle anywhere in the repository (`grep -ril pickle .` finds nothing). AUDIT.md requires these *written*, not executed, at this gate, scoped to "ce que seul un jeu qui tourne peut montrer" — and this mod has exactly that kind of surface: the letter actually rendering, the hidden-by-default MainButton, a RIMMSQOL click reaching through another mod's window (the literal example in AUDIT.md's own Pickle guidance), the translated settings dialog layout, and memory state that only proves itself across a save/reload. `TEST_SCENARIOS.md` was written as the human-run substitute for exactly this surface, which is evidence the surface was recognized, not that the Pickle requirement is inapplicable to it. No `not_applicable` justification for skipping Pickle is recorded anywhere. This is a real gap, not an unperformed convenience check. |
+| done -> tested | **Not established** (gate above not reached). Historically unverified regardless: no scenario in `TEST_SCENARIOS.md` has been run in a live game, `tested_on` is empty, and no Pickle suite exists to run. |
+
+### Last cumulatively justified state: **preTest**
+
+Every gate through `l10n -> preTest` is independently validated above, including a fresh
+re-run of all automated evidence at current HEAD. The single blocker to `done` is the missing
+Pickle scenario suite required by `preTest -> done`; nothing else at that gate is in question.
+This is a step back from the `done` this file declared after the 2026-09-13 corrections — that
+audit's own gate table did not check for a Pickle artifact at this transition, and none was
+ever written. Preserving that section below as history rather than rewriting it: it was correct
+about everything it checked.
+
+### What closes `done`
+
+Write a `Tests/Pickle/` Gherkin suite (and the `TESTING.md` describing its passes, per
+AUDIT.md's Pickle section) scoped to what a running game alone can show for this mod: the
+morning letter rendering and its translated text, the settings dialog opening through both the
+primary route and the revealed MainButtons shortcut, a RIMMSQOL-revealed shortcut actually
+being clickable through its window, and a memory surviving a save/reload. Everything else this
+mod does — scoring, clamping, Scribe round-trips, interaction weights — is already proven
+headless and does not belong in Gherkin per AUDIT.md's own "on ne teste pas le jeu" and
+unit-test-priority rules. This does not require running the suite to reach `done`; only writing
+it and stating its scope.
+
+This audit does not write that suite: `AUDIT.md` is explicit that an audit does not complete
+development to improve its own verdict, and Pickle suite design belongs to the session holding
+the mod, per [[rimworld-tests-hors-jeu]] and [[rimworld-status-md-a-maintenir]].
 
 ## Delivery — 2026-09-13
 

@@ -1,130 +1,130 @@
-{
-  "executed_at": "2026-09-13T14:30:47.9757874+02:00",
-  "base_revision": "68154e0474d7a456eb5b3dd1ff7d0f81a1e860d2",
-  "scope": "Working tree; behavior and XML checks, not in-game validation",
-  "game_assembly": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\RimWorldWin64_Data\\Managed",
-  "game_assembly_sha256": "5CF1B5BE399D5B1C9C56CA72C9D35B4ECF307FEACF5859D04AC5A1AA5926356A",
-  "distributed_dll_sha256": "96E46073724F0B1E443D8D692641C6753C1A18F88B164F5F7C6F9BE50ECB8A53",
-  "files": [
-    {
-      "path": "Mod/About/About.xml",
-      "sha256": "E194A86197916ADB1D9C1E71B2D2F00DD05CA9A415915FF5213B74CF8D2FF5A5"
-    },
-    {
-      "path": "Mod/About/ModIcon.png",
-      "sha256": "62F74353E969D39435A05AC0F9CF3A6A9F90616D15BE88B45AAF7E6396F3857C"
-    },
-    {
-      "path": "Mod/About/Preview.png",
-      "sha256": "71BD7D4072DFDAE3EC6AD30735F0150D67C9E7D8AE3D5BC92D67040ECAB9ECE7"
-    },
-    {
-      "path": "Mod/Assemblies/ManyHappyReturns.dll",
-      "sha256": "96E46073724F0B1E443D8D692641C6753C1A18F88B164F5F7C6F9BE50ECB8A53"
-    },
-    {
-      "path": "Mod/ATTRIBUTION.md",
-      "sha256": "CA0B1740168A1F170F954B6E35F42035D580778727920293384072788FB1028B"
-    },
-    {
-      "path": "Mod/Defs/Birthday.xml",
-      "sha256": "C680E66D44BF544EE7AC724C952A584C7C3655EF1ECCACAC64E785F97181B68F"
-    },
-    {
-      "path": "Mod/Defs/MainButton.xml",
-      "sha256": "30D76FA9899F2C4C63C1F6BEA023C55DC1BB7AFE66C8689D5CCF6D45F9095F47"
-    },
-    {
-      "path": "Mod/Languages/English/Keyed/ManyHappyReturns.xml",
-      "sha256": "BE17FE3B80943C84B73FA2957EB6AB1B60C799D1E069AB070219C73362EFF63C"
-    },
-    {
-      "path": "Mod/Languages/French/DefInjected/InteractionDef/Birthday.xml",
-      "sha256": "D1C2AB6138F3A58C45A42DA5309C5AB8909E729E47D72EF69514C77C864EAED5"
-    },
-    {
-      "path": "Mod/Languages/French/DefInjected/MainButtonDef/Settings.xml",
-      "sha256": "2D251B63EC1EF1F5F4CFB193EDF145C5460775569EB336093F9C1676289C2F6C"
-    },
-    {
-      "path": "Mod/Languages/French/DefInjected/ThoughtDef/Birthday.xml",
-      "sha256": "EC0AA0386E4DF2E5ADB8029008E15C66F391F3780B5FAFCDA8124F921BCE46A6"
-    },
-    {
-      "path": "Mod/Languages/French/Keyed/ManyHappyReturns.xml",
-      "sha256": "83704C04E8EBAE6251613065A1842FE6B86BF0D542F2B9F29B8E39D9885E6560"
-    },
-    {
-      "path": "Mod/LICENSE",
-      "sha256": "45C90B6744C0831C1F82E6DA309F189410E3218CDAC19B51489D7350571E4D51"
-    },
-    {
-      "path": "Mod/Textures/ManyHappyReturns/BirthdayWish.png",
-      "sha256": "76783AABD70EE1104DA36328FCFAFE15BC803244A9C63C9EC24853397079934A"
-    },
-    {
-      "path": "Source/BirthdayRecord.cs",
-      "sha256": "9672DCD310DEA86BCC872B78AA070B5259674F27DC67822726CD73D64C69CB33"
-    },
-    {
-      "path": "Source/BirthdayUtility.cs",
-      "sha256": "2D09BCC68B04A49D5EF2A1435116F7CF54B0B3F501F13C6B82C8FC09B48199F6"
-    },
-    {
-      "path": "Source/DebugActions_Birthday.cs",
-      "sha256": "8A19BAEF5196933E2F578FE28739A1A7F6057C9378BE19EA9393457DF66DB95A"
-    },
-    {
-      "path": "Source/Directory.Build.props",
-      "sha256": "B773B810CA292E1725EA8A2CFBDD3708A2A31C2C199F6694291E475B1E2AD6C8"
-    },
-    {
-      "path": "Source/GameComponent_Birthdays.cs",
-      "sha256": "E417EE62695DE2C6E56B41B901370E6ABFB22166E67008AAB79BCD6CBAEE1217"
-    },
-    {
-      "path": "Source/InteractionWorker_BirthdayWish.cs",
-      "sha256": "4E2AA200C234F7849DF5376C6E249E358F9ECC0B06C8A62249760E0D5A1DC40F"
-    },
-    {
-      "path": "Source/MainButtonWorker_Settings.cs",
-      "sha256": "67437887A1A5057D966A90A28438A15E7FE522E2E8BBC1C7D4E2BA5277A5CB1D"
-    },
-    {
-      "path": "Source/ManyHappyReturns.csproj",
-      "sha256": "BC2FF9C4A00C20B630548936FB18F0DA47C90C75A28DA825A49EADCC68C4CD4D"
-    },
-    {
-      "path": "Source/ManyHappyReturnsMod.cs",
-      "sha256": "CFA517EA5606776DA12F7AAD9EA86FE4B4ABE6F17D3C7093E337E816FE640C1B"
-    },
-    {
-      "path": "Source/ManyHappyReturnsSettings.cs",
-      "sha256": "69F6117A9B932501EC959728EECDDF10DBE8997490625557303BB848AE7AEB90"
-    },
-    {
-      "path": "Source/MHRDefOf.cs",
-      "sha256": "82322023ECEBF9B8B43C42A89693BC4A6F24527F1918669022B5269CA603EF2E"
-    },
-    {
-      "path": "Tests/Check-Xml.ps1",
-      "sha256": "02B96731F7EA16E526B639FED712E2FE7222120B278F44517F00F9D190D6EE66"
-    },
-    {
-      "path": "Tests/Directory.Build.props",
-      "sha256": "86E482902AF333366D59C3A3E13F5D156E0CBB525B44D73A8D21E5CDDE0FEE41"
-    },
-    {
-      "path": "Tests/ManyHappyReturns.Tests.csproj",
-      "sha256": "264B65EF4CE7DF2C3C1226198F6E408D2596B43B99525666ED505C79EF211B57"
-    },
-    {
-      "path": "Tests/Program.cs",
-      "sha256": "69E57164EED97AA15D4EDC38940105B46001E174E85D14AD56FE2540806734E4"
-    },
-    {
-      "path": "Tests/Run.ps1",
-      "sha256": "146F5942C71DBBB62F2F653FD11A9713473F8B42390EEC6D12EC56113541FE69"
-    }
-  ]
+﻿{
+    "executed_at":  "2026-09-23T12:31:59.9203263+02:00",
+    "base_revision":  "933fe40a19d5eeb6c35358263fed121b475a2113",
+    "scope":  "Working tree; behavior and XML checks, not in-game validation",
+    "game_assembly":  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\RimWorldWin64_Data\\Managed",
+    "game_assembly_sha256":  "5CF1B5BE399D5B1C9C56CA72C9D35B4ECF307FEACF5859D04AC5A1AA5926356A",
+    "distributed_dll_sha256":  "96E46073724F0B1E443D8D692641C6753C1A18F88B164F5F7C6F9BE50ECB8A53",
+    "files":  [
+                  {
+                      "path":  "Mod/About/About.xml",
+                      "sha256":  "DA24F2390B14184E555F1E749713397A66A0B57F64E2C1D408BDF15CF05B7537"
+                  },
+                  {
+                      "path":  "Mod/About/ModIcon.png",
+                      "sha256":  "3C56E8E466FCB979139E99FE2E419366AD66C7B133FCFDB062292A48D2CAF33A"
+                  },
+                  {
+                      "path":  "Mod/About/Preview.png",
+                      "sha256":  "71BD7D4072DFDAE3EC6AD30735F0150D67C9E7D8AE3D5BC92D67040ECAB9ECE7"
+                  },
+                  {
+                      "path":  "Mod/Assemblies/ManyHappyReturns.dll",
+                      "sha256":  "96E46073724F0B1E443D8D692641C6753C1A18F88B164F5F7C6F9BE50ECB8A53"
+                  },
+                  {
+                      "path":  "Mod/ATTRIBUTION.md",
+                      "sha256":  "CA0B1740168A1F170F954B6E35F42035D580778727920293384072788FB1028B"
+                  },
+                  {
+                      "path":  "Mod/Defs/Birthday.xml",
+                      "sha256":  "C680E66D44BF544EE7AC724C952A584C7C3655EF1ECCACAC64E785F97181B68F"
+                  },
+                  {
+                      "path":  "Mod/Defs/MainButton.xml",
+                      "sha256":  "30D76FA9899F2C4C63C1F6BEA023C55DC1BB7AFE66C8689D5CCF6D45F9095F47"
+                  },
+                  {
+                      "path":  "Mod/Languages/English/Keyed/ManyHappyReturns.xml",
+                      "sha256":  "BE17FE3B80943C84B73FA2957EB6AB1B60C799D1E069AB070219C73362EFF63C"
+                  },
+                  {
+                      "path":  "Mod/Languages/French/DefInjected/InteractionDef/Birthday.xml",
+                      "sha256":  "D1C2AB6138F3A58C45A42DA5309C5AB8909E729E47D72EF69514C77C864EAED5"
+                  },
+                  {
+                      "path":  "Mod/Languages/French/DefInjected/MainButtonDef/Settings.xml",
+                      "sha256":  "2D251B63EC1EF1F5F4CFB193EDF145C5460775569EB336093F9C1676289C2F6C"
+                  },
+                  {
+                      "path":  "Mod/Languages/French/DefInjected/ThoughtDef/Birthday.xml",
+                      "sha256":  "EC0AA0386E4DF2E5ADB8029008E15C66F391F3780B5FAFCDA8124F921BCE46A6"
+                  },
+                  {
+                      "path":  "Mod/Languages/French/Keyed/ManyHappyReturns.xml",
+                      "sha256":  "83704C04E8EBAE6251613065A1842FE6B86BF0D542F2B9F29B8E39D9885E6560"
+                  },
+                  {
+                      "path":  "Mod/LICENSE",
+                      "sha256":  "B054D95F9B2C1B9302B895C37C3E5EACEA13EDDAC7278D307C3CAE267F227892"
+                  },
+                  {
+                      "path":  "Mod/Textures/ManyHappyReturns/BirthdayWish.png",
+                      "sha256":  "76783AABD70EE1104DA36328FCFAFE15BC803244A9C63C9EC24853397079934A"
+                  },
+                  {
+                      "path":  "Source/BirthdayRecord.cs",
+                      "sha256":  "9672DCD310DEA86BCC872B78AA070B5259674F27DC67822726CD73D64C69CB33"
+                  },
+                  {
+                      "path":  "Source/BirthdayUtility.cs",
+                      "sha256":  "2D09BCC68B04A49D5EF2A1435116F7CF54B0B3F501F13C6B82C8FC09B48199F6"
+                  },
+                  {
+                      "path":  "Source/DebugActions_Birthday.cs",
+                      "sha256":  "8A19BAEF5196933E2F578FE28739A1A7F6057C9378BE19EA9393457DF66DB95A"
+                  },
+                  {
+                      "path":  "Source/Directory.Build.props",
+                      "sha256":  "B773B810CA292E1725EA8A2CFBDD3708A2A31C2C199F6694291E475B1E2AD6C8"
+                  },
+                  {
+                      "path":  "Source/GameComponent_Birthdays.cs",
+                      "sha256":  "E417EE62695DE2C6E56B41B901370E6ABFB22166E67008AAB79BCD6CBAEE1217"
+                  },
+                  {
+                      "path":  "Source/InteractionWorker_BirthdayWish.cs",
+                      "sha256":  "4E2AA200C234F7849DF5376C6E249E358F9ECC0B06C8A62249760E0D5A1DC40F"
+                  },
+                  {
+                      "path":  "Source/MainButtonWorker_Settings.cs",
+                      "sha256":  "67437887A1A5057D966A90A28438A15E7FE522E2E8BBC1C7D4E2BA5277A5CB1D"
+                  },
+                  {
+                      "path":  "Source/ManyHappyReturns.csproj",
+                      "sha256":  "BC2FF9C4A00C20B630548936FB18F0DA47C90C75A28DA825A49EADCC68C4CD4D"
+                  },
+                  {
+                      "path":  "Source/ManyHappyReturnsMod.cs",
+                      "sha256":  "CFA517EA5606776DA12F7AAD9EA86FE4B4ABE6F17D3C7093E337E816FE640C1B"
+                  },
+                  {
+                      "path":  "Source/ManyHappyReturnsSettings.cs",
+                      "sha256":  "69F6117A9B932501EC959728EECDDF10DBE8997490625557303BB848AE7AEB90"
+                  },
+                  {
+                      "path":  "Source/MHRDefOf.cs",
+                      "sha256":  "82322023ECEBF9B8B43C42A89693BC4A6F24527F1918669022B5269CA603EF2E"
+                  },
+                  {
+                      "path":  "Tests/Check-Xml.ps1",
+                      "sha256":  "02B96731F7EA16E526B639FED712E2FE7222120B278F44517F00F9D190D6EE66"
+                  },
+                  {
+                      "path":  "Tests/Directory.Build.props",
+                      "sha256":  "86E482902AF333366D59C3A3E13F5D156E0CBB525B44D73A8D21E5CDDE0FEE41"
+                  },
+                  {
+                      "path":  "Tests/ManyHappyReturns.Tests.csproj",
+                      "sha256":  "264B65EF4CE7DF2C3C1226198F6E408D2596B43B99525666ED505C79EF211B57"
+                  },
+                  {
+                      "path":  "Tests/Program.cs",
+                      "sha256":  "69E57164EED97AA15D4EDC38940105B46001E174E85D14AD56FE2540806734E4"
+                  },
+                  {
+                      "path":  "Tests/Run.ps1",
+                      "sha256":  "146F5942C71DBBB62F2F653FD11A9713473F8B42390EEC6D12EC56113541FE69"
+                  }
+              ]
 }

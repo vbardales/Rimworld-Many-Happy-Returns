@@ -65,7 +65,9 @@ mod actually relies on. Two mutations needed for the forgotten-birthday exemptio
 tenure, the Psychopath trait) are reverted in `[AfterScenario]`, following the collection's
 `SettingsSandbox` pattern for the settings file itself.
 
-The optional pass with Gifts and Birthdays is stageable: its Workshop id (3625791734, `KrukuCoB.rout`) wasconfirmed later the same day from the downloaded item's own `About.xml`, and`wsl-deps.avec-gifts-and-birthdays.map` carries it.
+The optional pass with Gifts and Birthdays is stageable: its Workshop id (3625791734, `KrukuCoB.rout`)
+was confirmed later the same day from the downloaded item's own `About.xml`, and
+`wsl-deps.avec-gifts-and-birthdays.map` carries it.
 
 This restores `stage: done`: every criterion of `preTest -> done` the prior audit checked still
 holds (re-verified nothing changed under it), and the missing Pickle criterion it found is now

@@ -160,8 +160,26 @@ step text carries "Many Happy Returns" or names the neighbour it drives.
 result. Then the count of scenarios played against the count discovered: this suite has no
 `@requires:` gating and no `@wip` scenarios, so a clean run should play all of it in both passes.
 
-## Evidence
+## Evidence: what to keep
 
 The launcher is given `-EvidenceDir ManyHappyReturns/Tests/Pickle/Evidence/<run>` and copies the report, log
-and captures there before it releases the lock. That folder stays on disk and is ignored by git; a text
-summary of each run is committed under [docs/runs/](../../docs/runs/README.md).
+and captures there before it releases the lock. That folder stays on disk and is ignored by git (as is `*.dds`).
+Nothing of it is committed: what the repository keeps is one text summary per run in
+[docs/runs/](../../docs/runs/README.md). Disk is not free, so the folder is pruned to what still proves something.
+
+**Keep**, per pass, only the latest report for the revision now in the repository:
+- `junit.xml`, `summary.json` and `summary.md`: the outcome of every scenario, and the failure messages;
+- `Player.log`: the log check that `done -> tested` asks for;
+- the `@review` captures that nobody has opened yet, and the ones a person has judged good enough to show. A green
+  `@review` scenario proves the trip, not the image.
+
+**Delete**, once a run is summarised:
+- `report.html` and `messages.ndjson`: the heavy, derived copies of what `junit.xml` already says (about 40 MB a run);
+- the failure captures of scenarios that have since been fixed: the cause is in the summary;
+- any older report for a scenario a newer run repeated, unless it is the only proof of a check the newer one skipped;
+- everything the launcher copied that is not this suite's. The shared `pickle-reports/screenshots` folder holds every
+  suite's captures, and the launcher's copy stops on a path over 260 characters: copy this suite's captures by name,
+  and check the file times, since two suites can share a scenario title.
+
+Never delete a report that `STATUS.md` still points to: repoint it first. A run's line in `docs/runs/` says which
+pass, language and revision it played, its `exitReason`, its counts, and what was not read.

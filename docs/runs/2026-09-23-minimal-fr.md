@@ -6,7 +6,7 @@
   same suite as the English pass, with none of the fixes made since
 - **exitReason**: `failed`. Pickle exit 1
 - **Scenarios**: 39 discovered, 39 accounted for: 24 passed, 5 failed, 10 skipped, 0 flaky
-- **Evidence**: on disk, ignored by git, report files only. The launcher's own copy stopped again on a path over 260 characters,
+- **Evidence**: on disk, ignored by git: `junit.xml`, `summary.json`, `summary.md`, `Player.log` and the `@review` capture of the settings page (not yet opened). `report.html`, `messages.ndjson` and the failure captures were deleted the same day for disk space. The launcher's own copy stopped again on a path over 260 characters,
   and no captures were kept: the shared screenshot folder cannot tell this suite's images from other suites'.
 
 ## Same result as English, plus one

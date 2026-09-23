@@ -25,15 +25,12 @@ remaining:
   - unverified: native settings opening and persistence across full game restart and save loading
   - unverified: RIMMSQOL reveal/open/hide persistence and optional dependency combinations, recording exact versions
   - unverified: new colony and existing save regressions
-  - blocked: the optional Gifts and Birthdays Pickle pass (wsl-deps.avec-gifts-and-birthdays.map)
-    needs KrukuCoB's Workshop id confirmed before it can be staged; two Steam lookups hit the rate
-    limit while writing the suite. Confirm the id, then uncomment the map's one dependency line.
-  - recommendation: the description names "Gifts and Birthdays" and "Birthday Variety" without
-    the Workshop-link convention PUBLISHING.md added on 2026-09-22 (`[url=...]name[/url]` on every
-    citation). The item is not yet on Steam, so this is still a free edit; not verified here
-    which of the two live "Gifts and Birthdays" Workshop listings is KrukuCoB's exact item.
-session:      2026-09-23, the Pickle suite requested and written
-updated:      2026-09-23, done restored: the Pickle scenarios preTest -> done required are now written
+  - recommendation: the description names "Birthday Variety" without the Workshop-link convention
+    PUBLISHING.md added on 2026-09-22 (`[url=...]name[/url]` on every citation). The item is not
+    yet on Steam, so this is still a free edit. Not resolved here: which Workshop listing is that
+    mod's exact item was not looked up.
+session:      2026-09-23, the Pickle suite requested and written, then Gifts and Birthdays' Workshop id confirmed
+updated:      2026-09-23, Workshop id 3625791734 confirmed for KrukuCoB.rout from its own downloaded About.xml; the optional Pickle pass and the description's Workshop link are no longer blocked
 ---
 
 # Many Happy Returns — status

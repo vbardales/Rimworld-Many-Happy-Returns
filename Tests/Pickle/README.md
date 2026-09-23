@@ -71,11 +71,12 @@ Nothing below is a defect. It is work this suite does not perform, matching what
 - **RIMMSQOL itself** (S12): revealing the shortcut inside its own interface, and whether its
   choice survives a restart. That is RIMMSQOL's behaviour; feature 03 covers this mod's own side of
   the contract — the same split Bill Autopilot's `18-settings-shortcut.feature` draws.
-- **Gifts and Birthdays' own party and congratulation** (S13): feature 01's correspondence check
-  only proves the lookup agrees with what `ModsConfig` says is loaded, not that its party actually
-  runs or that its congratulation counts toward the verdict. Exercising that needs its own optional
-  pass with that mod staged — see below — and was not attempted here because its Workshop id could
-  not be confirmed (see "Optional pass" below).
+- **Gifts and Birthdays' own party and congratulation actually running** (S13): feature 01's
+  correspondence check, run in the optional pass below, only proves the lookup agrees with what
+  `ModsConfig` says is loaded. It does not drive that mod's own party or confirm a congratulation
+  it hands out actually reaches `BirthdayUtility.CountWishers` and counts toward the verdict — that
+  would need scenarios that stage and drive Gifts and Birthdays' own mechanics, which this suite
+  does not attempt.
 - **Anomaly's Inhumanized guard** (S14): needs a real inhumanized pawn under that DLC.
 - **Every `@review` screenshot**: a green run says the trip happened, not that the image shows
   anything correct. That review is a human step, not a scenario.
@@ -93,11 +94,13 @@ powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod Many
 Proves the mod stands alone. Feature 01's Gifts and Birthdays scenario is green here specifically
 *because* that mod is absent — read the correspondence, not a fixed pass/fail.
 
-**2. With Gifts and Birthdays** — `wsl-deps.avec-gifts-and-birthdays.map`. **Not staged yet**: the
-map file exists with the dependency line commented out, because this suite's author could not
-confirm KrukuCoB's exact Workshop id from here (two Steam searches for "Gifts and Birthdays"
-returned HTTP 429 before a result could be read). Whoever runs this pass first should confirm the
-id, uncomment the line, and update `wsl-ids.map`.
+**2. With Gifts and Birthdays** — `wsl-deps.avec-gifts-and-birthdays.map`, staging Workshop id
+`3625791734`. Confirmed 2026-09-23 by reading that item's own downloaded `About.xml`
+(`steamapps/workshop/content/294100/3625791734/About/About.xml`): `packageId` `KrukuCoB.rout`,
+matching this mod's own `<loadAfter>`, and its `Defs/ThoughtDefs/Thoughts_Birthday.xml` does define
+`BirthdayCongratulationReceived`. (An earlier Steam search under that id had returned the display
+name "KrikiCoB" rather than "KrukuCoB" — that is the Steam account's display name, not the
+`About.xml` author field, and the two differ.)
 
 ```powershell
 powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod ManyHappyReturns -DepMap wsl-deps.avec-gifts-and-birthdays.map

@@ -1,6 +1,6 @@
 ﻿{
-    "executed_at":  "2026-09-23T12:31:59.9203263+02:00",
-    "base_revision":  "933fe40a19d5eeb6c35358263fed121b475a2113",
+    "executed_at":  "2026-09-23T13:19:47.9697248+02:00",
+    "base_revision":  "274dec9d1587a85781c2a9419f09f50cf1bcdbaa",
     "scope":  "Working tree; behavior and XML checks, not in-game validation",
     "game_assembly":  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\RimWorldWin64_Data\\Managed",
     "game_assembly_sha256":  "5CF1B5BE399D5B1C9C56CA72C9D35B4ECF307FEACF5859D04AC5A1AA5926356A",
@@ -8,7 +8,7 @@
     "files":  [
                   {
                       "path":  "Mod/About/About.xml",
-                      "sha256":  "DA24F2390B14184E555F1E749713397A66A0B57F64E2C1D408BDF15CF05B7537"
+                      "sha256":  "133087EADF0BAF80F046BCDC53A410B9622F81C7852E81CBC6BF533252963B37"
                   },
                   {
                       "path":  "Mod/About/ModIcon.png",
@@ -116,7 +116,7 @@
                   },
                   {
                       "path":  "Tests/ManyHappyReturns.Tests.csproj",
-                      "sha256":  "264B65EF4CE7DF2C3C1226198F6E408D2596B43B99525666ED505C79EF211B57"
+                      "sha256":  "3D9A98B0555F85698853C21ABCADC23C05CB5E1FF4EC7EEA7041E4F610F138FD"
                   },
                   {
                       "path":  "Tests/Program.cs",

@@ -8,6 +8,14 @@
     <OutputPath>..\.build\tests\bin\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <!-- SDK-style default globbing pulls in every .cs under this project's own folder. Pickle/
+         is a second, separate project (Tests/Pickle/Source/ManyHappyReturns.PickleSteps.csproj),
+         built against RimWorks.Pickle.Ref rather than this project's plain Assembly-CSharp
+         reference: without this exclusion, its files fail here on every Given/When/Then/
+         AfterScenario attribute, which this project never references. -->
+    <Compile Remove="Pickle\**" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Source\ManyHappyReturns.csproj" />
     <Reference Include="Assembly-CSharp"><HintPath>$(GameManaged)\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="UnityEngine.CoreModule"><HintPath>$(GameManaged)\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>

@@ -22,7 +22,7 @@ mutation/teardown design are in [Tests/Pickle/README.md](Tests/Pickle/README.md)
 | Pass | Command | What it establishes |
 | --- | --- | --- |
 | Minimal | `Run-PickleWsl.ps1 -Mod ManyHappyReturns` | The mod stands alone: no optional integration staged. Feature 01's Gifts and Birthdays scenario is expected green here *because* that mod is absent. |
-| With Gifts and Birthdays | `Run-PickleWsl.ps1 -Mod ManyHappyReturns -DepMap wsl-deps.avec-gifts-and-birthdays.map` | The optional lookup actually finds `BirthdayCongratulationReceived` when that mod is loaded. **Not ready**: `wsl-deps.avec-gifts-and-birthdays.map` has its one dependency line commented out because KrukuCoB's Workshop id could not be confirmed when this suite was written (Steam rate-limited two lookups). Confirm the id before running this pass. |
+| With Gifts and Birthdays | `Run-PickleWsl.ps1 -Mod ManyHappyReturns -DepMap wsl-deps.avec-gifts-and-birthdays.map` | The optional lookup actually finds `BirthdayCongratulationReceived` when that mod is loaded. Workshop id `3625791734` confirmed 2026-09-23 by reading the downloaded item's own `About.xml`: `packageId KrukuCoB.rout`, matching this mod's declaration. Does not drive that mod's own party or congratulation mechanics — see Tests/Pickle/README.md. |
 | French | `Run-PickleWsl.ps1 -Mod ManyHappyReturns -Language French` | Same suite, same scenarios: nothing here spells an English string, so a missing key shows as accented gibberish in developer mode rather than passing quietly. |
 
 No `incompatibleWith` is declared in `About.xml`, so there is no declared-incompatibility pass to

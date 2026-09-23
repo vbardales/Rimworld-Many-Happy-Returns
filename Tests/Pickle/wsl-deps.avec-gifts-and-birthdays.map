@@ -1,12 +1,10 @@
 # Optional-integration pass: stages Gifts and Birthdays alongside this mod's own suite, so feature
 # 01's correspondence scenario is green because the lookup found the def, not because it is absent.
 #
-# NOT READY: the packageId below is KrukuCoB.rout, matching About.xml's <loadAfter> and
-# BirthdayUtility.GiftsAndBirthdaysWishDef's comment, but its Workshop id could not be confirmed
-# from here on 2026-09-23 (two lookups for "Gifts and Birthdays" hit Steam's rate limit before a
-# result could be read, and the one search that did return picked a "Gifts and Birthdays" listing
-# credited to "KrikiCoB" rather than "KrukuCoB" - close enough to be the same author mistyped by
-# the tool that read the page, too close to stage on a guess). Confirm the id before uncommenting
-# the line below.
-#
-# KrukuCoB.rout                    <CONFIRM WORKSHOP ID BEFORE USE>
+# Confirmed 2026-09-23 by reading the actually-downloaded item's own About.xml
+# (steamapps/workshop/content/294100/3625791734/About/About.xml): packageId KrukuCoB.rout, matching
+# About.xml's <loadAfter> and BirthdayUtility.GiftsAndBirthdaysWishDef's comment, and its
+# Defs/ThoughtDefs/Thoughts_Birthday.xml does define BirthdayCongratulationReceived. An earlier
+# Steam search under this id had returned a display name "KrikiCoB" rather than "KrukuCoB" - the
+# account's Steam display name, not its About.xml author field, which the two differ on.
+KrukuCoB.rout                     3625791734

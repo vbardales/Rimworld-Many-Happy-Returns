@@ -14,7 +14,7 @@ licence_at:   written from scratch, MIT; only the general idea is shared
 dependencies: none
 showcase:     complete
 tested_on:
-workshop:
+workshop:     3806762201
 remaining:
   - unverified: run the Pickle suite (Tests/Pickle/), all three passes named in TESTING.md, and
     review its @review captures. Written and offline-verified on 2026-09-23 (builds 0 warnings/0
@@ -31,8 +31,8 @@ remaining:
     mechanism (GatheringWorker_SendLetter.cs patches the letter text; PartyCauseDef carries no
     separate lord job), so a party it causes should still grant vanilla AttendedParty and count
     toward DayQualityBonus like any other party. Not confirmed live.
-session:      2026-09-23, Birthday Variety's Workshop id confirmed; Wing's Meaningful Parties named at the user's request
-updated:      2026-09-23, Workshop id 3625791734 confirmed for KrukuCoB.rout from its own downloaded About.xml; the optional Pickle pass and the description's Workshop link are no longer blocked
+session:      2026-09-23, first Workshop item created private by the owner (0.1.0)
+updated:      2026-09-23, workshop id 3806762201 recorded; stage left at done pending the in-game gate
 ---
 
 # Many Happy Returns — status
@@ -65,11 +65,7 @@ mod actually relies on. Two mutations needed for the forgotten-birthday exemptio
 tenure, the Psychopath trait) are reverted in `[AfterScenario]`, following the collection's
 `SettingsSandbox` pattern for the settings file itself.
 
-Left explicitly unstaged: the optional pass with Gifts and Birthdays, because its Workshop id could
-not be confirmed here (two lookups hit Steam's rate limit; a third returned a "Gifts and Birthdays"
-credited to "KrikiCoB", close enough to be the same author mistyped, too close to stage on a
-guess). `wsl-deps.avec-gifts-and-birthdays.map` documents this and needs the id confirmed before
-its one dependency line is uncommented.
+The optional pass with Gifts and Birthdays is stageable: its Workshop id (3625791734, `KrukuCoB.rout`) wasconfirmed later the same day from the downloaded item's own `About.xml`, and`wsl-deps.avec-gifts-and-birthdays.map` carries it.
 
 This restores `stage: done`: every criterion of `preTest -> done` the prior audit checked still
 holds (re-verified nothing changed under it), and the missing Pickle criterion it found is now

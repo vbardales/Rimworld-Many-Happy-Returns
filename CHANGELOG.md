@@ -1,6 +1,14 @@
 # Changelog
 
-## Unreleased
+## 0.1.0 — 2026-09-23
+
+- Create the `PublishedFileId.txt` (first Workshop item, id 3806762201, created private).
+
+## Before the first Workshop item
+
+Kept as written. Its "1.0.0" was the repository's own first release; it was never tagged and never uploaded to Steam.
+
+### Unreleased
 
 - Establish an autonomous repository using the existing published history.
 - Add an optional main-bar settings shortcut, hidden by default, opening the native mod dialog.
@@ -10,7 +18,7 @@
 - Add automated settings/scoring/XML checks and explicit in-game validation scenarios.
 - Keep build intermediates inside this repository and pin the 1.6 compilation reference.
 
-## 1.0.0 — 2026-09-03
+### 1.0.0 — 2026-09-03
 
 First release. RimWorld 1.6.
 

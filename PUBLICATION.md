@@ -3,7 +3,7 @@
 What the Workshop page asks for and the repository holds nowhere else. Written before the first
 upload, and kept for whoever picks this mod up later.
 
-**Nothing here has been sent.** The mod is at `done` in the workflow: the in-game gate of
+**The first item exists, created private on 2026-09-23 as 0.1.0 (id 3806762201).** The messages below are not posted: an item has to be public first. The mod is at `done` in the workflow: the in-game gate of
 `done -> tested` has not been passed, so the first upload is not due yet. This file exists so
 that when it is, none of it is discovered at the form.
 

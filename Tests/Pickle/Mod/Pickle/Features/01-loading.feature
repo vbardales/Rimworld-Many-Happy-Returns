@@ -15,3 +15,12 @@ Feature: Many Happy Returns loads cleanly
   Scenario: the optional Gifts and Birthdays lookup matches what this pass loaded
     Given the save "test-colony" is loaded
     Then Many Happy Returns's optional Gifts and Birthdays lookup matches what is loaded
+
+  # TEST_SCENARIOS.md S14, the half that belongs to this mod: the MayRequire guard on the Inhumanized entry
+  # follows the DLC. Correct in every pass, so the default one (Anomaly staged) reads it listed and
+  # wsl-deps.sans-anomaly.map (Anomaly left out) reads it absent, with no unresolved reference and no error
+  # in either. The engine's own refusal of a memory for an inhumanized pawn is not this mod's to prove.
+  Scenario: the Anomaly guard on the birthday thoughts follows whether the DLC is active
+    Given the save "test-colony" is loaded
+    Then the birthday thoughts list the Inhumanized hediff exactly when Anomaly is active
+    And no errors were logged

@@ -1,0 +1,5 @@
+# Anomaly-less pass: stages the default set with the Anomaly DLC left out, so the two MayRequire
+# entries on the birthday thoughts are read as a pass without the DLC sees them (TEST_SCENARIOS.md S14).
+# The fixture is a played colony that may carry Anomaly content: if it loads with errors of its own,
+# read them before blaming this mod, and record which fixture-side errors were seen.
+!ludeon.rimworld.anomaly

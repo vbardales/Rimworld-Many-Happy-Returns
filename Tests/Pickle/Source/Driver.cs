@@ -207,7 +207,9 @@ namespace ManyHappyReturns.PickleSteps
             }
 
             string key = keyOf(role);
-            Pawn found = Colonists(ctx).FirstOrDefault(p => NameKeyOf(p) == key);
+            // Every free colonist on the map, not only the eligible ones: a role must keep resolving once its
+            // pawn has been made Downed by an exemption scenario, which Colonists() would filter out.
+            Pawn found = Map(ctx).mapPawns.FreeColonistsSpawned.FirstOrDefault(p => NameKeyOf(p) == key);
             ctx.Require(found != null,
                 $"no colonist named '{key}' is on the map any more: this scenario's celebrant or "
                 + "wisher left, died, or the save reloaded onto a different fixture");

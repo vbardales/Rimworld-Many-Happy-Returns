@@ -1,6 +1,6 @@
 # The Pickle suite for Many Happy Returns
 
-Twelve feature files, written and **not yet run**. They hold what only a running game can show;
+Fourteen feature files, written and **not yet run**. They hold what only a running game can show;
 everything provable outside one is proven outside one, in `Tests/ManyHappyReturns.Tests.csproj`
 (15 passing cases: defaults/reset, NaN/Infinity/out-of-range clamping, real Scribe callbacks,
 score thresholds, wisher-count weighting, invalid interaction inputs, native shortcut inheritance,
@@ -30,6 +30,8 @@ What is left needs a game, and needs it for a concrete reason:
 | 07 midnight and year boundary | The day closing on its own: `GameComponent_Birthdays` judging a birthday when the absolute day changes, across the year wrap, and a save/reload mid-day that must not repeat the letter (S11) |
 | 08 to 11 RIMMSQOL | The shortcut revealed through RIMMSQOL's own settings instance and PickleTools' `RimmsqolSteps`, opening this mod's settings, and its visibility surviving a real restart over three launches (S12) |
 | 12 Gifts and Birthdays | Its real congratulation counted once, its real `LordJob_BirthdayParty` recognised as a party by `DayQualityBonus`, and the resulting stage against the day's own tally (S13) |
+| 13 exemptions | `Evaluate`'s early returns and `TryGiveForgotten`'s witness floor against real pawns: a celebrant Downed, away in a real caravan, and the floor of two witnesses played on both sides (S10) |
+| 14 newborn | A baby generated the way the game generates one, born today, on the calendar and refused by `CanCelebrate`; needs Biotech (S10) |
 
 ## Roles, not names
 
@@ -63,14 +65,12 @@ died mid-scenario.
 ## Left manual, and why
 
 Nothing below is a defect. It is work this suite does not perform, matching what
-`TEST_SCENARIOS.md` already tracks as its own manual scenarios (S10 and S14 only, since S11, S12 and S13 are now written).
+`TEST_SCENARIOS.md` already tracks as its own manual scenarios (S14, second half only: everything else is written).
 
-- **S10, the Downed, caravan and fewer-than-two-witnesses exemptions, and S14, Anomaly's
-  Inhumanized guard.** Not written yet, and not because they cannot be: an earlier version of this
-  file called them riskier "to a shared fixture", which overstated it. Every scenario begins by
-  loading the saved fixture again, so a pawn made Downed, despawned or sent off in a caravan is
-  discarded with the scenario. What stands between them and `tested` is a decision, recorded in
-  `STATUS.md`: write them, or list them as not applicable with a reason. See the notes there.
+- **The engine's own refusal of a memory for an inhumanized pawn** (the second half of S14). The
+  mod declares `nullifyingHediffs` on both thoughts; feature 01 proves the declaration follows the DLC
+  in both passes. That the game then declines the memory is `MemoryThoughtHandler`'s own behaviour,
+  which AUDIT.md's "on ne teste pas le jeu" leaves to the game. Not applicable, with that reason.
 - **Every `@review` screenshot**: a green run says the trip happened, not that the image shows
   anything correct. That review is a human step, not a scenario.
 
@@ -120,6 +120,16 @@ pass in the process that wrote. From PowerShell, with a real array (see the auth
 
 An unfiltered run of this pass is not valid: 10 and 11 would run in the writer's process.
 
+**5. Without Anomaly** — `wsl-deps.sans-anomaly.map` (`!ludeon.rimworld.anomaly`). The default pass
+stages Anomaly, so feature 01's guard scenario reads the Inhumanized entry listed there and absent here,
+with no unresolved reference and no error in either: together they are S14's first half. The fixture is a
+played colony that may carry Anomaly content; errors of its own on load are read before anything is
+blamed on this mod.
+
+```powershell
+powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod ManyHappyReturns -DepMap wsl-deps.sans-anomaly.map -Language English
+```
+
 No `incompatibleWith` is declared, so there is no incompatibility pass to write.
 
 ## Building the steps
@@ -139,9 +149,9 @@ produced without one did not test the fix.
 powershell.exe -ExecutionPolicy Bypass -File Tests/Pickle/Check-Steps.ps1
 ```
 
-Run offline on 2026-09-23: 50 patterns declared, all 50 compile, compared against 743 other
-expressions (205 from Pickle itself, 538 from 29 other step sources in the collection) — none
-ambiguous, and all 228 step lines across the twelve features resolve to a declared expression. Every
+Run offline on 2026-09-23: 59 patterns declared, all 59 compile, compared against 746 other
+expressions (205 from Pickle itself, 541 from 29 other step sources in the collection) — none
+ambiguous, and all 267 step lines across the fourteen features resolve to a declared expression. Every
 step text carries "Many Happy Returns" or names the neighbour it drives.
 
 ## Reading a report

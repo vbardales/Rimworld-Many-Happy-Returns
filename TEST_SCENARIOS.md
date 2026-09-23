@@ -6,9 +6,9 @@ and Player.log for every run. Back up an existing save before these scenarios.
 
 A Pickle (Gherkin) suite covering part of this manual scope now exists at
 [Tests/Pickle/](Tests/Pickle/README.md), written 2026-09-23 and also not yet run — it automates a
-subset of S04–S10, but this document remains the full human-run reference: it covers RIMMSQOL
-integration (S12), dependency combinations (S13), Anomaly (S14) and the interface/log review
-(S15–S16), which stay manual for the reasons Tests/Pickle/README.md gives.
+subset of S04–S13 (S11, S12 and S13 in features 07 to 12), but this document remains the full
+reference: it also covers the Downed, caravan and witness exemptions of S10, Anomaly (S14) and the
+interface/log review (S15–S16), which are not automated, for the reasons recorded in STATUS.md.
 
 Common setup: development mode, Core and Many Happy Returns, optional dependencies absent,
 three awake adult humanlike free colonists on the same map, one with at least ten days as a

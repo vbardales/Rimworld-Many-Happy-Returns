@@ -16,11 +16,16 @@ showcase:     complete
 tested_on:
 workshop:     3806762201
 remaining:
-  - unverified: run the Pickle suite (Tests/Pickle/), all three passes named in TESTING.md, and
-    review its @review captures. Written and offline-verified on 2026-09-23 (builds 0 warnings/0
-    errors against the real game assembly; Check-Steps.ps1 reports all 35 patterns compiling, none
-    ambiguous against 732 other expressions in the collection, all 92 step lines resolved) but
-    never launched in a game: no ticket was taken for this suite, on explicit instruction.
+  - unverified: run the Pickle suite (Tests/Pickle/, twelve features), every pass named in
+    TESTING.md (minimal, with Gifts and Birthdays, with RIMMSQOL, French), and review its @review
+    captures. Written and offline-verified on 2026-09-23 (builds 0 warnings/0 errors against the real
+    game assembly; Check-Steps.ps1: 50 patterns compiling, none ambiguous against 743 other
+    expressions, all 228 step lines resolved). The minimal English and French passes were queued
+    that evening, on the owner's instruction; nothing below was played yet.
+  - defect-by-rule: AUDIT.md's done -> tested requires no manual test left to validate. S11, S12
+    and S13 are written (features 07 to 12); S10's Downed, caravan and fewer-than-two-witnesses
+    exemptions and S14's Anomaly guard are not written and not yet declared not applicable.
+    Decision pending with the owner: automate, or justify.
   - unverified: execute TEST_SCENARIOS.md in game, including EN/FR interface and logs
   - unverified: native settings opening and persistence across full game restart and save loading
   - unverified: RIMMSQOL reveal/open/hide persistence and optional dependency combinations, recording exact versions

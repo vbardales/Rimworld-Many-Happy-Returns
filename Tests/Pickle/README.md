@@ -1,6 +1,6 @@
 # The Pickle suite for Many Happy Returns
 
-Six feature files, written and **not yet run**. They hold what only a running game can show;
+Twelve feature files, written and **not yet run**. They hold what only a running game can show;
 everything provable outside one is proven outside one, in `Tests/ManyHappyReturns.Tests.csproj`
 (15 passing cases: defaults/reset, NaN/Infinity/out-of-range clamping, real Scribe callbacks,
 score thresholds, wisher-count weighting, invalid interaction inputs, native shortcut inheritance,
@@ -27,6 +27,9 @@ What is left needs a game, and needs it for a concrete reason:
 | 04 settings persistence | That closing a real `Dialog_ModSettings` actually calls `Mod.WriteSettings` (`Window.PreClose`), and that a freshly re-read `GetSettings<T>()` agrees with the file |
 | 05 wishes and duplicate protection | `InteractionWorker_BirthdayWish.RandomSelectionWeight` and `Pawn_InteractionsTracker.TryInteractWith` against real `Pawn` objects — memory handlers, relations, developmental stage, all wired together the way only the game wires them |
 | 06 verdict and forgotten | `MemoryThoughtHandler.TryGainMemory`, where `nullifyingTraits` and the settings' mood factor are actually enforced, plus a real save/reload |
+| 07 midnight and year boundary | The day closing on its own: `GameComponent_Birthdays` judging a birthday when the absolute day changes, across the year wrap, and a save/reload mid-day that must not repeat the letter (S11) |
+| 08 to 11 RIMMSQOL | The shortcut revealed through RIMMSQOL's own settings instance and PickleTools' `RimmsqolSteps`, opening this mod's settings, and its visibility surviving a real restart over three launches (S12) |
+| 12 Gifts and Birthdays | Its real congratulation counted once, its real `LordJob_BirthdayParty` recognised as a party by `DayQualityBonus`, and the resulting stage against the day's own tally (S13) |
 
 ## Roles, not names
 
@@ -60,24 +63,14 @@ died mid-scenario.
 ## Left manual, and why
 
 Nothing below is a defect. It is work this suite does not perform, matching what
-`TEST_SCENARIOS.md` already tracks as its own manual scenarios (S10, S12, S13, S14).
+`TEST_SCENARIOS.md` already tracks as its own manual scenarios (S10 and S14 only, since S11, S12 and S13 are now written).
 
-- **A Downed celebrant, a caravan celebrant, and fewer than two witnesses** (part of S10). Forcing
-  a Downed state needs the health system; a caravan needs actually forming one; a low witness
-  count needs removing colonists from a shared, played fixture. Each is reachable in principle —
-  see Bill Autopilot's own "what stays manual" list for the same judgment call on a different mod
-  — but riskier to a shared fixture than the tenure and trait mutations above, which touch only the
-  celebrant and revert cleanly.
-- **RIMMSQOL itself** (S12): revealing the shortcut inside its own interface, and whether its
-  choice survives a restart. That is RIMMSQOL's behaviour; feature 03 covers this mod's own side of
-  the contract — the same split Bill Autopilot's `18-settings-shortcut.feature` draws.
-- **Gifts and Birthdays' own party and congratulation actually running** (S13): feature 01's
-  correspondence check, run in the optional pass below, only proves the lookup agrees with what
-  `ModsConfig` says is loaded. It does not drive that mod's own party or confirm a congratulation
-  it hands out actually reaches `BirthdayUtility.CountWishers` and counts toward the verdict — that
-  would need scenarios that stage and drive Gifts and Birthdays' own mechanics, which this suite
-  does not attempt.
-- **Anomaly's Inhumanized guard** (S14): needs a real inhumanized pawn under that DLC.
+- **S10, the Downed, caravan and fewer-than-two-witnesses exemptions, and S14, Anomaly's
+  Inhumanized guard.** Not written yet, and not because they cannot be: an earlier version of this
+  file called them riskier "to a shared fixture", which overstated it. Every scenario begins by
+  loading the saved fixture again, so a pawn made Downed, despawned or sent off in a caravan is
+  discarded with the scenario. What stands between them and `tested` is a decision, recorded in
+  `STATUS.md`: write them, or list them as not applicable with a reason. See the notes there.
 - **Every `@review` screenshot**: a green run says the trip happened, not that the image shows
   anything correct. That review is a human step, not a scenario.
 
@@ -115,6 +108,18 @@ accented gibberish rather than clean English.
 powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod ManyHappyReturns -Language French
 ```
 
+**4. With RIMMSQOL** — `wsl-deps.avec-rimmsqol.map`, staging RIMMSQOL (Workshop id 1084452457) and
+PickleTools' `RimmsqolSteps`. Features 08 to 11 need it and skip without it. 08 is one process; 09, 10
+and 11 are the three launches of a restart chain under one hold of the lock, and 10 and 11 refuse to
+pass in the process that wrote. From PowerShell, with a real array (see the authoring guide):
+
+```powershell
+& ./scripts/Run-PickleWsl.ps1 -Mod ManyHappyReturns -DepMap wsl-deps.avec-rimmsqol.map -Language English -Filter 08-rimmsqol-shortcut.feature
+& ./scripts/Run-PickleWsl.ps1 -Mod ManyHappyReturns -DepMap wsl-deps.avec-rimmsqol.map -Language English -Filter 09-rimmsqol-restart-write.feature -Then @('10-rimmsqol-restart-read-revealed.feature', '11-rimmsqol-restart-read-hidden.feature')
+```
+
+An unfiltered run of this pass is not valid: 10 and 11 would run in the writer's process.
+
 No `incompatibleWith` is declared, so there is no incompatibility pass to write.
 
 ## Building the steps
@@ -134,9 +139,9 @@ produced without one did not test the fix.
 powershell.exe -ExecutionPolicy Bypass -File Tests/Pickle/Check-Steps.ps1
 ```
 
-Run offline on 2026-09-23: 35 patterns declared, all 35 compile, compared against 732 other
-expressions (205 from Pickle itself, 527 from 29 other step sources in the collection) — none
-ambiguous, and all 92 step lines across the six features resolve to a declared expression. Every
+Run offline on 2026-09-23: 50 patterns declared, all 50 compile, compared against 743 other
+expressions (205 from Pickle itself, 538 from 29 other step sources in the collection) — none
+ambiguous, and all 228 step lines across the twelve features resolve to a declared expression. Every
 step text carries "Many Happy Returns" or names the neighbour it drives.
 
 ## Reading a report

@@ -1,0 +1,7 @@
+# RIMMSQOL pass: stages RIMMSQOL and PickleTools' RimmsqolSteps beside this mod's own suite, for
+# 08-rimmsqol-shortcut.feature and the three-launch restart chain 09, 10, 11. Harmony is not repeated:
+# the staging puts it first in every pass. RIMMSQOL is a 1.6 build, Workshop id 1084452457, packageId
+# MalteSchulze.RIMMSqol (see PickleTools/RimmsqolSteps/README.md); the steps mod's own About.xml packageId
+# must equal the one written here, or the staging stops.
+MalteSchulze.RIMMSqol            1084452457
+nelim.pickletools.rimmsqol       path:PickleTools/RimmsqolSteps/Mod

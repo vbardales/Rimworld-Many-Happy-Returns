@@ -51,5 +51,15 @@ namespace ManyHappyReturns.PickleSteps
                 "the settings file re-read from disk still has morningLetter=true: closing the dialog "
                 + "did not persist the change, or PreClose did not call WriteSettings");
         }
+
+        /// <summary>
+        /// What the primary route shows after a change made through the shortcut. Both routes hold the
+        /// one Mod instance, so this reads the value the second dialog would draw (TEST_SCENARIOS.md S12:
+        /// "edit settings and verify shared values").
+        /// </summary>
+        [Then("the announce-birthdays setting reads off")]
+        public void AssertAnnounceOff(PickleContext ctx) =>
+            ctx.Assert(!Driver.Settings(ctx).morningLetter,
+                "the announce-birthdays setting still reads on after it was switched off through the other route");
     }
 }

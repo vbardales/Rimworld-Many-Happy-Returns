@@ -63,7 +63,11 @@ congratulations given at its party count towards the verdict here. The wishes he
 mood of their own — only opinion — so nothing is ever counted twice. The mod is found by def
 name, not by packageId, and everything works identically when it is absent.
 
-**Birthday Variety** randomises birth dates. Nothing to do.
+**Birthday Variety** (`Axolki.BirthdayVariety`) randomises birth dates. Nothing to do.
+
+**Wing's Meaningful Parties** gives the vanilla party event a reason, birthdays included, without
+touching how or how often it fires — it patches only the letter text, not the party mechanism —
+so a party it causes still grants vanilla `AttendedParty` and counts here like any other party.
 
 ## How it works
 
@@ -121,6 +125,8 @@ MIT. See `LICENSE` and `ATTRIBUTION.md`.
 - Written from scratch by Nelim, with the help of Claude (Anthropic).
 - Dalrae, for *Garam, Happy Birthday* — the idea, and nothing else. See `ATTRIBUTION.md`.
 - KrukuCoB, for *Gifts and Birthdays*, which this mod deliberately stays out of the way of.
+- Axolki, for *Birthday Variety*.
+- winggar, for *Wing's Meaningful Parties*.
 - Ludeon Studios, for a game whose social layer is generous enough that a mod like this needs
   no Harmony patch at all.
 

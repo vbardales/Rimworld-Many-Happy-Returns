@@ -25,12 +25,13 @@ remaining:
   - unverified: native settings opening and persistence across full game restart and save loading
   - unverified: RIMMSQOL reveal/open/hide persistence and optional dependency combinations, recording exact versions
   - unverified: new colony and existing save regressions
-  - unverified: Wing's Meaningful Parties (Workshop id 3504909699) is not named anywhere in this
-    mod. Read-only reasoning, not tested in game: it retextures the vanilla party event without
-    replacing its mechanism (GatheringWorker_SendLetter.cs patches the letter text; PartyCauseDef
-    carries no separate lord job), so a party it causes should still grant vanilla AttendedParty
-    and count toward DayQualityBonus like any other party. Not confirmed live.
-session:      2026-09-23, Birthday Variety's Workshop id confirmed; Wing's Meaningful Parties surfaced
+  - unverified: Wing's Meaningful Parties (`winggar`, Workshop id 3504909699), now named in the
+    description, README and ATTRIBUTION.md at the user's request. Read-only reasoning from its
+    source, not tested in game: it retextures the vanilla party event without replacing its
+    mechanism (GatheringWorker_SendLetter.cs patches the letter text; PartyCauseDef carries no
+    separate lord job), so a party it causes should still grant vanilla AttendedParty and count
+    toward DayQualityBonus like any other party. Not confirmed live.
+session:      2026-09-23, Birthday Variety's Workshop id confirmed; Wing's Meaningful Parties named at the user's request
 updated:      2026-09-23, Workshop id 3625791734 confirmed for KrukuCoB.rout from its own downloaded About.xml; the optional Pickle pass and the description's Workshop link are no longer blocked
 ---
 

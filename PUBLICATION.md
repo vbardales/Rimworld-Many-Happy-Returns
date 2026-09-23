@@ -64,7 +64,7 @@ all, and named in the description as "works with".**
 | --- | --- | --- | --- |
 | Gifts and Birthdays | `KrukuCoB.rout` | 3625791734 | Looks up its `BirthdayCongratulationReceived` thought def by name; its congratulations count toward this mod's own verdict, and its party is recognised as a party. No reference, no patch; behaves identically absent. |
 | Birthday Variety | `Axolki.BirthdayVariety` | 3770972092 | Nothing: this mod reads `Pawn_AgeTracker.BirthDayOfYear`, whatever set it. |
-| Wing's Meaningful Parties | (none declared on its own page) | 3504909699 | Nothing: it retextures the vanilla party event rather than replacing it, so a party it causes still grants vanilla `AttendedParty`. |
+| Wing's Meaningful Parties | `winggar.meaningfulparties` | 3504909699 | Nothing: it retextures the vanilla party event rather than replacing it, so a party it causes still grants vanilla `AttendedParty`. |
 
 None of the three belongs in the required items list: a hard dependency forces a download on
 someone who does not want it, and all three are genuinely optional here.
@@ -114,7 +114,7 @@ on its own line. Steam's comment limit is 1000 characters; each of these is well
 >
 > https://steamcommunity.com/sharedfiles/filedetails/?id=PUBLISHED_FILE_ID
 
-### Wing's Meaningful Parties (Workshop id 3504909699)
+### Wing's Meaningful Parties (`winggar.meaningfulparties`, id 3504909699)
 
 > Hi! I've published Many Happy Returns, a mod about the quiet, everyday half of a colonist's
 > birthday — the letter, the wishes, the memory of the day. I read through your source before

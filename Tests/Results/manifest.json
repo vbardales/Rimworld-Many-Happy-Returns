@@ -1,6 +1,6 @@
 ﻿{
-    "executed_at":  "2026-09-23T13:44:39.7554105+02:00",
-    "base_revision":  "5576748967828f005fb6d1f1d861e301e0ea113b",
+    "executed_at":  "2026-09-23T13:50:59.4035143+02:00",
+    "base_revision":  "b3700e4436ff781884b53fc4fd4e640549d23107",
     "scope":  "Working tree; behavior and XML checks, not in-game validation",
     "game_assembly":  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\RimWorldWin64_Data\\Managed",
     "game_assembly_sha256":  "5CF1B5BE399D5B1C9C56CA72C9D35B4ECF307FEACF5859D04AC5A1AA5926356A",
@@ -24,7 +24,7 @@
                   },
                   {
                       "path":  "Mod/ATTRIBUTION.md",
-                      "sha256":  "EF459347EBE10E4216B2948FD9986BBB6A28CEDD7A63ED3E5F54BE29DA376E06"
+                      "sha256":  "D38E1ECEDEFEAE36DF6ECD75361F8E6652C69BACD89730DB8B2CA16596DD959A"
                   },
                   {
                       "path":  "Mod/Defs/Birthday.xml",

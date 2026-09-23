@@ -30,7 +30,7 @@ announces the day to the player.
   the mod behaves identically when it is absent.
 - **Birthday Variety** by Axolki (`Axolki.BirthdayVariety`), 1.6, randomises birth dates. Nothing
   to do: this mod reads `Pawn_AgeTracker.BirthDayOfYear`, whatever set it.
-- **Wing's Meaningful Parties** by winggar, 1.5/1.6, gives the vanilla party event a reason,
+- **Wing's Meaningful Parties** by winggar (`winggar.meaningfulparties`), 1.5/1.6, gives the vanilla party event a reason,
   birthdays included, without changing how or how often it fires: its own source patches only the
   letter text (`GatheringWorker_SendLetter.cs`), not the party mechanism. No reference, no patch;
   a party it causes still grants vanilla `AttendedParty` and counts in `DayQualityBonus` the same

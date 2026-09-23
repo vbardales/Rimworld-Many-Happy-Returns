@@ -65,7 +65,7 @@ name, not by packageId, and everything works identically when it is absent.
 
 **Birthday Variety** (`Axolki.BirthdayVariety`) randomises birth dates. Nothing to do.
 
-**Wing's Meaningful Parties** gives the vanilla party event a reason, birthdays included, without
+**Wing's Meaningful Parties** (`winggar.meaningfulparties`) gives the vanilla party event a reason, birthdays included, without
 touching how or how often it fires — it patches only the letter text, not the party mechanism —
 so a party it causes still grants vanilla `AttendedParty` and counts here like any other party.
 

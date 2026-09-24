@@ -15,7 +15,8 @@ powershell -ExecutionPolicy Bypass -File Tests/Run.ps1
 
 ## Pickle (`Tests/Pickle/`)
 
-**Written on 2026-09-23, not yet run.** Fourteen feature files; scope, what stays manual, and the
+**Written on 2026-09-23. The minimal English and French passes ran that day and their failures were fixed; the other
+passes have not run yet** (`docs/runs/`). Fourteen feature files; scope, what stays manual, and the
 mutation/teardown design are in [Tests/Pickle/README.md](Tests/Pickle/README.md). Summary here per
 `AUDIT.md`'s instruction to name how many passes a verdict needs and what each covers.
 

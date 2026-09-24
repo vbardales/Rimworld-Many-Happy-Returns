@@ -19,7 +19,7 @@ remaining:
   - unverified: run the Pickle suite (Tests/Pickle/, fourteen features), every pass named in
     TESTING.md (minimal, with Gifts and Birthdays, with RIMMSQOL, without Anomaly, French), and review its @review
     captures. Written and offline-verified on 2026-09-23 (builds 0 warnings/0 errors against the real
-    game assembly; Check-Steps.ps1: 59 patterns compiling, none ambiguous against 746 other
+    game assembly; Check-Steps.ps1, rerun 2026-09-24: 60 patterns compiling, none ambiguous against 840 other
     expressions, all 274 step lines resolved). The minimal passes ran on 2026-09-23: English 25 passed,
     4 failed, 10 skipped; French 24 passed, 5 failed, 10 skipped (docs/runs/). The failures were the suite's:
     a fixture too young for the forgotten memory, the newborn generation, and in French one wish refused.

@@ -1,6 +1,7 @@
 # The Pickle suite for Many Happy Returns
 
-Fourteen feature files, written and **not yet run**. They hold what only a running game can show;
+Fourteen feature files (39 scenarios). The minimal English and French passes ran on 2026-09-23 and the failures
+they showed were fixed in the suite; the other passes have not run yet (see `docs/runs/` and `STATUS.md`). They hold what only a running game can show;
 everything provable outside one is proven outside one, in `Tests/ManyHappyReturns.Tests.csproj`
 (15 passing cases: defaults/reset, NaN/Infinity/out-of-range clamping, real Scribe callbacks,
 score thresholds, wisher-count weighting, invalid interaction inputs, native shortcut inheritance,
@@ -149,16 +150,20 @@ produced without one did not test the fix.
 powershell.exe -ExecutionPolicy Bypass -File Tests/Pickle/Check-Steps.ps1
 ```
 
-Run offline on 2026-09-23: 59 patterns declared, all 59 compile, compared against 746 other
-expressions (205 from Pickle itself, 541 from 29 other step sources in the collection) — none
-ambiguous, and all 267 step lines across the fourteen features resolve to a declared expression. Every
-step text carries "Many Happy Returns" or names the neighbour it drives.
+Run offline on 2026-09-24: 60 patterns declared, all 60 compile, compared against 840 other
+expressions (205 from Pickle itself, 635 from 30 other step sources in the collection) — none
+ambiguous, and all 274 step lines across the fourteen features resolve to a declared expression. Every
+step text carries "Many Happy Returns" or names the neighbour it drives. The collection grows, so the
+"other expressions" figure moves from one check to the next; the pattern and step-line counts are this suite's.
 
 ## Reading a report
 
 `exitReason` first, before any number. A run killed in flight leaves a report that looks like a
-result. Then the count of scenarios played against the count discovered: this suite has no
-`@requires:` gating and no `@wip` scenarios, so a clean run should play all of it in both passes.
+result. Then the count of scenarios played against the count discovered (39). Features 08 to 11 (`@requires:` RIMMSQOL and its
+PickleTools steps), 12 (`@requires:KrukuCoB.rout`) and 14 (`@requires:ludeon.rimworld.biotech`) are conditional and
+skip where their mod is absent: the default English pass plays 25 and skips 10 (08 to 12), and feature 14 plays there
+because Biotech is staged. No scenario is `@wip`. A skip is read against the pass that was meant to play it: the
+conditional scenarios count as tested only in their own pass (RIMMSQOL, Gifts and Birthdays, without Anomaly).
 
 ## Evidence: what to keep
 

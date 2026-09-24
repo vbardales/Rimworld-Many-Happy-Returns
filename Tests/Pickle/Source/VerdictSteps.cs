@@ -10,8 +10,8 @@ namespace ManyHappyReturns.PickleSteps
     /// What only a running game proves about the end-of-day verdict: that CloseOutDay, wired to real
     /// Pawn objects, actually forms the graded Nelim_BirthdayRemembered or the negative
     /// Nelim_BirthdayForgotten through the game's own MemoryThoughtHandler.TryGainMemory - which is
-    /// where nullifyingTraits and nullifyingHediffs are enforced, and which an offline test cannot
-    /// reach without a full Pawn (mood tracker, trait tracker, records tracker all wired together).
+    /// which stores the memory (a nullifying trait or hediff only zeroes its mood offset afterwards), and
+    /// which an offline test cannot reach without a full Pawn (mood tracker, trait tracker, records tracker all wired together).
     ///
     /// The stage/score arithmetic itself (StageForScore, PointsForWishers, the five documented
     /// grades) is already exhaustively proven offline in Tests/Program.cs and is not repeated here:
@@ -63,6 +63,30 @@ namespace ManyHappyReturns.PickleSteps
         public void AssertNoForgotten(PickleContext ctx) =>
             ctx.Assert(!Driver.HasMemoryOfDef(Driver.Celebrant(ctx), MHRDefOf.Nelim_BirthdayForgotten),
                 "the celebrant holds a Nelim_BirthdayForgotten memory, and this scenario expected none");
+
+        /// <summary>
+        /// A nullifying trait does not stop the memory being stored: MemoryThoughtHandler.TryGainMemory
+        /// only asks ThoughtUtility.CanGetThought without its checkIfNullified flag, and the first
+        /// replay of this suite showed a psychopath holding the forgotten memory. What the trait does is
+        /// zero the memory's mood offset (Thought.MoodOffset returns 0 for a nullified thought), so that
+        /// is what the exemption is asserted on.
+        /// </summary>
+        [Then("the celebrant's birthday-forgotten memory, if any, has no effect on mood")]
+        public void AssertForgottenNullified(PickleContext ctx)
+        {
+            Pawn pawn = Driver.Celebrant(ctx);
+            ctx.Assert(ThoughtUtility.ThoughtNullified(pawn, MHRDefOf.Nelim_BirthdayForgotten),
+                $"ThoughtUtility.ThoughtNullified is false for {pawn.LabelShortCap} and Nelim_BirthdayForgotten: "
+                + "the Psychopath trait did not nullify the thought");
+
+            foreach (Thought_Memory memory in Driver.TodaysMemories(pawn)
+                         .Where(m => m.def == MHRDefOf.Nelim_BirthdayForgotten))
+            {
+                ctx.Assert(memory.MoodOffset() == 0f,
+                    $"the nullified Nelim_BirthdayForgotten memory still moves {pawn.LabelShortCap}'s mood by "
+                    + $"{memory.MoodOffset()}");
+            }
+        }
 
         private static void AssertScaledByMoodFactor(PickleContext ctx, Thought_Memory memory)
         {

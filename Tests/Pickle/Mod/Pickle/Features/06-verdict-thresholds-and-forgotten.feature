@@ -1,8 +1,8 @@
 # What only a running game shows about the end-of-day verdict: that CloseOutDay, wired to a real
 # Pawn, actually forms Nelim_BirthdayRemembered or Nelim_BirthdayForgotten through the game's own
-# MemoryThoughtHandler.TryGainMemory - where nullifyingTraits and the settings' mood factor are
-# both enforced by real engine code, not by this mod alone - and that a formed memory survives a
-# real save and reload.
+# MemoryThoughtHandler.TryGainMemory - which applies the settings' mood factor, and leaves
+# nullifyingTraits to zero the memory's mood offset rather than refusing it - and that a formed
+# memory survives a real save and reload.
 #
 # The grade a score maps to (StageForScore) and the wisher-count weighting (PointsForWishers) are
 # already exhaustively covered offline in Tests/Program.cs and are not re-derived here: these
@@ -50,11 +50,13 @@ Feature: the end-of-day verdict and the forgotten-birthday exemptions
   # Mod/Defs/Birthday.xml's own comment: "a psychopath must still be able to enjoy a good
   # birthday" - the nullifying trait sits only on Nelim_BirthdayForgotten, never on
   # Nelim_BirthdayRemembered, so the two halves of that sentence are two different scenarios.
+  # The game stores the memory anyway and nullifies its effect (ThoughtUtility.CanGetThought, without its
+  # checkIfNullified flag, is all TryGainMemory asks), so the exemption is that it moves no mood.
   Scenario: a psychopath is exempt from the forgotten memory on an unwished birthday
     Given the celebrant has been a colonist for 20 days
     And the celebrant is a psychopath
     When Many Happy Returns closes out today's birthdays
-    Then the celebrant holds no birthday-forgotten memory
+    Then the celebrant's birthday-forgotten memory, if any, has no effect on mood
 
   Scenario: a psychopath still receives a positive verdict on a wished birthday
     Given the celebrant is a psychopath

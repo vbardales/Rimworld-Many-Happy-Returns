@@ -51,8 +51,9 @@ namespace ManyHappyReturns
 
             // The wish disqualifies itself by the memory it leaves, so it must be certain that the
             // memory will actually be stored. MemoryThoughtHandler.TryGainMemory drops it silently
-            // when the thought is nullified for this pawn, or when the initiator falls outside the
-            // social target filter — and a wish that leaves no trace would repeat forever.
+            // when CanGetThought refuses it (stage, gender, ...), or when the initiator falls outside the
+            // social target filter (a nullifying trait only zeroes the mood offset) - and a wish that
+            // leaves no trace would repeat forever.
             ThoughtDef received = MHRDefOf.Nelim_BirthdayWishReceived;
             if (!ThoughtUtility.CanGetThought(recipient, received))
             {

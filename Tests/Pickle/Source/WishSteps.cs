@@ -1,3 +1,5 @@
+using System.Reflection;
+using RimWorld;
 using RimWorks.Pickle;
 using Verse;
 
@@ -50,11 +52,32 @@ namespace ManyHappyReturns.PickleSteps
         {
             Pawn wisher = Driver.Wisher(ctx);
             Pawn celebrant = Driver.Celebrant(ctx);
+
+            // The fixture's colonists chat on their own while it loads and settles, and TryInteractWith
+            // refuses an initiator that interacted less than 120 ticks ago. That ambient chat is not what
+            // is under test, so the initiator starts each exchange without one on record.
+            ctx.Require(lastInteractionTime != null,
+                "Pawn_InteractionsTracker has no private lastInteractionTime field: vanilla renamed it");
+            lastInteractionTime.SetValue(wisher.interactions, -9999);
+
             bool ok = wisher.interactions.TryInteractWith(celebrant, MHRDefOf.Nelim_BirthdayWish);
-            ctx.Assert(ok,
-                "Pawn_InteractionsTracker.TryInteractWith refused the birthday wish: "
-                + "CanInteractNowWith or a recent-interaction cooldown blocked it");
+            if (!ok)
+            {
+                InteractionDef wish = MHRDefOf.Nelim_BirthdayWish;
+                ctx.Assert(false,
+                    "Pawn_InteractionsTracker.TryInteractWith refused the birthday wish. What CanInteractNowWith reads: "
+                    + $"celebrant spawned={celebrant.Spawned}, good position="
+                    + $"{(wisher.Map != null && celebrant.Map == wisher.Map && SocialInteractionUtility.IsGoodPositionForInteraction(wisher, celebrant))}"
+                    + $" (wisher {wisher.Position}, celebrant {celebrant.Position}), wisher can initiate="
+                    + $"{SocialInteractionUtility.CanInitiateInteraction(wisher, wish)} (awake={wisher.Awake()}, "
+                    + $"downed={wisher.Downed}, mental state={wisher.MentalStateDef?.defName ?? "none"}), celebrant can receive="
+                    + $"{SocialInteractionUtility.CanReceiveInteraction(celebrant, wish)} (awake={celebrant.Awake()}, "
+                    + $"downed={celebrant.Downed}, mental state={celebrant.MentalStateDef?.defName ?? "none"})");
+            }
         }
+
+        private static readonly FieldInfo lastInteractionTime =
+            typeof(Pawn_InteractionsTracker).GetField("lastInteractionTime", BindingFlags.Instance | BindingFlags.NonPublic);
 
         [Then("the celebrant holds a birthday wish received from the wisher")]
         public void AssertReceived(PickleContext ctx)

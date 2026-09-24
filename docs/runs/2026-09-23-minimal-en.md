@@ -5,7 +5,7 @@
 - **Suite state**: the commit before `feaf85e`, i.e. eleven feature files as written that afternoon
 - **exitReason**: `failed`. Pickle exit 1
 - **Scenarios**: 39 discovered, 39 accounted for: 25 passed, 4 failed, 10 skipped, 0 flaky
-- **Evidence**: on disk, ignored by git (`Tests/Pickle/Evidence/2026-09-23-minimale-en/`): `junit.xml`, `summary.json`, `summary.md` and `Player.log`. The heavy `report.html`, `messages.ndjson` and the four failure captures were deleted the same day (disk space; the failures are fixed and their causes are written below).
+- **Evidence**: deleted on 2026-09-24, superseded by the replay (`2026-09-24-minimal-en.md`). It had been kept on disk as `junit.xml`, `summary.json`, `summary.md` and `Player.log`. The heavy `report.html`, `messages.ndjson` and the four failure captures were deleted the same day (disk space; the failures are fixed and their causes are written below).
   The launcher's own copy stopped on a path over 260 characters, and the rest of the shared report folder belongs to other suites.
 
 ## The ten skips are the expected ones

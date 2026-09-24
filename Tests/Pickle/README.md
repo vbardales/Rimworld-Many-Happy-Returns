@@ -27,7 +27,7 @@ What is left needs a game, and needs it for a concrete reason:
 | 03 settings shortcut | What the main bar's own worker does with a real `MainButtonDef`, and which mod a real `Dialog_ModSettings` was built for |
 | 04 settings persistence | That closing a real `Dialog_ModSettings` actually calls `Mod.WriteSettings` (`Window.PreClose`), and that a freshly re-read `GetSettings<T>()` agrees with the file |
 | 05 wishes and duplicate protection | `InteractionWorker_BirthdayWish.RandomSelectionWeight` and `Pawn_InteractionsTracker.TryInteractWith` against real `Pawn` objects — memory handlers, relations, developmental stage, all wired together the way only the game wires them |
-| 06 verdict and forgotten | `MemoryThoughtHandler.TryGainMemory`, where `nullifyingTraits` and the settings' mood factor are actually enforced, plus a real save/reload |
+| 06 verdict and forgotten | `MemoryThoughtHandler.TryGainMemory` and the settings' mood factor, and the mood offset a `nullifyingTraits` entry zeroes (the game stores the memory anyway), plus a real save/reload |
 | 07 midnight and year boundary | The day closing on its own: `GameComponent_Birthdays` judging a birthday when the absolute day changes, across the year wrap, and a save/reload mid-day that must not repeat the letter (S11) |
 | 08 to 11 RIMMSQOL | The shortcut revealed through RIMMSQOL's own settings instance and PickleTools' `RimmsqolSteps`, opening this mod's settings, and its visibility surviving a real restart over three launches (S12) |
 | 12 Gifts and Birthdays | Its real congratulation counted once, its real `LordJob_BirthdayParty` recognised as a party by `DayQualityBonus`, and the resulting stage against the day's own tally (S13) |

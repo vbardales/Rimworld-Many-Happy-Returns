@@ -28,3 +28,6 @@ desktop.ini
 # Pickle evidence (reports, logs, captures) stays on disk: too heavy for git, and rewritten by every run.
 # A text summary of each run is committed under docs/runs/ instead.
 Tests/Pickle/Evidence/
+
+node_modules/
+.npm/

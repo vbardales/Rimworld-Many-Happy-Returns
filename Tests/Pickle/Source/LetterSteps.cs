@@ -45,13 +45,13 @@ namespace ManyHappyReturns.PickleSteps
                 + "The stack holds: " + Describe());
         }
 
-        private static string LabelFor(PickleContext ctx)
+        internal static string LabelFor(PickleContext ctx)
         {
             Pawn pawn = Driver.Celebrant(ctx);
             return "ManyHappyReturns.BirthdayLetterLabel".Translate(pawn.Named("PAWN")).Resolve();
         }
 
-        private static System.Collections.Generic.List<Letter> Letters() =>
+        internal static System.Collections.Generic.List<Letter> Letters() =>
             Find.LetterStack?.LettersListForReading ?? new System.Collections.Generic.List<Letter>();
 
         private static string Describe()

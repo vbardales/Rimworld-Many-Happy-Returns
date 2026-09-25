@@ -48,11 +48,10 @@ namespace ManyHappyReturns.PickleSteps
         }
 
         [When("the wisher exchanges the birthday wish with the celebrant")]
-        public void Exchange(PickleContext ctx)
-        {
-            Pawn wisher = Driver.Wisher(ctx);
-            Pawn celebrant = Driver.Celebrant(ctx);
+        public void Exchange(PickleContext ctx) => ExchangeWish(ctx, Driver.Wisher(ctx), Driver.Celebrant(ctx));
 
+        internal static void ExchangeWish(PickleContext ctx, Pawn wisher, Pawn celebrant)
+        {
             // The fixture's colonists chat on their own while it loads and settles, and TryInteractWith
             // refuses an initiator that interacted less than 120 ticks ago. That ambient chat is not what
             // is under test, so the initiator starts each exchange without one on record.

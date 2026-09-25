@@ -1,14 +1,18 @@
 ﻿{
-    "executed_at":  "2026-09-23T18:52:56.3839013+02:00",
-    "base_revision":  "693be082d41f34ea40ce8111ca2504fbeb9446d4",
+    "executed_at":  "2026-09-25T20:43:17.9840290+02:00",
+    "base_revision":  "6ed04ba52cae06e0001a1dee47f6735150cce603",
     "scope":  "Working tree; behavior and XML checks, not in-game validation",
     "game_assembly":  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\RimWorldWin64_Data\\Managed",
     "game_assembly_sha256":  "5CF1B5BE399D5B1C9C56CA72C9D35B4ECF307FEACF5859D04AC5A1AA5926356A",
     "distributed_dll_sha256":  "96E46073724F0B1E443D8D692641C6753C1A18F88B164F5F7C6F9BE50ECB8A53",
     "files":  [
                   {
+                      "path":  "Mod/.steamignore",
+                      "sha256":  "71726D7D4B5F7BE4FA9E9B2EC60A016103294EC773B4AE2715EE7A1253222D2A"
+                  },
+                  {
                       "path":  "Mod/About/About.xml",
-                      "sha256":  "CE4736E26AF5BF7FB46E898CD8135B5B7B46084FB7CDB68A74B80D798999F4C6"
+                      "sha256":  "D24479558903632041172C81AD19D0A8011E6BF571FE9D42AE985ECE8ABC38F4"
                   },
                   {
                       "path":  "Mod/About/ModIcon.png",
@@ -63,6 +67,10 @@
                       "sha256":  "B054D95F9B2C1B9302B895C37C3E5EACEA13EDDAC7278D307C3CAE267F227892"
                   },
                   {
+                      "path":  "Mod/README.template.md",
+                      "sha256":  "42044CC2EAAA5F41E2840FDE9D72473188987DB016960B9B4AAE4C36FDB395C0"
+                  },
+                  {
                       "path":  "Mod/Textures/ManyHappyReturns/BirthdayWish.dds",
                       "sha256":  "4236637D471C7BD5715400C2F898B89CB1CBD27A54BF2F48362C5A153D709710"
                   },
@@ -92,7 +100,7 @@
                   },
                   {
                       "path":  "Source/InteractionWorker_BirthdayWish.cs",
-                      "sha256":  "4E2AA200C234F7849DF5376C6E249E358F9ECC0B06C8A62249760E0D5A1DC40F"
+                      "sha256":  "33AC5AB4045B29211E25E33E3120716D4B662652E87CB913980787A92D145FBA"
                   },
                   {
                       "path":  "Source/MainButtonWorker_Settings.cs",

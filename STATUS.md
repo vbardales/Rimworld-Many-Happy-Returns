@@ -51,8 +51,11 @@ remaining:
     manual tests done, then the last commit, tell the CI/CD session its SHA for the dry-run, no push to main after it
     (documented mode, CI/CD commit 5c77b94, no `feat:` commit needed). Done on 2026-09-25 (commit ce53f13): the
     `## [1.0.0] - 2026-09-25` section of CHANGELOG.md (re-date it if the publication slips) and the `### 1.0.0` change
-    note of PUBLICATION.md. Still to do in that last commit: the THANKS in the description (Pickle, RimLogging, PickleTools,
-    RIMMSQOL, agreed by the owner, after the replay 6e70 has run), and the shared thank-you register. Not done: no tag, no green dry-run. New colony (S16): a session cannot start one, Nelim's Pickle Tools
+    note of PUBLICATION.md. Replay 6e70 read on 2026-09-25 (docs/runs/2026-09-25-gallery-replay-en.md): 2 of 2 green, so the showcase pass has no red
+    scenario left. The THANKS (Pickle, RimLogging, PickleTools, RIMMSQOL, agreed by the owner) are in the description, its
+    Markdown source and the README. Still to do: the shared thank-you register (owner said wait), the S16 feature on the
+    fixture save with the LoadAudit step of Nelim's Pickle Tools (not yet played in game on their side), the new-colony
+    scenario once, in the final pass, and the owner's own validations. Not done: no tag, no green dry-run. New colony (S16): a session cannot start one, Nelim's Pickle Tools
     was asked on 2026-09-25 for a step that starts a new colony in a headless pass; no answer yet.
     `Mod/README.template.md` and `Mod/.steamignore` are committed.
   - not applicable, by rule: the engine's own refusal of a memory for an inhumanized pawn (S14, second

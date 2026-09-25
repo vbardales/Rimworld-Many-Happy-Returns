@@ -126,6 +126,8 @@ MIT. See `LICENSE` and `ATTRIBUTION.md`.
 - Dalrae, for *Garam, Happy Birthday* — the idea, and nothing else. See `ATTRIBUTION.md`.
 - KrukuCoB, for *Gifts and Birthdays*, which this mod deliberately stays out of the way of.
 - Axolki, for *Birthday Variety*.
+- Pickle, RimLogging and PickleTools, for development-only testing, and RIMMSQOL, for exercising the optional main-bar
+  shortcut. None of them is a dependency of this mod.
 - winggar, for *Wing's Meaningful Parties*.
 - Ludeon Studios, for a game whose social layer is generous enough that a mod like this needs
   no Harmony patch at all.

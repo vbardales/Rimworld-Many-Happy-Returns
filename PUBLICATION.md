@@ -141,6 +141,8 @@ plain text here), and the GitHub release notes are the `## [1.0.0]` section of `
 ### 1.0.0
 
 ```
+[b]1.0.0[/b]
+
 First release. RimWorld 1.6.
 
 Colonists notice their own birthday, and whether anyone said anything about it. A letter in the morning, a birthday wish that colonists give each other on their own, and a single graded memory formed at the end of the day, from "someone thought of me" to "an unforgettable birthday", built from who wished them well, whether someone close was among them, a party, the meal, and the room it was eaten in. And if nobody said a word all day, that is noticed too, hard to earn and easy to avoid.

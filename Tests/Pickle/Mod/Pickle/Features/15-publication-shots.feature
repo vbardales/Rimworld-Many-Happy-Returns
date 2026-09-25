@@ -15,7 +15,7 @@
 #
 # Not done here, on purpose: the wish bubble is a mote that lasts a few seconds in play. The game is paused
 # for the capture, so it is still there if the motes do not age while paused; the review says whether it is.
-@review @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.inspecttabs @requires:nelim.pickletools.hoversteps
+@review @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.inspecttabs
 Feature: images for the Workshop page
 
   Background:
@@ -55,9 +55,10 @@ Feature: images for the Workshop page
     And I take a screenshot "Workshop page, 2 the wish"
 
   # 3. Where the verdict lives, graded rather than binary. Three colonists wish the fourth: three points, the
-  # second of five grades. The mood tooltip is what lists the memory, so the pointer is put on it.
+  # third of five grades with a lover among the wishers. The Needs tab lists the memory in its mood section, so
+  # no hover is needed.
   @timeout:30
-  Scenario: the day's memory in the mood tooltip
+  Scenario: the day's memory in the Needs tab
     Given the celebrant's birthday is moved to today
     When every other colonist wishes the celebrant a happy birthday
     And Many Happy Returns closes out today's birthdays
@@ -68,8 +69,6 @@ Feature: images for the Workshop page
     Then the celebrant holds a birthday-remembered memory
     And Nelim's Pickle Tools: the "Needs" inspect tab is open
     And Nelim's Pickle Tools: developer mode is turned off for the capture
-    When Nelim's Pickle Tools: I hover over the tooltip containing "Quiet birthday"
-    Then Nelim's Pickle Tools: the tooltip containing "Quiet birthday" is drawn
     And I take a screenshot "Workshop page, 3 the memory"
 
   # 4. "Can I tune this": the settings page with the slider away from its default.
@@ -84,7 +83,7 @@ Feature: images for the Workshop page
 
   # 5. The sad half, so the page is honest about it: nobody said a word all day.
   @timeout:30
-  Scenario: the forgotten birthday in the mood tooltip
+  Scenario: the forgotten birthday in the Needs tab
     Given the celebrant has been a colonist for 20 days
     And the celebrant's birthday is moved to today
     When Many Happy Returns closes out today's birthdays
@@ -95,6 +94,4 @@ Feature: images for the Workshop page
     Then the celebrant holds a birthday-forgotten memory
     And Nelim's Pickle Tools: the "Needs" inspect tab is open
     And Nelim's Pickle Tools: developer mode is turned off for the capture
-    When Nelim's Pickle Tools: I hover over the tooltip containing "Nobody remembered my birthday"
-    Then Nelim's Pickle Tools: the tooltip containing "Nobody remembered my birthday" is drawn
     And I take a screenshot "Workshop page, 5 the forgotten birthday"

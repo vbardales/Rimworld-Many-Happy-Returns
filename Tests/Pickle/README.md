@@ -1,6 +1,6 @@
 # The Pickle suite for Many Happy Returns
 
-Fifteen feature files (44 scenarios). The minimal English and French passes ran on 2026-09-23 and the failures
+Sixteen feature files (45 scenarios). The minimal English and French passes ran on 2026-09-23 and the failures
 they showed were fixed in the suite; the other passes have not run yet (see `docs/runs/` and `STATUS.md`). They hold what only a running game can show;
 everything provable outside one is proven outside one, in `Tests/ManyHappyReturns.Tests.csproj`
 (15 passing cases: defaults/reset, NaN/Infinity/out-of-range clamping, real Scribe callbacks,
@@ -33,6 +33,7 @@ What is left needs a game, and needs it for a concrete reason:
 | 12 Gifts and Birthdays | Its real congratulation counted once, its real `LordJob_BirthdayParty` recognised as a party by `DayQualityBonus`, and the resulting stage against the day's own tally (S13) |
 | 13 exemptions | `Evaluate`'s early returns and `TryGiveForgotten`'s witness floor against real pawns: a celebrant Downed, away in a real caravan, and the floor of two witnesses played on both sides (S10) |
 | 15 publication shots | The five images of the Workshop page, taken on the owner's showcase colony, in English, with the interface hidden or not as each image needs; a person opens every one (`@review`) |
+| 16 existing-save regression | A birthday played through on the saved colony from the letter to the verdict, both settings routes, then the game log read for this mod by Nelim's Pickle Tools' LoadAudit (S16, its "existing save" half) |
 | 14 newborn | A baby generated the way the game generates one, born today, on the calendar and refused by `CanCelebrate`; needs Biotech (S10) |
 
 ## Roles, not names
@@ -138,6 +139,17 @@ powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod Many
 powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ManyHappyReturns -Owner local_<id> -DepMap wsl-deps.studio.map -Language English -Filter 15-publication-shots.feature -EvidenceDir ManyHappyReturns/Tests/Pickle/Evidence/<run>
 ```
 
+**7. Existing save, log audited** — `wsl-deps.avec-loadaudit.map`, feature 16 only, once in English and once in French (the
+key check reads the active language's data). S16's "existing save" half: a birthday from the letter to the verdict on the saved
+colony, the settings opened and closed, then LoadAudit reads the process log for this mod. It does not prove a key that is never
+displayed, a def never loaded or a path never executed. Its step was written by Nelim's Pickle Tools and had not been played in a
+game when this feature was written. The other half of S16, a new colony, is not reproducible and is played once, in the final pass,
+in its own feature, when the PickleTools step for it exists.
+
+```powershell
+powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ManyHappyReturns -Owner local_<id> -DepMap wsl-deps.avec-loadaudit.map -Language English -Filter 16-existing-save-regression.feature -Label "S16 existing save, <sha>" -EvidenceDir ManyHappyReturns/Tests/Pickle/Evidence/<run>
+```
+
 No `incompatibleWith` is declared, so there is no incompatibility pass to write.
 
 ## Building the steps
@@ -159,16 +171,16 @@ powershell.exe -ExecutionPolicy Bypass -File Tests/Pickle/Check-Steps.ps1
 
 Run offline on 2026-09-24: 60 patterns declared, all 60 compile, compared against 840 other
 expressions (205 from Pickle itself, 635 from 30 other step sources in the collection) — none
-ambiguous, and all 274 step lines across the fifteen features resolve to a declared expression. Every
+ambiguous, and all 345 step lines across the sixteen features resolve to a declared expression. Every
 step text carries "Many Happy Returns" or names the neighbour it drives. The collection grows, so the
 "other expressions" figure moves from one check to the next; the pattern and step-line counts are this suite's.
 
 ## Reading a report
 
 `exitReason` first, before any number. A run killed in flight leaves a report that looks like a
-result. Then the count of scenarios played against the count discovered (44). Features 08 to 11 (`@requires:` RIMMSQOL and its
-PickleTools steps), 12 (`@requires:KrukuCoB.rout`) and 14 (`@requires:ludeon.rimworld.biotech`) and 15 (the showcase colony and three PickleTools companions) are conditional and
-skip where their mod is absent: the default English pass plays 25 and skips 15 (08 to 12, and the five of feature 15), and feature 14 plays there
+result. Then the count of scenarios played against the count discovered (45). Features 08 to 11 (`@requires:` RIMMSQOL and its
+PickleTools steps), 12 (`@requires:KrukuCoB.rout`) and 14 (`@requires:ludeon.rimworld.biotech`) 15 (the showcase colony and three PickleTools companions) and 16 (LoadAudit) are conditional and
+skip where their mod is absent: the default English pass plays 25 and skips 16 (08 to 12, the five of feature 15 and the one of feature 16), and feature 14 plays there
 because Biotech is staged. No scenario is `@wip`. A skip is read against the pass that was meant to play it: the
 conditional scenarios count as tested only in their own pass (RIMMSQOL, Gifts and Birthdays, without Anomaly, showcase).
 

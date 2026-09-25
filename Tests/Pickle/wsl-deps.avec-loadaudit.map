@@ -1,0 +1,4 @@
+# The existing-save pass: feature 16 reads the game's log with Nelim's Pickle Tools' LoadAudit.
+#   Run-PickleWsl.ps1 -Mod ManyHappyReturns -DepMap wsl-deps.avec-loadaudit.map -Language English -Filter 16-existing-save-regression.feature
+# Then again with -Language French: the key check reads the active language's data.
+nelim.pickletools.loadaudit   path:PickleTools/LoadAudit/Mod

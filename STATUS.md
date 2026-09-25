@@ -46,8 +46,11 @@ remaining:
     `feat:`/`fix:` commit yet. The runner's DLL differs from the tracked one (runner c99622ed..., tracked and local
     build 96e46073...); the workflow puts the tracked files back, so the committed, tested DLL is what ships and it must
     stay committed. The description is 3693 bytes; the straight quotes reach Steam as typographic ones. To go: gallery and
-    manual tests done, then the last commit is a `feat:` (its subject is the Steam change note), push, tell the CI/CD
-    session the SHA for the dry-run, no push to main after it. Not done: no tag, no green dry-run.
+    manual tests done, then the final commit (documented mode, CI/CD commit 5c77b94, no `feat:` commit needed) adds
+    `## [1.0.0] - <date>` to CHANGELOG.md and, in PUBLICATION.md, a `### 1.0.0` heading followed by a fenced block that is
+    the Steam change note (BBCode, 8000 bytes at most); push, tell the CI/CD session the SHA for the dry-run, no push to
+    main after it. Not done: no tag, no green dry-run. New colony (S16): a session cannot start one, Nelim's Pickle Tools
+    was asked on 2026-09-25 for a step that starts a new colony in a headless pass; no answer yet.
     `Mod/README.template.md` and `Mod/.steamignore` are committed.
   - not applicable, by rule: the engine's own refusal of a memory for an inhumanized pawn (S14, second
     half). The mod declares `nullifyingHediffs`; feature 01 proves the declaration follows the DLC in

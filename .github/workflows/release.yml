@@ -66,21 +66,23 @@ jobs:
       - run: npm ci
       - name: Rebuild the exact Workshop directory
         run: dotnet build Source/ManyHappyReturns.csproj -c Release --nologo
-      # The runner's build overwrites the tracked files of Mod/ (the project writes its assembly there) and
-      # what it built is what ships. Say so, and say which tracked files differ from the commit.
-      - name: Check the rebuilt Mod/ against the tracked one
+      # The project writes its assembly into Mod/, over the committed one. A build made on the runner is not the
+      # build that was tested: on 2026-09-25 the runner's DLL of a mod differed from the committed, tested one
+      # (same source, same reference assemblies). So the differences are reported, and then the tracked files are
+      # put back: what ships is what is committed. Files the build creates and Git does not track are kept.
+      - name: Compare the rebuilt Mod/ with the tracked one, then ship the tracked one
         shell: bash
         run: |
           changed="$(git diff --name-only -- Mod)"
           if [[ -z "$changed" ]]; then
-            echo "The build reproduces the tracked Mod/ byte for byte: what ships is what is committed."
-            echo "The build reproduces the tracked Mod/ byte for byte." >> "$GITHUB_STEP_SUMMARY"
+            echo "The build reproduces the tracked Mod/ byte for byte." | tee -a "$GITHUB_STEP_SUMMARY"
           else
-            echo "::warning::The runner's build differs from the tracked Mod/: the rebuilt files ship, not the committed ones."
+            echo "::warning::The runner's build differs from the tracked Mod/: the committed files ship, not the rebuilt ones."
             {
-              echo "The runner's build differs from the tracked files below: the rebuilt ones ship, not the committed ones. Compare with the build you tested."
+              echo "The runner's build differs from the tracked files below. The committed (tested) ones ship, the rebuilt ones are discarded:"
               while IFS= read -r file; do echo "- $file: committed $(git show "HEAD:$file" | sha256sum | cut -d' ' -f1), rebuilt $(sha256sum "$file" | cut -d' ' -f1)"; done <<<"$changed"
             } | tee -a "$GITHUB_STEP_SUMMARY"
+            git checkout -- Mod
           fi
       # The plugin skips the Steam steps unless STEAM_PUBLISH is true, so this needs no credential. It
       # also prints the whole Steam description that would replace the page.

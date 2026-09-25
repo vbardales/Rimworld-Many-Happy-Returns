@@ -34,8 +34,10 @@ remaining:
     (`bootstrap-release.sh`), knowing that the page description is overwritten from `Mod/README.template.md`, that no
     commit is pinned (the publish takes the head of main when she approves) and that `dispatch-publish.sh` does not
     apply to it; rollback target: the item switched back to private by her (the repository has no tag and the 0.1.0
-    only created the item). Before any publish, indispensable and not done: the Workshop gallery (five captures,
-    PUBLICATION.md, none made) and the manual tests (S15 interface and log review in English and French, S16 regressions
+    only created the item). Before any publish, indispensable and not done: the Workshop gallery (five images in
+    `Art/Workshop/`, cropped from the run of 2026-09-25, judged by the session and validated one at a time by the owner:
+    image 1, the whole letter window, validated 2026-09-25; images 2 to 5 to present; the two memory scenarios are
+    replayed by request 6e70, not read yet) and the manual tests (S15 interface and log review in English and French, S16 regressions
     on a new colony and on an existing save, the `@review` captures opened). Environments release-dry-run and
     steam-production (reviewer vbardales) and secrets STEAM_USERNAME, STEAM_CONFIG_VDF_B64 are present on the
     repository since 2026-09-23 (bulk scripts of Rimworld-Release-Admin, checked read-only by the CI/CD session on

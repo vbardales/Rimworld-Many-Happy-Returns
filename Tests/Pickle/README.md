@@ -132,7 +132,7 @@ blamed on this mod.
 powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod ManyHappyReturns -DepMap wsl-deps.sans-anomaly.map -Language English
 ```
 
-**6. Showcase (the Workshop gallery)** â€” `wsl-deps.studio.map`, English only, feature 15 only: the five images of the page, in the upload order of `PUBLICATION.md`, on `nelim-zen-meadow-studio`. The captures are opened and judged by a person; a green run only says they were produced.
+**6. Showcase (the Workshop gallery)** — `wsl-deps.studio.map`, English only, feature 15 only: the five images of the page, in the upload order of `PUBLICATION.md`, on `nelim-zen-meadow-studio`. The captures are opened and judged by a person; a green run only says they were produced.
 
 ```powershell
 powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ManyHappyReturns -Owner local_<id> -DepMap wsl-deps.studio.map -Language English -Filter 15-publication-shots.feature -EvidenceDir ManyHappyReturns/Tests/Pickle/Evidence/<run>

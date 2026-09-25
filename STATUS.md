@@ -36,7 +36,7 @@ remaining:
     apply to it; rollback target: the item switched back to private by her (the repository has no tag and the 0.1.0
     only created the item). Before any publish, indispensable and not done: the Workshop gallery (five images in
     `Art/Workshop/`, cropped from the run of 2026-09-25, judged by the session and validated one at a time by the owner:
-    image 1, the whole letter window, validated 2026-09-25; images 2 to 5 to present; the two memory scenarios are
+    images 1 (the whole letter window) and 2 (the wish in the Log tab) validated 2026-09-25; images 3 to 5 to present; the two memory scenarios are
     replayed by request 6e70, not read yet) and the manual tests (S15 interface and log review in English and French, S16 regressions
     on a new colony and on an existing save, the `@review` captures opened). Environments release-dry-run and
     steam-production (reviewer vbardales) and secrets STEAM_USERNAME, STEAM_CONFIG_VDF_B64 are present on the

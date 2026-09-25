@@ -39,9 +39,16 @@ remaining:
     on a new colony and on an existing save, the `@review` captures opened). Environments release-dry-run and
     steam-production (reviewer vbardales) and secrets STEAM_USERNAME, STEAM_CONFIG_VDF_B64 are present on the
     repository since 2026-09-23 (bulk scripts of Rimworld-Release-Admin, checked read-only by the CI/CD session on
-    2026-09-25); approval of steam-production is Virginie's. Not done: no workflow (the CI/CD session runs the
-    bootstrap on a one-line inventory), no `feat:` commit, no tag, no dry-run. `Mod/README.template.md` and
-    `Mod/.steamignore` are committed.
+    2026-09-25); approval of steam-production is Virginie's. The workflow is in place (CI/CD session, commits 7c3cd0c and
+    82b9bb8 on main, `.github/workflows/release.yml`, inputs ref, version, mode): publish needs the full 40-character SHA
+    and refuses if main has moved since, so `dispatch-publish.sh vbardales/Rimworld-Many-Happy-Returns release.yml <SHA> 1.0.0`
+    works with it. Two dry-runs, nothing published (runs 36129326221 and 36129589535): both end red by design, no
+    `feat:`/`fix:` commit yet. The runner's DLL differs from the tracked one (runner c99622ed..., tracked and local
+    build 96e46073...); the workflow puts the tracked files back, so the committed, tested DLL is what ships and it must
+    stay committed. The description is 3693 bytes; the straight quotes reach Steam as typographic ones. To go: gallery and
+    manual tests done, then the last commit is a `feat:` (its subject is the Steam change note), push, tell the CI/CD
+    session the SHA for the dry-run, no push to main after it. Not done: no tag, no green dry-run.
+    `Mod/README.template.md` and `Mod/.steamignore` are committed.
   - not applicable, by rule: the engine's own refusal of a memory for an inhumanized pawn (S14, second
     half). The mod declares `nullifyingHediffs`; feature 01 proves the declaration follows the DLC in
     the default and the Anomaly-less passes; the enforcement is the game's, which AUDIT.md leaves to it.

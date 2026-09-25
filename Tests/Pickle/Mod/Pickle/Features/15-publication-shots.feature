@@ -27,6 +27,7 @@ Feature: images for the Workshop page
     And at least a third eligible colonist is present
 
   # 1. The whole pitch: the game noticing on its own what it otherwise ignores.
+  @timeout:30
   Scenario: the morning letter, open
     Given the local hour at the celebrant is set to 8
     And the celebrant's birthday is moved to today
@@ -39,6 +40,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: screenshot mode is disabled
 
   # 2. The interaction that carries most of the mod's day-to-day presence: the wish and its social log line.
+  @timeout:30
   Scenario: two colonists exchanging the birthday wish
     Given the celebrant's birthday is moved to today
     And the wisher is brought next to the celebrant
@@ -54,6 +56,7 @@ Feature: images for the Workshop page
 
   # 3. Where the verdict lives, graded rather than binary. Three colonists wish the fourth: three points, the
   # second of five grades. The mood tooltip is what lists the memory, so the pointer is put on it.
+  @timeout:30
   Scenario: the day's memory in the mood tooltip
     Given the celebrant's birthday is moved to today
     When every other colonist wishes the celebrant a happy birthday
@@ -70,6 +73,7 @@ Feature: images for the Workshop page
     And I take a screenshot "Workshop page, 3 the memory"
 
   # 4. "Can I tune this": the settings page with the slider away from its default.
+  @timeout:30
   Scenario: the settings page, with the mood scale changed
     Given the mood scale is set to 150 percent
     And the primary settings page for Many Happy Returns is opened
@@ -79,6 +83,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: screenshot mode is disabled
 
   # 5. The sad half, so the page is honest about it: nobody said a word all day.
+  @timeout:30
   Scenario: the forgotten birthday in the mood tooltip
     Given the celebrant has been a colonist for 20 days
     And the celebrant's birthday is moved to today

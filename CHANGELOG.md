@@ -1,22 +1,33 @@
 # Changelog
 
-## 0.1.0 — 2026-09-23
+## [1.0.0] - 2026-09-25
+
+First public release. RimWorld 1.6.
+
+- A letter on the morning of a colonist's birthday. The game sends none for an ordinary birthday:
+  `LetterBirthdayBiological` only fires when age-related injuries were gained.
+- A birthday wish, a social interaction that fires on its own on the day, once per pair. Opinion only, no mood, so
+  it never doubles Gifts and Birthdays' congratulations.
+- A single graded memory at the end of the day, its stage chosen from the day's score: wishes received, whether
+  someone close was among them, a party, the meal, the room it was eaten in.
+- A forgotten-birthday memory when nobody said a word, guarded by ten days in the colony, two colonists who could
+  have remembered, and the pawn being awake and present.
+- Mod settings under Mod options: morning letter, forgotten-birthday memory, mood scale 50-200 %, with an
+  explanation of their scope and when they apply; an invalid stored mood factor is recovered.
+- An optional main-bar settings shortcut, hidden by default, that RIMMSQOL and compatible tools can reveal; it opens
+  the same dialog.
+- English and French, defs, interface and developer actions.
+- Developer actions under "Many Happy Returns": move a birthday onto today, close the books without waiting for
+  midnight, log the day's tally.
+- Works with Gifts and Birthdays, Birthday Variety and Wing's Meaningful Parties. None required. No Harmony.
+
+## [0.1.0] - 2026-09-23
 
 - Create the `PublishedFileId.txt` (first Workshop item, id 3806762201, created private).
 
 ## Before the first Workshop item
 
 Kept as written. Its "1.0.0" was the repository's own first release; it was never tagged and never uploaded to Steam.
-
-### Unreleased
-
-- Establish an autonomous repository using the existing published history.
-- Add an optional main-bar settings shortcut, hidden by default, opening the native mod dialog.
-- Explain global settings scope and application timing; recover invalid stored mood factors.
-- Localize debug actions and confirmations in English and French.
-- Add the source link and 1.6 preview badge with reproducible composition; retain the original icon style.
-- Add automated settings/scoring/XML checks and explicit in-game validation scenarios.
-- Keep build intermediates inside this repository and pin the 1.6 compilation reference.
 
 ### 1.0.0 — 2026-09-03
 

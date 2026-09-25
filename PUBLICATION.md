@@ -30,9 +30,12 @@ And one that surprises people: **Steam creates every item private.** RimWorld ne
 ## Screenshots, in upload order
 
 Steam shows the first one large. That slot goes to the most demonstrative image, not the
-prettiest. **None of these exist yet.** They are not the Preview — that is the header image,
-already made (`Mod/About/Preview.png`, 896x504). These are the page's own captures; `Tests/Pickle/`
-has no dedicated capture scenario yet, so they would currently be made by hand.
+prettiest. **The five exist**, in `Art/Workshop/` (`01-` to `05-`, in upload order, nothing else in that
+folder), cropped from the captures of the showcase pass (`Tests/Pickle/Mod/Pickle/Features/15-publication-shots.feature`,
+run `docs/runs/2026-09-25-gallery-en.md`). Each was opened by the session and validated one at a time by the owner on
+2026-09-25. Two differ from the table below: the settings image is cropped above the empty half of the window, and the
+wish image shows the log line, not the speech bubble (the pawns are stacked and small in the full frame). They are not
+the Preview — that is the header image, already made (`Mod/About/Preview.png`, 896x504). The upload is by hand.
 
 | # | What it must show | Why this slot |
 | --- | --- | --- |
@@ -129,24 +132,21 @@ Claude (Anthropic) is credited in the description under `AI-GENERATED`, not by c
 
 ## Steam release notes
 
-Written at the moment of upload, in a tab nothing prompts until the form is open — the easiest
+Written at the moment of upload, in a tab nothing prompts until the form is open â€” the easiest
 thing to forget. Unlike the description they can be corrected afterwards and start again at every
-update, which is no reason to arrive without one. Drafted from `CHANGELOG.md`, to finalise once a
-version is actually tagged for the first upload:
+update. With the release workflow of `.github/workflows/release.yml` in documented mode, the change note
+is the fenced block under the `### 1.0.0` heading below, sent to Steam as written (BBCode, 8000 bytes at most,
+plain text here), and the GitHub release notes are the `## [1.0.0]` section of `CHANGELOG.md`.
 
-> First release. RimWorld 1.6.
->
-> Colonists notice their own birthday, and whether anyone said anything about it. A letter in the
-> morning, a birthday wish that colonists give each other on their own, and a single graded memory
-> formed at the end of the day — from "someone thought of me" to "an unforgettable birthday" —
-> built from who wished them well, whether someone close was among them, a party, the meal, and
-> the room it was eaten in. And if nobody said a word all day, that is noticed too, hard to earn
-> and easy to avoid.
->
-> Works with Gifts and Birthdays, Birthday Variety and Wing's Meaningful Parties. None required.
-> Mod settings for the letter, the forgotten-birthday memory, and a mood scale. English and
-> French. No Harmony.
+### 1.0.0
 
+```
+First release. RimWorld 1.6.
+
+Colonists notice their own birthday, and whether anyone said anything about it. A letter in the morning, a birthday wish that colonists give each other on their own, and a single graded memory formed at the end of the day, from "someone thought of me" to "an unforgettable birthday", built from who wished them well, whether someone close was among them, a party, the meal, and the room it was eaten in. And if nobody said a word all day, that is noticed too, hard to earn and easy to avoid.
+
+Works with Gifts and Birthdays, Birthday Variety and Wing's Meaningful Parties. None required. Mod settings for the letter, the forgotten-birthday memory, and a mood scale, under Mod options. English and French. No Harmony.
+```
 ## Right after the upload, in this order
 
 1. Commit and push `Mod/About/PublishedFileId.txt`. Before anything else.

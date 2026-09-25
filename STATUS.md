@@ -24,9 +24,12 @@ remaining:
     failed, ran to the end): 25 passed, 4 failed, 10 skipped. The first run's fixes hold (tenure, newborn, year turn).
     The four failures are the suite's, none a defect of the mod: a psychopath keeps the forgotten memory with a zero
     mood offset (the game stores nullified memories; the assertion was wrong, now rewritten) and three refused wish
-    exchanges of unproven cause (diagnostic and cooldown reset added). Fixed since, not replayed: the next ticket is
-    these four scenarios only, then the French year-turn one. French pass of 2026-09-23 (24 passed, 5 failed, 10 skipped)
-    is the only French proof and predates the fixes. Not run: the RIMMSQOL, Gifts and Birthdays and Anomaly-less passes.
+    exchanges of unproven cause (diagnostic and cooldown reset added). Replayed on 2026-09-25 as two targeted
+    tickets, both exitReason passed: the four scenarios plus one control, 5 of 5 in English, and the year turn in French
+    (docs/runs/). The wish refusal was intermittent, so one green sample does not prove its cause. The French pass
+    of 2026-09-23 (24 passed, 5 failed, 10 skipped) remains the proof of the other French scenarios and predates the fixes.
+    Not run: the RIMMSQOL, Gifts and Birthdays and Anomaly-less passes, and the full English and French passes that
+    `tested` needs on the final revision.
   - not applicable, by rule: the engine's own refusal of a memory for an inhumanized pawn (S14, second
     half). The mod declares `nullifyingHediffs`; feature 01 proves the declaration follows the DLC in
     the default and the Anomaly-less passes; the enforcement is the game's, which AUDIT.md leaves to it.

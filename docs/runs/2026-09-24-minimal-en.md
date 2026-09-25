@@ -5,7 +5,7 @@
 - **Suite state**: commit `7a45161`, fourteen feature files
 - **exitReason**: `failed`. Pickle exit 1: the run went to the end
 - **Scenarios**: 39 discovered, 39 accounted for: 25 passed, 4 failed, 10 skipped, 0 flaky
-- **Evidence**: on disk, ignored by git (`Tests/Pickle/Evidence/2026-09-24-minimale-en/`): `junit.xml`, `summary.json`, `summary.md`, `Player.log`, the `@review` capture and the captures of the three failures whose cause is still open. Deleted
+- **Evidence**: on disk, ignored by git (`Tests/Pickle/Evidence/2026-09-24-minimale-en/`): `junit.xml`, `summary.json`, `summary.md`, `Player.log` and the `@review` capture. Deleted
   once summarised: `report.html`, `messages.ndjson` (40 MB), the psychopath failure capture (its cause is written above) and the whole
   2026-09-23 English run, which this one supersedes scenario for scenario. The 2026-09-23 French run stays: it is the only French proof.
 
@@ -45,5 +45,6 @@ error from the mod itself, and no unresolved reference. The other errors are the
 
 ## Not read
 
-The four failure captures and the `@review` capture of feature 03 were kept and not opened beyond one (the Downed-wished
-capture: three colonists standing outside at 9h, nothing that names the refusal).
+The `@review` capture of feature 03 was kept and not opened. One failure capture was opened (Downed, wished: three colonists
+standing outside at 9h, nothing that names the refusal). The three refusal captures were deleted on 2026-09-25 once the
+targeted replay (`2026-09-25-targeted-en.md`) passed those scenarios.

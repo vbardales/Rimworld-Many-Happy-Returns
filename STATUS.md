@@ -30,6 +30,18 @@ remaining:
     of 2026-09-23 (24 passed, 5 failed, 10 skipped) remains the proof of the other French scenarios and predates the fixes.
     Not run: the RIMMSQOL, Gifts and Birthdays and Anomaly-less passes, and the full English and French passes that
     `tested` needs on the final revision.
+  - unverified: publication of the 1.0.0 by CI. Decided by Virginie on 2026-09-25: semantic-release
+    (`bootstrap-release.sh`), knowing that the page description is overwritten from `Mod/README.template.md`, that no
+    commit is pinned (the publish takes the head of main when she approves) and that `dispatch-publish.sh` does not
+    apply to it; rollback target: the item switched back to private by her (the repository has no tag and the 0.1.0
+    only created the item). Before any publish, indispensable and not done: the Workshop gallery (five captures,
+    PUBLICATION.md, none made) and the manual tests (S15 interface and log review in English and French, S16 regressions
+    on a new colony and on an existing save, the `@review` captures opened). Environments release-dry-run and
+    steam-production (reviewer vbardales) and secrets STEAM_USERNAME, STEAM_CONFIG_VDF_B64 are present on the
+    repository since 2026-09-23 (bulk scripts of Rimworld-Release-Admin, checked read-only by the CI/CD session on
+    2026-09-25); approval of steam-production is Virginie's. Not done: no workflow (the CI/CD session runs the
+    bootstrap on a one-line inventory), no `feat:` commit, no tag, no dry-run. `Mod/README.template.md` and
+    `Mod/.steamignore` are committed.
   - not applicable, by rule: the engine's own refusal of a memory for an inhumanized pawn (S14, second
     half). The mod declares `nullifyingHediffs`; feature 01 proves the declaration follows the DLC in
     the default and the Anomaly-less passes; the enforcement is the game's, which AUDIT.md leaves to it.

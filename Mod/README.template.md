@@ -1,0 +1,30 @@
+Colonists notice their own birthday, and they notice whether anyone else did.
+
+The base game already knows every pawn's birth date, and does nothing with it: no letter, no reaction, nothing but the occasional age-related injury. This mod adds the part that was missing — the felt experience of the day.
+
+## What it does
+
+- A letter in the morning: today is someone's birthday. That is all the mod asks of you; what you do with the day is your business.
+- Colonists wish each other happy birthday. It is a normal social interaction, so it happens on its own when two colonists meet, once per pair per birthday, and it leaves both of them thinking a little better of each other.
+- At the end of the day, the birthday pawn forms one memory of how it went. Not a memory of the party — a memory of the day. Five grades, from "someone thought of me" to "an unforgettable birthday", and what moves the needle is: how many colonists wished them well, whether a spouse, a parent, a child, a sibling or a close friend was among them, whether there was a party, whether they ate something better than survival paste, and whether they ate it somewhere worth sitting down in.
+- And if nobody said a word all day, they notice that too.
+
+The forgotten-birthday thought is deliberately hard to earn. It needs the pawn to have lived in the colony for at least ten days, to have had at least two other colonists around who could have remembered, and to have been awake and present. A recruit from yesterday expects nothing from anyone, and a colonist who spent their birthday unconscious in the hospital is not being snubbed.
+
+## Works with Gifts and Birthdays
+
+[Gifts and Birthdays](https://steamcommunity.com/sharedfiles/filedetails/?id=3625791734) organises the party, invites the guests and wraps the presents. This mod does none of that, on purpose. Its congratulations only fire during that party; the wishes here happen all day, wherever two colonists cross paths. The two tallies are added together, so congratulations given at its party count towards the verdict here, and its party is recognised as a party. The wishes here carry no mood of their own — only opinion — so nothing is counted twice.
+
+It also works with [Birthday Variety](https://steamcommunity.com/sharedfiles/filedetails/?id=3770972092), with [Wing's Meaningful Parties](https://steamcommunity.com/sharedfiles/filedetails/?id=3504909699) — it only renames why the vanilla party happens, so a birthday party it throws is still a party here too — and with nothing installed at all.
+
+## Mod settings
+
+The morning letter and the forgotten-birthday thought can each be switched off, and the whole mood scale can be dialled between 50% and 200%.
+
+No Harmony patches. No save data on pawns; the mod's own state is a single day-long list that is safe to remove at any time.
+
+Written from scratch, with the help of an AI assistant (Claude, by Anthropic). Thanks to KrukuCoB, whose [Gifts and Birthdays](https://steamcommunity.com/sharedfiles/filedetails/?id=3625791734) covers the logistics this mod deliberately leaves alone, to Axolki for [Birthday Variety](https://steamcommunity.com/sharedfiles/filedetails/?id=3770972092), and to winggar for [Wing's Meaningful Parties](https://steamcommunity.com/sharedfiles/filedetails/?id=3504909699).
+
+If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
+
+[Source code on GitHub](https://github.com/vbardales/Rimworld-Many-Happy-Returns)

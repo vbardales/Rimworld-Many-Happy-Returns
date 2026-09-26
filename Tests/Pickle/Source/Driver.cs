@@ -100,7 +100,10 @@ namespace ManyHappyReturns.PickleSteps
 
             ctx.Require(colonists.Count >= atLeast,
                 $"the map has {colonists.Count} eligible, non-downed free colonists; this scenario needs "
-                + $"at least {atLeast}. TEST_SCENARIOS.md's common setup asks for three");
+                + $"at least {atLeast}. TEST_SCENARIOS.md's common setup asks for three. "
+                + "Free colonists in the game: " + string.Join("; ", PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_FreeColonists
+                    .Select(p => $"{p.LabelShort} spawned={p.Spawned} downed={p.Downed} "
+                        + $"canCelebrate={BirthdayUtility.CanCelebrate(p)} holder={p.ParentHolder?.GetType().Name ?? "none"}")));
             return colonists;
         }
 

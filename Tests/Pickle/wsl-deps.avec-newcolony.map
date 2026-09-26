@@ -1,0 +1,5 @@
+# The new-colony pass: feature 17 starts a colony with Nelim's Pickle Tools' NewColony and reads the game's log with LoadAudit.
+# NOT reproducible: played once, in the final pass, in a ticket of its own:
+#   Submit-PickleRun.ps1 -Mod ManyHappyReturns -Owner local_<id> -DepMap wsl-deps.avec-newcolony.map -Language English -Filter 17-new-colony -Extra "-pickle-scenario-timeout=400" -Label "S16 new colony, <sha>" -EvidenceDir ManyHappyReturns/Tests/Pickle/Evidence/<run>
+nelim.pickletools.newcolony   path:PickleTools/NewColony/Mod
+nelim.pickletools.loadaudit   path:PickleTools/LoadAudit/Mod

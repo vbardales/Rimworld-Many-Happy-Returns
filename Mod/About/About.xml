@@ -10,7 +10,7 @@
 
 The base game already knows every pawn's birth date, and does nothing with it: no letter, no reaction, nothing but the occasional age-related injury. This mod adds the part that was missing — the felt experience of the day.
 
-WHAT IT DOES
+What it does
 
 - A letter in the morning: today is someone's birthday. That is all the mod asks of you; what you do with the day is your business.
 - Colonists wish each other happy birthday. It is a normal social interaction, so it happens on its own when two colonists meet, once per pair per birthday, and it leaves both of them thinking a little better of each other.
@@ -19,25 +19,23 @@ WHAT IT DOES
 
 The forgotten-birthday thought is deliberately hard to earn. It needs the pawn to have lived in the colony for at least ten days, to have had at least two other colonists around who could have remembered, and to have been awake and present. A recruit from yesterday expects nothing from anyone, and a colonist who spent their birthday unconscious in the hospital is not being snubbed.
 
-WORKS WITH [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3625791734]GIFTS AND BIRTHDAYS[/url]
+Works with Gifts and Birthdays
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3625791734]Gifts and Birthdays[/url] organises the party, invites the guests and wraps the presents. This mod does none of that, on purpose. Its congratulations only fire during that party; the wishes here happen all day, wherever two colonists cross paths. The two tallies are added together, so congratulations given at its party count towards the verdict here, and its party is recognised as a party. The wishes here carry no mood of their own — only opinion — so nothing is counted twice.
+Gifts and Birthdays (https://steamcommunity.com/sharedfiles/filedetails/?id=3625791734) organises the party, invites the guests and wraps the presents. This mod does none of that, on purpose. Its congratulations only fire during that party; the wishes here happen all day, wherever two colonists cross paths. The two tallies are added together, so congratulations given at its party count towards the verdict here, and its party is recognised as a party. The wishes here carry no mood of their own — only opinion — so nothing is counted twice.
 
-It also works with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3770972092]Birthday Variety[/url], with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3504909699]Wing's Meaningful Parties[/url] — it only renames why the vanilla party happens, so a birthday party it throws is still a party here too — and with nothing installed at all.
+It also works with Birthday Variety (https://steamcommunity.com/sharedfiles/filedetails/?id=3770972092), with Wing's Meaningful Parties (https://steamcommunity.com/sharedfiles/filedetails/?id=3504909699) — it only renames why the vanilla party happens, so a birthday party it throws is still a party here too — and with nothing installed at all.
 
-MOD SETTINGS
+Mod settings
 
 The morning letter and the forgotten-birthday thought can each be switched off, and the whole mood scale can be dialled between 50% and 200%.
 
 No Harmony patches. No save data on pawns; the mod's own state is a single day-long list that is safe to remove at any time.
 
-
-
-Written from scratch, with the help of an AI assistant (Claude, by Anthropic). Thanks to KrukuCoB, whose [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3625791734]Gifts and Birthdays[/url] covers the logistics this mod deliberately leaves alone, to Axolki for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3770972092]Birthday Variety[/url], and to winggar for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3504909699]Wing's Meaningful Parties[/url]. [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678]Pickle[/url], [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696]RimLogging[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401]PickleTools[/url] were used for development-only testing, and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1084452457]RIMMSQOL[/url] to exercise the optional main-bar shortcut. None of them is a dependency of Many Happy Returns.
+Written from scratch, with the help of an AI assistant (Claude, by Anthropic). Thanks to KrukuCoB, whose Gifts and Birthdays (https://steamcommunity.com/sharedfiles/filedetails/?id=3625791734) covers the logistics this mod deliberately leaves alone, to Axolki for Birthday Variety (https://steamcommunity.com/sharedfiles/filedetails/?id=3770972092), and to winggar for Wing's Meaningful Parties (https://steamcommunity.com/sharedfiles/filedetails/?id=3504909699). Pickle (https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678), RimLogging (https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696) and PickleTools (https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401) were used for development-only testing, and RIMMSQOL (https://steamcommunity.com/sharedfiles/filedetails/?id=1084452457) to exercise the optional main-bar shortcut. None of them is a dependency of Many Happy Returns.
 
 If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
 
-[url=https://github.com/vbardales/Rimworld-Many-Happy-Returns]Source code on GitHub[/url]</description>
+Source code on GitHub (https://github.com/vbardales/Rimworld-Many-Happy-Returns)</description>
   <url>https://github.com/vbardales/Rimworld-Many-Happy-Returns</url>
   <loadAfter>
     <li>Ludeon.RimWorld</li>

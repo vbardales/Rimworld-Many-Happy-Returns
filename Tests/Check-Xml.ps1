@@ -81,7 +81,7 @@ $about = (Read-Xml (Join-Path $mod 'About/About.xml')).ModMetaData
 $url = 'https://github.com/vbardales/Rimworld-Many-Happy-Returns'
 Assert ($about.packageId -eq 'nelim.manyhappyreturns') 'Stable packageId changed'
 Assert ($about.url -eq $url) 'Incorrect source URL'
-Assert ($about.description.TrimEnd().EndsWith("[url=$url]Source code on GitHub[/url]")) 'Final description source link missing'
+Assert ($about.description.TrimEnd().EndsWith("Source code on GitHub ($url)")) 'Final description source link missing'
 Assert (!$about.modDependencies) 'Unexpected mandatory dependency'
 foreach ($node in $defs.Values.SelectNodes('.//*[@MayRequire]')) { Assert ($node.MayRequire -eq 'Ludeon.RimWorld.Anomaly') 'Unexpected conditional dependency' }
 foreach ($name in 'LICENSE','ATTRIBUTION.md') {

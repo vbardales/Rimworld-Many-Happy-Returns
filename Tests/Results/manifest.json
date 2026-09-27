@@ -1,6 +1,6 @@
 ﻿{
-    "executed_at":  "2026-09-25T20:43:17.9840290+02:00",
-    "base_revision":  "6ed04ba52cae06e0001a1dee47f6735150cce603",
+    "executed_at":  "2026-09-27T18:03:06.1176695+02:00",
+    "base_revision":  "2512015fa6cc61f5f556e27e44911cd8f286b9ae",
     "scope":  "Working tree; behavior and XML checks, not in-game validation",
     "game_assembly":  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\RimWorldWin64_Data\\Managed",
     "game_assembly_sha256":  "5CF1B5BE399D5B1C9C56CA72C9D35B4ECF307FEACF5859D04AC5A1AA5926356A",
@@ -12,7 +12,7 @@
                   },
                   {
                       "path":  "Mod/About/About.xml",
-                      "sha256":  "D24479558903632041172C81AD19D0A8011E6BF571FE9D42AE985ECE8ABC38F4"
+                      "sha256":  "B8E986E5CEA171470B83EDE1CAA38F9A5FDA542DB929EDC1A9276EB8C8E5710A"
                   },
                   {
                       "path":  "Mod/About/ModIcon.png",
@@ -124,7 +124,7 @@
                   },
                   {
                       "path":  "Tests/Check-Xml.ps1",
-                      "sha256":  "02B96731F7EA16E526B639FED712E2FE7222120B278F44517F00F9D190D6EE66"
+                      "sha256":  "E7DD24A51B8B4CDC19F177AA50251FCA6D064F891295D103609F89EB0314D034"
                   },
                   {
                       "path":  "Tests/Directory.Build.props",

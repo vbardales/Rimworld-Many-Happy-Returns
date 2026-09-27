@@ -15,6 +15,7 @@ Feature: the mod in a new colony, from its first minutes, leaves a clean log
     Given the main menu is open
     And Nelim's Pickle Tools: the new colony's seed is "many-happy-returns-s16"
     When Nelim's Pickle Tools: a new colony is started
+    And Nelim's Pickle Tools: any open message dialog is accepted
     And Nelim's Pickle Tools: the new colony's colonists have landed
     Then Many Happy Returns's own defs are all resolved
     Given Many Happy Returns settings are at their defaults

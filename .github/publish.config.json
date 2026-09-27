@@ -1,0 +1,19 @@
+{
+  "templateStamp": "a8ca11cdd9a3",
+  "workshopId": "3806762201",
+  "packageId": "nelim.manyhappyreturns",
+  "releaseTitle": "Many Happy Returns {version}",
+  "requirePaths": [
+    "Assemblies/ManyHappyReturns.dll"
+  ],
+  "forbidPaths": [],
+  "previewFile": "About/Preview.png",
+  "aboutFromDescription": true,
+  "build": {
+    "project": "Source/ManyHappyReturns.csproj"
+  },
+  "description": {
+    "file": "Mod/README.template.md",
+    "format": "markdown"
+  }
+}

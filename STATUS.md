@@ -53,10 +53,17 @@ remaining:
     `## [1.0.0] - 2026-09-25` section of CHANGELOG.md (re-date it if the publication slips) and the `### 1.0.0` change
     note of PUBLICATION.md. Replay 6e70 read on 2026-09-25 (docs/runs/2026-09-25-gallery-replay-en.md): 2 of 2 green, so the showcase pass has no red
     scenario left. The THANKS (Pickle, RimLogging, PickleTools, RIMMSQOL, agreed by the owner) are in the description, its
-    Markdown source and the README. Still to do: the shared thank-you register (owner said wait), the S16 feature on the
-    fixture save with the LoadAudit step of Nelim's Pickle Tools (not yet played in game on their side), the new-colony
-    scenario once, in the final pass, and the owner's own validations. Not done: no tag, no green dry-run. New colony (S16): a session cannot start one, Nelim's Pickle Tools
-    was asked on 2026-09-25 for a step that starts a new colony in a headless pass; no answer yet.
+    Markdown source and the README. Still to do: the shared thank-you register (owner said wait), a green new-colony run (feature 17), and the
+    owner's own validations. Not done: no tag, no green dry-run. S16 on the saved colony is green in English and French
+    (docs/runs/2026-09-25-s16-en.md, -s16-fr.md). New colony (S16, feature 17, once): four red attempts of 2026-09-26/27, the first
+    three for set-up reasons in the PickleTools NewColony steps (colonists still in their pods behind the Crashlanded intro
+    dialog, a Dialog_NodeTree the accept step did not handle), all fixed on their side; the fourth (df29) reached the log audit
+    and found a real defect of the mod: `BirthdayUtility.IsCloseTo` used `DirectRelationExists` on the implied relations
+    Child and Sibling (a game warning, and children and siblings never counted as close). Fixed in 93bb86b with
+    `Pawn.GetRelations`; the runs before it no longer prove the current build. Replay 59df requested. The ModIcon was
+    downscaled from `Art/ModIcon-text-free-source.png` on 2026-09-28 at the owner's instruction (083f4f9), with `Art/ModIcon.ico`.
+    The CI/CD session pushed the manual publish workflow (1702347) and About.xml's description became plain text, by design;
+    the semantic-release files are still there, migration undecided by the owner.
     `Mod/README.template.md` and `Mod/.steamignore` are committed.
   - not applicable, by rule: the engine's own refusal of a memory for an inhumanized pawn (S14, second
     half). The mod declares `nullifyingHediffs`; feature 01 proves the declaration follows the DLC in

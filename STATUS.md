@@ -11,6 +11,7 @@ detached:     yes
 stage:        done
 licence:      original
 licence_at:   written from scratch, MIT; only the general idea is shared
+upstream_mod_remotes: N/A
 dependencies: none
 showcase:     complete
 tested_on:

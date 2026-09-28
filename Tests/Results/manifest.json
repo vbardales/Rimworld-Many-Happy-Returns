@@ -1,10 +1,10 @@
 ﻿{
-    "executed_at":  "2026-09-27T18:03:06.1176695+02:00",
-    "base_revision":  "2512015fa6cc61f5f556e27e44911cd8f286b9ae",
+    "executed_at":  "2026-09-28T18:34:10.9125230+02:00",
+    "base_revision":  "16b358706df95be768a66a5813a879beeefdd53c",
     "scope":  "Working tree; behavior and XML checks, not in-game validation",
     "game_assembly":  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\RimWorldWin64_Data\\Managed",
     "game_assembly_sha256":  "5CF1B5BE399D5B1C9C56CA72C9D35B4ECF307FEACF5859D04AC5A1AA5926356A",
-    "distributed_dll_sha256":  "96E46073724F0B1E443D8D692641C6753C1A18F88B164F5F7C6F9BE50ECB8A53",
+    "distributed_dll_sha256":  "759B8A676B75FE861291AF08701F4DFEFF06DC59719E581BA0C81523DDA167FF",
     "files":  [
                   {
                       "path":  "Mod/.steamignore",
@@ -16,7 +16,7 @@
                   },
                   {
                       "path":  "Mod/About/ModIcon.png",
-                      "sha256":  "3C56E8E466FCB979139E99FE2E419366AD66C7B133FCFDB062292A48D2CAF33A"
+                      "sha256":  "D8EF365341C98D2E9A007269445529399129801E011CC5DDBA86367516044BDB"
                   },
                   {
                       "path":  "Mod/About/Preview.png",
@@ -28,7 +28,7 @@
                   },
                   {
                       "path":  "Mod/Assemblies/ManyHappyReturns.dll",
-                      "sha256":  "96E46073724F0B1E443D8D692641C6753C1A18F88B164F5F7C6F9BE50ECB8A53"
+                      "sha256":  "759B8A676B75FE861291AF08701F4DFEFF06DC59719E581BA0C81523DDA167FF"
                   },
                   {
                       "path":  "Mod/ATTRIBUTION.md",
@@ -84,7 +84,7 @@
                   },
                   {
                       "path":  "Source/BirthdayUtility.cs",
-                      "sha256":  "2D09BCC68B04A49D5EF2A1435116F7CF54B0B3F501F13C6B82C8FC09B48199F6"
+                      "sha256":  "BDA040AFB291C5717FE5C563E9C67F87512E711E6C4AA92BC81FE803D61073F0"
                   },
                   {
                       "path":  "Source/DebugActions_Birthday.cs",

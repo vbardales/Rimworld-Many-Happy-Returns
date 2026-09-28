@@ -1,12 +1,10 @@
 # Artwork
 
-`Preview-source.png` and `ModIcon-source.png` are the preserved original illustrations.
-The user preferred the original icon style and requested its restoration on 2026-09-13.
-`ModIcon-selected.png` preserves that exact original 128 x 128 delivered PNG, including its
-ribbon, gift and confetti. The build copies it unchanged. This explicit user choice overrides
-the general no-text icon guideline. `ModIcon-text-free-source.png` is an unused alternative.
+`Preview-source.png` is the preserved original illustration.
 
-Exact built-in edit prompt:
+`ModIcon-text-free-source.png` (1254 x 1254) is the source of the delivered icon: `Mod/About/ModIcon.png` is it downscaled to 128 x 128, and `Art/ModIcon.ico` (256 px, outside `Mod/`) is the local folder icon. Downscaled on 2026-09-28 at the owner's instruction. The earlier ribbon-and-gift icon was dropped.
+
+Exact built-in edit prompt for the source:
 
 > Edit target: the attached Many Happy Returns icon. Remove the entire bottom ribbon and all letters. Preserve the distinctive orange round winking mascot with ponytail, thick near-black outline and cake to its left. Simplify for a 128x128 RimWorld mod icon readable at 32 pixels: retain only the mascot and the birthday cake, remove gift box and scattered confetti; retain one small four-point sparkle. Plain near-black background, flat cel shading, no glow, no gradients, no text, no lettering, no ribbon, no frame, no extra characters. Recenter the mascot and cake to occupy most of the square with a modest margin. Output square icon.
 
@@ -24,6 +22,6 @@ text, plus contrast on the opaque badge. Current minima: 7.55:1 title, 8.46:1 su
 10.62:1 badge. Native-size and 268-pixel previews were inspected without clipping, overlaps or
 a concrete camera concern. Generated QA images and the numerical report live in `.build/art/`.
 
-Installed assets: `Mod/About/ModIcon.png` (128 x 128, 23,544 bytes),
+Installed assets: `Mod/About/ModIcon.png` (128 x 128, 13,982 bytes)
 `Mod/About/Preview.png` (896 x 504, 693,827 bytes). The 20–30 KB icon guidance is not a
 minimum file-size requirement; padding an already readable icon would serve no purpose.

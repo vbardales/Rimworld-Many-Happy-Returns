@@ -206,10 +206,12 @@ namespace ManyHappyReturns
                 return false;
             }
 
-            PawnRelationDef[] relations = CloseRelations;
-            for (int i = 0; i < relations.Length; i++)
+            // GetRelations answers for implied relations too (Child, Sibling). DirectRelationExists
+            // refuses those with a log warning and returns false, so it cannot be used for the family list.
+            PawnRelationDef[] close = CloseRelations;
+            foreach (PawnRelationDef relation in celebrant.GetRelations(other))
             {
-                if (relations[i] != null && celebrant.relations.DirectRelationExists(relations[i], other))
+                if (System.Array.IndexOf(close, relation) >= 0)
                 {
                     return true;
                 }

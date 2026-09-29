@@ -48,7 +48,7 @@ const contrast = (a,b) => (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
     checks.badge=contrast(luminance(color(palette.accent)),luminance(color(palette.badgeInk)));
     if(checks.badge<4.5) throw new Error('Badge contrast below 4.5');
     await sharp(path.join(out,'Preview.png')).png({compressionLevel:9}).toFile(at('Mod/About/Preview.png'));
-    await fs.copyFile(at('Art/ModIcon-selected.png'), at('Mod/About/ModIcon.png'));
+    await sharp(at('Art/ModIcon-text-free-source.png')).resize(128,128).png({compressionLevel:9}).toFile(at('Mod/About/ModIcon.png'));
     await sharp(at('Mod/About/Preview.png')).resize(268).toFile(path.join(out,'Preview-268.png'));
     await sharp(at('Mod/About/ModIcon.png')).resize(32,32).toFile(path.join(out,'ModIcon-32.png'));
     const sizes={preview:(await fs.stat(at('Mod/About/Preview.png'))).size,icon:(await fs.stat(at('Mod/About/ModIcon.png'))).size};

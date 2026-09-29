@@ -29,21 +29,25 @@ And one that surprises people: **Steam creates every item private.** RimWorld ne
 
 ## Screenshots, in upload order
 
-Steam shows the first one large. That slot goes to the most demonstrative image, not the
-prettiest. **The five exist**, in `Art/Workshop/` (`01-` to `05-`, in upload order, nothing else in that
-folder), cropped from the captures of the showcase pass (`Tests/Pickle/Mod/Pickle/Features/15-publication-shots.feature`,
-run `docs/runs/2026-09-25-gallery-en.md`). Each was opened by the session and validated one at a time by the owner on
-2026-09-25. Two differ from the table below: the settings image is cropped above the empty half of the window, and the
-wish image shows the log line, not the speech bubble (the pawns are stacked and small in the full frame). They are not
-the Preview — that is the header image, already made (`Mod/About/Preview.png`, 896x504). The upload is by hand.
+Steam shows the first one large. **Every gallery starts with a copy of the Preview** (owner's rule,
+2026-09-29): `01-` is a byte-for-byte copy of `Mod/About/Preview.png`, applies to every mod from now on. The
+captures follow in `02-` onward. **Six exist**, in `Art/Workshop/` (`01-` the Preview copy, `02-` to `06-`
+the captures, in upload order, nothing else in that folder), the captures cropped from the showcase pass
+(`Tests/Pickle/Mod/Pickle/Features/15-publication-shots.feature`, run `docs/runs/2026-09-25-gallery-en.md`).
+Each capture was opened by the session and validated one at a time by the owner on 2026-09-25; `01-` is
+regenerated with the Preview whenever that changes (`PUBLISHING.md`: the two must not diverge silently).
+Two differ from the table below: the settings image is cropped above the empty half of the window, and the
+wish image shows the log line, not the speech bubble (the pawns are stacked and small in the full frame).
+Two more captures are wanted to reach the eight the page can hold; not chosen yet. The upload is by hand.
 
 | # | What it must show | Why this slot |
 | --- | --- | --- |
-| 1 | The morning letter, open, naming the pawn and their age | The whole pitch in one image: the game noticing on its own what it otherwise ignores |
-| 2 | Two colonists exchanging the birthday-wish speech bubble, with the social log line visible | The interaction that carries most of the mod's day-to-day presence |
-| 3 | The end-of-day memory in a pawn's Needs/Mood tab, one of the graded stages, with its description readable | Where the verdict actually lives, and proof it is graded rather than binary |
-| 4 | The settings page, with the mood-scale slider mid-drag and its live percentage label | Answers "can I tune this" before anyone asks |
-| 5 | A forgotten-birthday memory, to show the mod also plays the sad half honestly | Sets expectations: this is not only a feel-good mod |
+| 1 | The Preview image itself | The gallery now opens on the same image as the header, per the owner's 2026-09-29 rule |
+| 2 | The morning letter, open, naming the pawn and their age | The whole pitch in one image: the game noticing on its own what it otherwise ignores |
+| 3 | Two colonists exchanging the birthday-wish speech bubble, with the social log line visible | The interaction that carries most of the mod's day-to-day presence |
+| 4 | The end-of-day memory in a pawn's Needs/Mood tab, one of the graded stages, with its description readable | Where the verdict actually lives, and proof it is graded rather than binary |
+| 5 | The settings page, with the mood-scale slider mid-drag and its live percentage label | Answers "can I tune this" before anyone asks |
+| 6 | A forgotten-birthday memory, to show the mod also plays the sad half honestly | Sets expectations: this is not only a feel-good mod |
 
 Rules for every one of them: no developer tools, no debug overlay, no other mod's overlay, no
 Pickle launcher panel in a corner. A window with nothing in it sells nothing. **Each image has to

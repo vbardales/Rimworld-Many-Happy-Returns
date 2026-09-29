@@ -2,7 +2,7 @@
 
 `Preview-source.png` is the preserved original illustration.
 
-`ModIcon-text-free-source.png` (1254 x 1254) is the source of the delivered icon: `Mod/About/ModIcon.png` is it downscaled to 128 x 128, and `Art/ModIcon.ico` (256 px, outside `Mod/`) is the local folder icon. Downscaled on 2026-09-28 at the owner's instruction. The earlier ribbon-and-gift icon was dropped.
+`ModIcon-text-free-source.png` (1254 x 1254) is the source of the delivered icon: `Mod/About/ModIcon.png` is it downscaled to 128 x 128 (`_tools/build-art.cjs`, since 2026-09-29), and `Art/ModIcon.ico` (256 px, outside `Mod/`) is the local folder icon. Downscaled on 2026-09-28 at the owner's instruction. The earlier ribbon-and-gift icon was dropped. Since 2026-09-29 the same source is also composited onto the Preview, bottom-right at 112 x 112 (`Art/Preview.html`'s `.icon`), at the owner's request.
 
 Exact built-in edit prompt for the source:
 
@@ -22,6 +22,6 @@ text, plus contrast on the opaque badge. Current minima: 7.55:1 title, 8.46:1 su
 10.62:1 badge. Native-size and 268-pixel previews were inspected without clipping, overlaps or
 a concrete camera concern. Generated QA images and the numerical report live in `.build/art/`.
 
-Installed assets: `Mod/About/ModIcon.png` (128 x 128, 13,982 bytes)
+Installed assets: `Mod/About/ModIcon.png` (128 x 128, 15,099 bytes)
 `Mod/About/Preview.png` (896 x 504, 693,827 bytes). The 20–30 KB icon guidance is not a
 minimum file-size requirement; padding an already readable icon would serve no purpose.

@@ -66,11 +66,14 @@ remaining:
     note of PUBLICATION.md. Replay 6e70 read on 2026-09-25 (docs/runs/2026-09-25-gallery-replay-en.md): 2 of 2 green, so the showcase pass has no red
     scenario left. The THANKS (Pickle, RimLogging, PickleTools, RIMMSQOL, agreed by the owner) are in the description, its
     Markdown source and the README. Still to do: the shared thank-you register (owner said wait), and the
-    owner's own validations. Not done: no tag. Dry-run green on 2026-09-29, `publish-tag.yml` (manual workflow, the
-    chosen path since; template 82de20b8aa50), SHA dd8bb1f, version 1.0.0: run 36549813159 (defaults) and
-    36549969053 (`update_description=true`, description 4175 bytes, sha256 ab5a3d81..., same renderer and source as
-    the earlier semantic-release path so the page would render identically; the live page itself is unreadable while
-    the item stays private, so no direct comparison was possible — expected, not a defect). S16 is now fully green: the saved colony in English and
+    owner's own validations. Not done: no tag. `publish-tag.yml` is now the only workflow (semantic-release
+    removed in 6abe743 after a green dry-run proved the page would not change). Dry-run of dd8bb1f (before that
+    removal) was green (runs 36549813159, 36549969053, description 4175 bytes, sha256 ab5a3d81..., same
+    renderer/source as the semantic-release path); a further commit changes the SHA and needs its own dry-run.
+    **The SHA to publish is now 6abe7432a4009fd0ce1d8649f5086b078c29bcf9, version 1.0.0, dry-run green (run
+    36550364220, 2026-09-29): same description, 4175 bytes, sha256 ab5a3d81...; live page unreadable while the
+    item stays private, comparison skipped by design, not a defect.** No commit since; this SHA is ready for
+    `dispatch-publish.sh`, which only Virginie can approve on `steam-production`. S16 is now fully green: the saved colony in English and
     French (docs/runs/2026-09-25-s16-en.md, -s16-fr.md), and the new-colony half (feature 17) on 2026-09-28
     (docs/runs/2026-09-28-s16-new-colony-5-en.md), after four red attempts of 2026-09-26/27 — the first three for
     set-up reasons in the PickleTools NewColony steps (colonists still in their pods behind the Crashlanded intro

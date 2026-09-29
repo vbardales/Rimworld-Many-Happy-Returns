@@ -73,7 +73,12 @@ remaining:
     **The SHA to publish is now 6abe7432a4009fd0ce1d8649f5086b078c29bcf9, version 1.0.0, dry-run green (run
     36550364220, 2026-09-29): same description, 4175 bytes, sha256 ab5a3d81...; live page unreadable while the
     item stays private, comparison skipped by design, not a defect.** No commit since; this SHA is ready for
-    `dispatch-publish.sh`, which only Virginie can approve on `steam-production`. S16 is now fully green: the saved colony in English and
+    `dispatch-publish.sh`. **Published 2026-09-29**, approved by Virginie: run 36560128134, `uploaded to Workshop
+    item 3806762201`, Steam upload confirmed ("Committing update... Success."), tag `v1.0.0` and the GitHub
+    release created on 6abe7432a4009fd0ce1d8649f5086b078c29bcf9 (`gh release view` confirms `targetCommitish`).
+    Still to verify: the public Steam page itself (description, gallery, visibility switch — the item stays
+    private until Virginie switches it, and no `SetItemVisibility` call ever runs), and `PublishedFileId.txt`
+    already committed from the earlier 0.1.0 prepublication, so nothing new to commit there. S16 is now fully green: the saved colony in English and
     French (docs/runs/2026-09-25-s16-en.md, -s16-fr.md), and the new-colony half (feature 17) on 2026-09-28
     (docs/runs/2026-09-28-s16-new-colony-5-en.md), after four red attempts of 2026-09-26/27 — the first three for
     set-up reasons in the PickleTools NewColony steps (colonists still in their pods behind the Crashlanded intro

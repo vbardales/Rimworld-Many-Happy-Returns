@@ -29,7 +29,7 @@ If I do not answer within a reasonable time after being contacted, anyone may fr
 
 ## AI-GENERATED
 
-Written from scratch, with the help of an AI assistant (Claude, by Anthropic).
+Written from scratch, with the help of an AI assistant (Claude, by Anthropic). The Preview and the ModIcon were generated with DALL-E (OpenAI).
 
 ## THANKS
 

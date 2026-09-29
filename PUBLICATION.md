@@ -134,7 +134,7 @@ Claude (Anthropic) is credited in the description under `AI-GENERATED`, not by c
 
 Written at the moment of upload, in a tab nothing prompts until the form is open — the easiest
 thing to forget. Unlike the description they can be corrected afterwards and start again at every
-update. With the release workflow of `.github/workflows/release.yml` in documented mode, the change note
+update. With the manual publish workflow (`.github/workflows/publish-tag.yml`, since 2026-09-29), the change note
 is the fenced block under the `### 1.0.0` heading below, sent to Steam as written (BBCode, 8000 bytes at most,
 plain text here), and the GitHub release notes are the `## [1.0.0]` section of `CHANGELOG.md`.
 

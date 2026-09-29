@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.0] - 2026-09-25
+## [1.0.0] - 2026-09-29
 
 First public release. RimWorld 1.6.
 

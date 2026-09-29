@@ -23,8 +23,18 @@ The morning letter and the forgotten-birthday thought can each be switched off, 
 
 No Harmony patches. No save data on pawns; the mod's own state is a single day-long list that is safe to remove at any time.
 
-Written from scratch, with the help of an AI assistant (Claude, by Anthropic). Thanks to KrukuCoB, whose [Gifts and Birthdays](https://steamcommunity.com/sharedfiles/filedetails/?id=3625791734) covers the logistics this mod deliberately leaves alone, to Axolki for [Birthday Variety](https://steamcommunity.com/sharedfiles/filedetails/?id=3770972092), and to winggar for [Wing's Meaningful Parties](https://steamcommunity.com/sharedfiles/filedetails/?id=3504909699). [Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678), [RimLogging](https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696) and [PickleTools](https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401) were used for development-only testing, and [RIMMSQOL](https://steamcommunity.com/sharedfiles/filedetails/?id=1084452457) to exercise the optional main-bar shortcut. None of them is a dependency of Many Happy Returns.
+## IF I GO QUIET
 
 If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
+
+## AI-GENERATED
+
+Written from scratch, with the help of an AI assistant (Claude, by Anthropic).
+
+## THANKS
+
+Thanks to KrukuCoB, whose [Gifts and Birthdays](https://steamcommunity.com/sharedfiles/filedetails/?id=3625791734) covers the logistics this mod deliberately leaves alone, to Axolki for [Birthday Variety](https://steamcommunity.com/sharedfiles/filedetails/?id=3770972092), and to winggar for [Wing's Meaningful Parties](https://steamcommunity.com/sharedfiles/filedetails/?id=3504909699). [Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678), [RimLogging](https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696) and [PickleTools](https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401) were used for development-only testing, and [RIMMSQOL](https://steamcommunity.com/sharedfiles/filedetails/?id=1084452457) to exercise the optional main-bar shortcut. None of them is a dependency of Many Happy Returns.
+
+This mod is MIT licensed. Full attribution: [ATTRIBUTION.md](https://github.com/vbardales/Rimworld-Many-Happy-Returns/blob/main/ATTRIBUTION.md). Licence text: [LICENSE](https://github.com/vbardales/Rimworld-Many-Happy-Returns/blob/main/LICENSE).
 
 [Source code on GitHub](https://github.com/vbardales/Rimworld-Many-Happy-Returns)

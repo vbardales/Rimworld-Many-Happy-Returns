@@ -48,3 +48,15 @@ traits and on the recreation (joy) they got that day. **The reading of "Dudley" 
 her** (a colonist who judges a birthday by what they received, like the character), as is whether it is a setting,
 a separate mode or a replacement of the current scoring. If it becomes a setting, it is a new player-facing text: it
 resets `settings_audit`, `localization`, `translation_en` and `translation_fr` until re-audited.
+
+## Forgetting affects the relationship, not just the forgotten pawn's own memory
+
+Asked by the owner on 2026-09-29. Today the "nobody said a word" thought only lands on the celebrant
+themselves (`GameComponent_Birthdays.Evaluate`); the colonists who could have wished them well and did not
+pay no cost of their own. The idea: if someone close (a spouse, a parent, a child, a sibling, a close
+friend — `BirthdayUtility.CloseRelations` already has the list) forgets, it should cost something on their
+side of the relationship too, not only on the celebrant's mood. Open: what it costs (an opinion penalty on
+the forgetting pawn toward the celebrant, a thought of their own, both), how "forgot" is detected for a
+specific pawn rather than the colony as a whole (today's tally only counts who *did* wish, not who was
+present and did not), and whether it should require the same ten-day/two-witnesses guard the celebrant's
+own forgotten memory already has.

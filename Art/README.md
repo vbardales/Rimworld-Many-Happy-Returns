@@ -2,7 +2,11 @@
 
 `Preview-source.png` is the preserved original illustration.
 
-`ModIcon-text-free-source.png` (1254 x 1254) is the source of the delivered icon: `Mod/About/ModIcon.png` is it downscaled to 128 x 128 (`_tools/build-art.cjs`, since 2026-09-29), and `Art/ModIcon.ico` (256 px, outside `Mod/`) is the local folder icon. Downscaled on 2026-09-28 at the owner's instruction. The earlier ribbon-and-gift icon was dropped. Since 2026-09-29 the same source is also composited onto the Preview, bottom-right at 112 x 112 (`Art/Preview.html`'s `.icon`), at the owner's request.
+`ModIcon-text-free-source.png` (1254 x 1254) is the source of the delivered icon: `Mod/About/ModIcon.png` is it downscaled to 128 x 128 (`_tools/build-art.cjs`, since 2026-09-29), and `Art/ModIcon.ico` (256 px, outside `Mod/`) is the local folder icon. Downscaled on 2026-09-28 at the owner's instruction. The earlier ribbon-and-gift icon was dropped. Since 2026-09-29 the same source is also composited onto the Preview, at the owner's request:
+`Art/ModIcon-cutout.png` (`_tools/cutout-icon.cjs`, flood-filled from the border so only the background goes
+transparent, the mascot's own near-black outline untouched) is placed bottom-left, the scene's darkest corner,
+240 x 240, tilted -8deg, bleeding slightly off the left and bottom edges (`Art/Preview.html`'s `.icon`).
+`cutout-icon.cjs` is a one-off, re-run by hand only if the source icon changes; its output is committed.
 
 Exact built-in edit prompt for the source:
 

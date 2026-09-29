@@ -8,13 +8,17 @@ packageId:    nelim.manyhappyreturns
 repo:         Rimworld-Many-Happy-Returns
 visibility:   public
 detached:     yes
-stage:        done
+stage:        tested
 licence:      original
 licence_at:   written from scratch, MIT; only the general idea is shared
 upstream_mod_remotes: N/A
 dependencies: none
 showcase:     complete
-tested_on:
+tested_on:    2026-09-29, c74f940: gate 9 met — gallery images opened and validated (2026-09-25), S16 green
+              on the saved colony (EN/FR) and on a new colony (feature 17, 2026-09-28), no @wip, logs
+              checked FR/EN, no manual test left uncleared. RIMMSQOL, Gifts and Birthdays and without-Anomaly
+              conditional passes not yet run: deferred to post-publication non-regression under fail fast
+              (AUDIT.md), not a blocker for gate 9 under that policy.
 workshop:     3806762201
 remaining:
   - unverified: run the Pickle suite (Tests/Pickle/, fourteen features), every pass named in

@@ -8,7 +8,7 @@ packageId:    nelim.manyhappyreturns
 repo:         Rimworld-Many-Happy-Returns
 visibility:   public
 detached:     yes
-stage:        tested
+stage:        prepublished
 licence:      original
 licence_at:   written from scratch, MIT; only the general idea is shared
 upstream_mod_remotes: N/A
@@ -19,6 +19,13 @@ tested_on:    2026-09-29, c74f940: gate 9 met — gallery images opened and vali
               checked FR/EN, no manual test left uncleared. RIMMSQOL, Gifts and Birthdays and without-Anomaly
               conditional passes not yet run: deferred to post-publication non-regression under fail fast
               (AUDIT.md), not a blocker for gate 9 under that policy.
+              Gate 10 (tested -> prepublished) met on 2026-09-29: working tree clean (a stale, uncommitted
+              .github regeneration from an older template than what's on main was reverted with
+              `git checkout -- .github`, per PUBLISHING.md's shared-index rule), DLL matches sources, the
+              description was reviewed and its current shape kept (no literal AI-GENERATED line, owner's
+              instruction), PUBLICATION.md complete, screenshots opened and their order justified (2026-09-25),
+              thank-you messages drafted, dependencies/DLC settled, Steam release notes written, adult content
+              boxes answered with both images opened (2026-09-13).
 workshop:     3806762201
 remaining:
   - unverified: run the Pickle suite (Tests/Pickle/, fourteen features), every pass named in

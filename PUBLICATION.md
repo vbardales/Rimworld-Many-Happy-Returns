@@ -78,14 +78,15 @@ someone who does not want it, and all three are genuinely optional here.
 
 ## Adult content boxes
 
-**No to all of them.** Both images were opened and looked at on 2026-09-13:
+**No to all of them.** Both images were opened and looked at on 2026-09-13, and again by the owner
+on 2026-09-29 after the Preview changed:
 
 - `Mod/About/Preview.png` — an overhead dining-room scene, warm lamp light over a table set for a
   small gathering, cool ambient elsewhere, small rear-facing colonists with no readable faces.
-  Title, tagline and a `1.6` corner badge.
-- `Mod/About/ModIcon.png` — a stylised mascot head with a ribbon, gift box and confetti (the
-  original art style, kept by explicit preference over the general no-text guideline; see
-  `STATUS.md`, "Icon preference").
+  Title, tagline, a `1.6` corner badge and, since 2026-09-29, the cut-out mascot icon bottom-left,
+  tilted, bleeding off the edge (`Art/README.md`).
+- `Mod/About/ModIcon.png` — the mascot head alone, on plain near-black, no ribbon or gift box (the
+  ribbon-and-gift version was dropped 2026-09-28; see `STATUS.md`).
 
 Nothing sexual, nothing graphic, no nudity, no gore. The mod adds no art beyond the icon and
 preview, no text beyond its own interface strings, and touches no body, health or combat system.

@@ -76,9 +76,23 @@ remaining:
     `dispatch-publish.sh`. **Published 2026-09-29**, approved by Virginie: run 36560128134, `uploaded to Workshop
     item 3806762201`, Steam upload confirmed ("Committing update... Success."), tag `v1.0.0` and the GitHub
     release created on 6abe7432a4009fd0ce1d8649f5086b078c29bcf9 (`gh release view` confirms `targetCommitish`).
-    Still to verify: the public Steam page itself (description, gallery, visibility switch — the item stays
+    Still to verify: the public Steam page itself (gallery, visibility switch — the item stays
     private until Virginie switches it, and no `SetItemVisibility` call ever runs), and `PublishedFileId.txt`
-    already committed from the earlier 0.1.0 prepublication, so nothing new to commit there. S16 is now fully green: the saved colony in English and
+    already committed from the earlier 0.1.0 prepublication, so nothing new to commit there.
+
+    **Post-publish description and art fixes (2026-09-29), owner's own edits and instructions.** The description
+    published on 2026-09-29 was missing the literal section headers `AUDIT.md` asks for: fixed in `Mod/README.template.md`
+    (`## IF I GO QUIET`, `## AI-GENERATED`, `## THANKS`, in that order, then the ATTRIBUTION/licence line, matching
+    DrumBathHygiene and JoyRescue's own descriptions), reversing an earlier "keep the current format" call. `AI-GENERATED`
+    now also names DALL-E (Preview and ModIcon), confirmed directly by the owner; not found named anywhere in the commit
+    tree, which only ever recorded the art's result, never the tool. The owner edited the live Steam description by hand
+    to match; the source is kept in step for the next `update_description` publish, not re-sent automatically.
+    The Preview gained the cut-out mascot icon (`_tools/cutout-icon.cjs`, flood-filled from the border, the outline
+    untouched), 240x240, bottom-left (the scene's darkest corner), tilted +15deg, bleeding off the left and bottom
+    edges — validated by the owner 2026-09-29. `Art/Workshop/01-preview.png` kept as its byte-identical copy (the new
+    shared rule, `PUBLISHING.md`: every gallery opens on the Preview; captures renumbered `02-` to `06-`, two more
+    wanted to reach eight). Fixed in passing: `_tools/build-art.cjs` still copied the retired `Art/ModIcon-selected.png`
+    (removed 083f4f9); it now downscales `ModIcon-text-free-source.png` with sharp. S16 is now fully green: the saved colony in English and
     French (docs/runs/2026-09-25-s16-en.md, -s16-fr.md), and the new-colony half (feature 17) on 2026-09-28
     (docs/runs/2026-09-28-s16-new-colony-5-en.md), after four red attempts of 2026-09-26/27 — the first three for
     set-up reasons in the PickleTools NewColony steps (colonists still in their pods behind the Crashlanded intro

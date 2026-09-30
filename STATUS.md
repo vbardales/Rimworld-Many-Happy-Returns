@@ -180,6 +180,13 @@ nouns/pronouns, not adjectives or participles agreeing with a specific pawn's ge
 rewording toward inclusive phrasing is possible if she wants that tone applied generally. Not done
 here without her decision.
 
+**Re-checked against the updated TRANSLATIONS.md (2026-09-30, o-series neutral grammar and
+"Player choice for gendered French").** Both `not_applicable` for this mod: no French text here
+agrees with a pawn's own gender (established above, and confirmed by Virginie's review turning up
+no gender-switch defect), so there is no `{PAWN_gender ? ...}` text whose neutral segment would
+need the o-series morphology, and section "Player choice for gendered French" itself says not to
+create a settings page for a mod with no such text — none is added.
+
 `translation_fr` stays `partial`: only Virginie's own reading of `FRENCH_REVIEW.md` can set it to
 `complete`, per TRANSLATIONS.md's "Systematic French review" section.
 

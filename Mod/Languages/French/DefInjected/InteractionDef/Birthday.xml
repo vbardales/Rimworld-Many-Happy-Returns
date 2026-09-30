@@ -17,9 +17,9 @@
   -->
   <Nelim_BirthdayWish.logRulesInitiator.rulesStrings>
     <li>r_logentry->[INITIATOR_nameDef] a souhaité un bon anniversaire à [RECIPIENT_nameDef].</li>
-    <li>r_logentry->[INITIATOR_nameDef] a rappelé à [RECIPIENT_nameDef] que c'était son anniversaire.</li>
+    <li>r_logentry->[INITIATOR_nameDef] s'est souvenu que c'était l'anniversaire de [RECIPIENT_nameDef].</li>
     <li>r_logentry->[INITIATOR_nameDef] a dit à [RECIPIENT_nameDef] de passer une bonne journée.</li>
-    <li>r_logentry->[INITIATOR_nameDef] a souhaité à [RECIPIENT_nameDef] encore beaucoup d'années comme celle-ci.</li>
+    <li>r_logentry->[INITIATOR_nameDef] a souhaité à [RECIPIENT_nameDef] encore de nombreux heureux anniversaires.</li>
     <li>r_logentry(p=0.5)->[INITIATOR_nameDef] a demandé à [RECIPIENT_nameDef] ce que ça fait d'avoir un an de plus.</li>
   </Nelim_BirthdayWish.logRulesInitiator.rulesStrings>
 

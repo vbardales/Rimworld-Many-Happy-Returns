@@ -36,9 +36,7 @@ function Get-Entries($path) {
 $script:stageSlugIndex = @{}  # "DefName" -> ordered dict of slug -> stage index, built as slugs are first seen
 # Texts the session doubts on a read (terminology, tone, phrasing), keyed by their row key, with
 # one line saying why. Filled by hand after reading the shipped French; not detected by pattern.
-$script:manualDoubt = @{
-    'Nelim_BirthdayRemembered.stages.quiet_birthday.description' = "'Discret, mais bien' is terser than the other four stage descriptions (which use full clauses); tone worth a second read"
-}
+$script:manualDoubt = @{}
 
 function Resolve-DefField($defsRoot, [string]$key) {
     # key looks like "DefName.field" or "DefName.stages.N.field" or "DefName.logRulesInitiator.rulesStrings",

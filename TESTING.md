@@ -39,3 +39,14 @@ S11 (07), S12 (08 to 11), S13 (12), S14's first half (01, run in two passes). Le
 the engine's own refusal of a memory for an inhumanized pawn (the game's `nullifyingHediffs` handling,
 not this mod's), S15 and S16 (a person reading the interface and the logs), and Birthday Variety's date
 randomization, which is not claimed as runtime-tested.
+
+## Evidence to keep (`Tests/Pickle/Evidence/`, on disk, ignored by git)
+
+Rule from `AGENTS.md`: per scenario, the latest report for the revision in the repository, plus an older one only if
+it is the sole proof of a check the latest did not repeat. `junit.xml`, `summary.json`, `summary.md`, `Player.log`
+are enough; captures only while a person still has to read them. Delete a report once a newer one replaces it, and
+never one a `STATUS.md` field points to. State on 2026-10-02 (2.2 MB): minimal EN `2026-09-24-minimale-en` and FR
+`2026-09-23-minimale-fr` (sole proof of the scenarios not replayed), targeted `2026-09-24-cibles-en` / `-cible-fr`,
+gallery `2026-09-25-galerie-en` + `-galerie-rejeu-en`, S16 `2026-09-25-s16-rejeu-en` + `-s16-fr`, new colony
+`2026-09-28-s16-nouvelle-colonie-5-en`. The conditional passes (RIMMSQOL, Gifts and Birthdays, Anomaly-less) have no
+report yet.

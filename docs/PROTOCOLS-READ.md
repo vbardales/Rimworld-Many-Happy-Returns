@@ -46,3 +46,15 @@ repositories of their own, cloned beside it.
 | `docs/runs/` | f1807d4 2026-09-25 | yes | One summary per run |
 | `Tests/Pickle/` | 2e28bc3 2026-09-25 | yes | Mine |
 | `BACKLOG.md`, `NOTES.md`, `BUGS.md` | absent | n/a | This repository has none; nothing to read |
+
+## Session of 2026-10-02 (audit)
+
+Read in full: `AUDIT.md` (90d51374 2026-09-25 on its last commit; the working copy also carries the 2026-10-02 rules:
+conditional scenarios, no manual test left, private-only publication, WSL cleanup) and `AGENTS.md` (90d51374, in
+the session context). Read for this mod's STATUS/TESTING/runs: all files listed in the audit request that exist here.
+Not reread, versions moved since the table above, so reread only if a task needs them:
+`PUBLISHING.md` (now c770fd1e 2026-10-02, modified), `STYLE_RIMWORLD.md` (f7e23d33 2026-10-01), `WORKSHOP_COMMENTS.md`
+(08878789 2026-09-29), `PickleTools` (b7620cb 2026-09-29), `Rimworld-Release-Admin` (d5282af 2026-10-01),
+`Rimworld-Ticket-Dispatcher` (dcbecf7 2026-10-01). Unchanged and not reread: `MOD_SETTINGS.md`, `TRANSLATIONS.md`,
+`scripts/SEARCHING.md` (90d51374). Of no use to this audit (no run, no publication, no art): the five tool/CI docs above
+and `STYLE_RIMWORLD.md`. `BACKLOG.md` exists here (4.3K), `NOTES.md` and `BUGS.md` do not.

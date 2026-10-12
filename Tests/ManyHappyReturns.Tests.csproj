@@ -5,7 +5,7 @@
     <LangVersion>latest</LangVersion>
     <GameManaged Condition="'$(GameManaged)' == ''">C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed</GameManaged>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>..\.build\tests\bin\</OutputPath>
+    <OutputPath>..\build\tests\bin\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <!-- SDK-style default globbing pulls in every .cs under this project's own folder. Pickle/

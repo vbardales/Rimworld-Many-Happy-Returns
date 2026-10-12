@@ -1,6 +1,6 @@
 {
-  "executed_at": "2026-10-12T05:18:34.2767334+02:00",
-  "base_revision": "96b249aca27ebacfa9933ae7ed7f54b75f0b3bbf",
+  "executed_at": "2026-10-12T05:25:04.9366949+02:00",
+  "base_revision": "3a8b9237cf785fc9831ee85838dfeef904a52f16",
   "scope": "Working tree; behavior and XML checks, not in-game validation",
   "game_assembly": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\RimWorldWin64_Data\\Managed",
   "game_assembly_sha256": "5CF1B5BE399D5B1C9C56CA72C9D35B4ECF307FEACF5859D04AC5A1AA5926356A",
@@ -92,7 +92,7 @@
     },
     {
       "path": "Source/Directory.Build.props",
-      "sha256": "B773B810CA292E1725EA8A2CFBDD3708A2A31C2C199F6694291E475B1E2AD6C8"
+      "sha256": "1A55B83D16DC77534CCE49A7E47FC4FA65D4B8D52FE433C0B7640C98C427E1EE"
     },
     {
       "path": "Source/GameComponent_Birthdays.cs",
@@ -128,11 +128,11 @@
     },
     {
       "path": "Tests/Directory.Build.props",
-      "sha256": "86E482902AF333366D59C3A3E13F5D156E0CBB525B44D73A8D21E5CDDE0FEE41"
+      "sha256": "BBCB576AD63E23D9BC228448CD63B6BF808627CEE06F9A7B0B627463C9B059AD"
     },
     {
       "path": "Tests/ManyHappyReturns.Tests.csproj",
-      "sha256": "3D9A98B0555F85698853C21ABCADC23C05CB5E1FF4EC7EEA7041E4F610F138FD"
+      "sha256": "CBC629AAF97A83021252089A420E3CED8E15EAFC1E3C734A5769F53ACA9EAA0D"
     },
     {
       "path": "Tests/Program.cs",
@@ -140,7 +140,7 @@
     },
     {
       "path": "Tests/Run.ps1",
-      "sha256": "146F5942C71DBBB62F2F653FD11A9713473F8B42390EEC6D12EC56113541FE69"
+      "sha256": "A46F64A5D213BC24BD34F0AA7B11C65383849AC0A4FAA5FAD0B3132C78AF5DBB"
     }
   ]
 }

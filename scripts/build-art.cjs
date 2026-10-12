@@ -11,7 +11,7 @@ const luminance = rgb => rgb.map(v => v/255).map(v => v <= .04045 ? v/12.92 : ((
 const color = hex => hex.slice(1).match(/../g).map(v => parseInt(v,16));
 const contrast = (a,b) => (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
 (async () => {
-  const out = at('.build/art');
+  const out = at('build/art');
   await fs.mkdir(out, {recursive:true});
   const palette = JSON.parse(await fs.readFile(at('Art/preview-palette.json'),'utf8'));
   const about = await fs.readFile(at('Mod/About/About.xml'),'utf8');

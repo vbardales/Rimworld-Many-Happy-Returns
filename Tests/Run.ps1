@@ -7,10 +7,10 @@ Push-Location $root
 try {
     & dotnet build Tests/ManyHappyReturns.Tests.csproj "-p:GameManaged=$GameManaged" -v:minimal *> (Join-Path $results 'build.txt')
     if ($LASTEXITCODE -ne 0) { throw 'Build failed; see Tests/Results/build.txt' }
-    & ./.build/tests/bin/ManyHappyReturns.Tests.exe $GameManaged *> (Join-Path $results 'automated.txt')
+    & ./build/tests/bin/ManyHappyReturns.Tests.exe $GameManaged *> (Join-Path $results 'automated.txt')
     if ($LASTEXITCODE -ne 0) { throw 'Behavior tests failed; see Tests/Results/automated.txt' }
     & ./Tests/Check-Xml.ps1 *> (Join-Path $results 'xml.txt')
-    $testedHash = (Get-FileHash .build/tests/bin/ManyHappyReturns.dll).Hash
+    $testedHash = (Get-FileHash build/tests/bin/ManyHappyReturns.dll).Hash
     $deliveredHash = (Get-FileHash Mod/Assemblies/ManyHappyReturns.dll).Hash
     if ($testedHash -ne $deliveredHash) { throw 'Tested and distributed DLLs differ' }
     $files = @(Get-ChildItem Source,Mod -Recurse -File) + @(Get-ChildItem Tests -File | Where-Object Extension -In '.cs','.csproj','.props','.ps1')

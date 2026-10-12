@@ -1,10 +1,11 @@
   Identification des projets ├á restaurer...
-  Tous les projets sont ├á jour pour la restauration.
+  Restauration effectu├®e de C:\Users\nelim\Documents\rimworld\ManyHappyReturns\Source\ManyHappyReturns.csproj (en 3,24 sec).
+  Restauration effectu├®e de C:\Users\nelim\Documents\rimworld\ManyHappyReturns\Tests\ManyHappyReturns.Tests.csproj (en 3,24 sec).
   ManyHappyReturns -> C:\Users\nelim\Documents\rimworld\ManyHappyReturns\Mod\Assemblies\ManyHappyReturns.dll
-  ManyHappyReturns.Tests -> C:\Users\nelim\Documents\rimworld\ManyHappyReturns\.build\tests\bin\ManyHappyReturns.Tests.exe
+  ManyHappyReturns.Tests -> C:\Users\nelim\Documents\rimworld\ManyHappyReturns\build\tests\bin\ManyHappyReturns.Tests.exe
 
 La g├®n├®ration a r├®ussi.
     0 Avertissement(s)
     0 Erreur(s)
 
-Temps ├®coul├® 00:00:09.21
+Temps ├®coul├® 00:00:18.90

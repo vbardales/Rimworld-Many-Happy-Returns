@@ -1,5 +1,5 @@
 Runtime assembly: C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll
-Mod assembly: C:\Users\nelim\Documents\rimworld\ManyHappyReturns\.build\tests\bin\ManyHappyReturns.dll
+Mod assembly: C:\Users\nelim\Documents\rimworld\ManyHappyReturns\build\tests\bin\ManyHappyReturns.dll
 PASS: Clean settings defaults
 PASS: Reset restores all settings
 PASS: Finite mood boundaries

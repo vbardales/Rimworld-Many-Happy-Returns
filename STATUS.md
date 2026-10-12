@@ -237,7 +237,7 @@ Revision `96b249a`. Chain re-read against AUDIT.md, gates 1 to 7. `workflow_stag
   and twice in French ("... se souviendra de la journée qu'{PAWN_pronoun} aura passée"). Not changed: the French text was
   read by Virginie, and a text change forces a new review (8.b). Also a WARN: French path `InteractionDef/Nelim_BirthdayWish.logRulesInitiator.rulesStrings`
   outside the text inventory.
-- **Pending housekeeping.** `.build/` to `build/` (rename after the four queued Pickle tickets return);
+- **Pending housekeeping.** `.build/` renamed `build/` on 2026-10-12 (paths updated);
   `Tests/Check-Xml.ps1` generic sections to replace by the shared `Check-ModBasics.ps1` / `Check-Translations.ps1` (LOCAL_SCRIPTS.md);
   `scripts/cutout-icon.cjs` obsolete (needs `modIconSource`, owner's art work); `Mod/About/About.xml` em dashes (WARN).
 - **Pickle (early, not a gate).** Four tickets filed 2026-10-12: RIMMSQOL 08, RIMMSQOL 09-11, Gifts and Birthdays 12+01, without-Anomaly 01.

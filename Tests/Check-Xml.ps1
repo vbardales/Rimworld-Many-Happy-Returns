@@ -31,8 +31,10 @@ $source = (Get-ChildItem -LiteralPath (Join-Path $Root 'Source') -Filter *.cs | 
 $used = @([regex]::Matches($source, '"(ManyHappyReturns\.[^"]+)"\s*\.Translate\(') | ForEach-Object { $_.Groups[1].Value } | Sort-Object -Unique)
 foreach ($key in $used) {
     foreach ($language in 'English','French') { Assert ($keyed[$language].ContainsKey($key)) "Missing $language source key $key" }
-    $enTokens = @([regex]::Matches($keyed.English[$key], '\{[^}]+\}').Value | Sort-Object -Unique)
-    $frTokens = @([regex]::Matches($keyed.French[$key], '\{[^}]+\}').Value | Sort-Object -Unique)
+    # An English pronoun token becomes a {PAWN_gender ? m : f : n} switch in French (TRANSLATIONS.md): compare what is left.
+    $enTokens = @([regex]::Matches($keyed.English[$key], '\{[^}]+\}').Value | Where-Object { $_ -notmatch '^\{PAWN_(pronoun|objective|possessive)\}$' } | Sort-Object -Unique)
+    $frText = [regex]::Replace($keyed.French[$key], '\{[^{}]*\?[^{}]*\}', '')
+    $frTokens = @([regex]::Matches($frText, '\{[^}]+\}').Value | Sort-Object -Unique)
     Assert (!(Compare-Object $enTokens $frTokens)) "Parameter mismatch for $key"
 }
 foreach ($language in 'English','French') {
@@ -44,10 +46,9 @@ Write-Output "PASS: $($used.Count) source keys covered in EN/FR, nonempty, uniqu
 # Require every owned source string and resolve every French injection back to source XML.
 $expected = @{}
 foreach ($def in $defs.Values) {
-    foreach ($node in $def.SelectNodes('label|description|logRulesInitiator/rulesStrings')) {
-        $field = if ($node.Name -eq 'rulesStrings') { 'logRulesInitiator.rulesStrings' } else { $node.Name }
-        $expected["$($def.defName).$field"] = $node
-    }
+    foreach ($node in $def.SelectNodes('label|description')) { $expected["$($def.defName).$($node.Name)"] = $node }
+    $items = @($def.SelectNodes('logRulesInitiator/rulesStrings/li'))
+    for ($i = 0; $i -lt $items.Count; $i++) { $expected["$($def.defName).logRulesInitiator.rulesStrings.$i"] = $items[$i] }
     foreach ($stage in $def.SelectNodes('stages/li')) {
         $handle = ([string]$stage.label) -replace '[^a-zA-Z0-9_]', '_'
         foreach ($node in $stage.SelectNodes('label|description')) { $expected["$($def.defName).stages.$handle.$($node.Name)"] = $node }
@@ -61,8 +62,7 @@ foreach ($file in Get-ChildItem -LiteralPath (Join-Path $mod 'Languages/French/D
         Assert (![string]::IsNullOrWhiteSpace($node.InnerText)) "Empty injection $($node.Name)"
         $defName = $node.Name.Split('.')[0]
         Assert ($file.Directory.Name -eq $defs[$defName].Name) "Wrong DefInjected type for $($node.Name)"
-        if ($node.Name.EndsWith('.rulesStrings')) {
-            Assert ($node.SelectNodes('li').Count -eq $expected[$node.Name].SelectNodes('li').Count) 'Grammar alternative count differs'
+        if ($node.Name -match '\.rulesStrings\.\d+$') {
             $enTokens = @([regex]::Matches($expected[$node.Name].InnerText, '\[[^\]]+\]').Value | Sort-Object -Unique)
             $frTokens = @([regex]::Matches($node.InnerText, '\[[^\]]+\]').Value | Sort-Object -Unique)
             Assert (!(Compare-Object $enTokens $frTokens)) 'Grammar tokens differ'

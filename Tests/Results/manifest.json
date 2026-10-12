@@ -1,6 +1,6 @@
 {
-  "executed_at": "2026-10-12T05:25:04.9366949+02:00",
-  "base_revision": "3a8b9237cf785fc9831ee85838dfeef904a52f16",
+  "executed_at": "2026-10-12T05:29:06.9325952+02:00",
+  "base_revision": "d6c6a14600f98d00e362adff84896983328600d3",
   "scope": "Working tree; behavior and XML checks, not in-game validation",
   "game_assembly": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\RimWorldWin64_Data\\Managed",
   "game_assembly_sha256": "5CF1B5BE399D5B1C9C56CA72C9D35B4ECF307FEACF5859D04AC5A1AA5926356A",
@@ -36,7 +36,7 @@
     },
     {
       "path": "Mod/Defs/Birthday.xml",
-      "sha256": "C680E66D44BF544EE7AC724C952A584C7C3655EF1ECCACAC64E785F97181B68F"
+      "sha256": "E6D442192C3B543F5A70042128FD6200D8CFA0BA3417CBBE75A9FB1A02FF0D92"
     },
     {
       "path": "Mod/Defs/MainButton.xml",
@@ -48,7 +48,7 @@
     },
     {
       "path": "Mod/Languages/French/DefInjected/InteractionDef/Birthday.xml",
-      "sha256": "E02CEDA210373A0CAA306474F346BDA6B2A6B52235E08AEF25D4FB31A690CF53"
+      "sha256": "D041DF9606181BB668A1ED60F539C1EB6D2A82EBC507BCB52C8B6174DC149F2C"
     },
     {
       "path": "Mod/Languages/French/DefInjected/MainButtonDef/Settings.xml",
@@ -56,11 +56,11 @@
     },
     {
       "path": "Mod/Languages/French/DefInjected/ThoughtDef/Birthday.xml",
-      "sha256": "0C88B0543E915F66E0B6607E1C28271EEAF293A9814BF9D7949EAF41F75561BB"
+      "sha256": "EAC63AEB7EAC0C12F7DFF2D8F4755DE2E04AF990933711DEEF2CD1AED2108C27"
     },
     {
       "path": "Mod/Languages/French/Keyed/ManyHappyReturns.xml",
-      "sha256": "8B6CF1F0C794FA5542CBCA41D1573A449F5B9D46E07B4D6021CECCAA2BB32A78"
+      "sha256": "C58847EB17DFBA439A1A5A506F73692FD08E42335D2592F5D1BCDDA3956ADB21"
     },
     {
       "path": "Mod/LICENSE",
@@ -124,7 +124,7 @@
     },
     {
       "path": "Tests/Check-Xml.ps1",
-      "sha256": "E7DD24A51B8B4CDC19F177AA50251FCA6D064F891295D103609F89EB0314D034"
+      "sha256": "2DD93FB52B36C06CB8D18CD3769D5798EACB7AB5EA9E03D4B09A0C5A6A4FA1BF"
     },
     {
       "path": "Tests/Directory.Build.props",

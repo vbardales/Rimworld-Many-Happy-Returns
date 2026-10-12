@@ -4,23 +4,22 @@
   <!-- EN: birthday wishes -->
   <Nelim_BirthdayWish.label>vœux d'anniversaire</Nelim_BirthdayWish.label>
 
-  <!-- EN:
-    <li>r_logentry->[INITIATOR_nameDef] wished [RECIPIENT_nameDef] a happy birthday.</li>
-    <li>r_logentry->[INITIATOR_nameDef] remembered it was [RECIPIENT_nameDef]'s birthday.</li>
-    <li>r_logentry->[INITIATOR_nameDef] told [RECIPIENT_nameDef] to have a good one.</li>
-    <li>r_logentry->[INITIATOR_nameDef] wished [RECIPIENT_nameDef] many happy returns.</li>
-    <li>r_logentry(p=0.5)->[INITIATOR_nameDef] asked [RECIPIENT_nameDef] how it feels to be a year older.</li>
+  <!-- EN, one rule per line below:
+    0: r_logentry->[INITIATOR_nameDef] wished [RECIPIENT_nameDef] a happy birthday.
+    1: r_logentry->[INITIATOR_nameDef] remembered it was [RECIPIENT_nameDef]'s birthday.
+    2: r_logentry->[INITIATOR_nameDef] told [RECIPIENT_nameDef] to have a good one.
+    3: r_logentry->[INITIATOR_nameDef] wished [RECIPIENT_nameDef] many happy returns.
+    4: r_logentry(p=0.5)->[INITIATOR_nameDef] asked [RECIPIENT_nameDef] how it feels to be a year older.
 
-    Every sentence uses the compound past with "avoir" and no reflexive pronoun, so the French
-    participle never agrees with the subject and the rule pack needs no gender inflection at
-    all.
+    Rule 1 is the only one that agrees with the initiator ("s'est souvenu"): it carries the three
+    segments, masculine, feminine, neutral. The game's own French grammar rules read the initiator's
+    gender the same way ({INITIATOR_gender ? ... : ... : ...}). The other four use the compound past
+    with "avoir" and no reflexive pronoun, so their participle does not agree with the subject.
   -->
-  <Nelim_BirthdayWish.logRulesInitiator.rulesStrings>
-    <li>r_logentry->[INITIATOR_nameDef] a souhaité un bon anniversaire à [RECIPIENT_nameDef].</li>
-    <li>r_logentry->[INITIATOR_nameDef] s'est souvenu que c'était l'anniversaire de [RECIPIENT_nameDef].</li>
-    <li>r_logentry->[INITIATOR_nameDef] a dit à [RECIPIENT_nameDef] de passer une bonne journée.</li>
-    <li>r_logentry->[INITIATOR_nameDef] a souhaité à [RECIPIENT_nameDef] encore de nombreux heureux anniversaires.</li>
-    <li>r_logentry(p=0.5)->[INITIATOR_nameDef] a demandé à [RECIPIENT_nameDef] ce que ça fait d'avoir un an de plus.</li>
-  </Nelim_BirthdayWish.logRulesInitiator.rulesStrings>
+  <Nelim_BirthdayWish.logRulesInitiator.rulesStrings.0>r_logentry->[INITIATOR_nameDef] a souhaité un bon anniversaire à [RECIPIENT_nameDef].</Nelim_BirthdayWish.logRulesInitiator.rulesStrings.0>
+  <Nelim_BirthdayWish.logRulesInitiator.rulesStrings.1>r_logentry->[INITIATOR_nameDef] {INITIATOR_gender ? s'est souvenu : s'est souvenue : s'est souvenux} que c'était l'anniversaire de [RECIPIENT_nameDef].</Nelim_BirthdayWish.logRulesInitiator.rulesStrings.1>
+  <Nelim_BirthdayWish.logRulesInitiator.rulesStrings.2>r_logentry->[INITIATOR_nameDef] a dit à [RECIPIENT_nameDef] de passer une bonne journée.</Nelim_BirthdayWish.logRulesInitiator.rulesStrings.2>
+  <Nelim_BirthdayWish.logRulesInitiator.rulesStrings.3>r_logentry->[INITIATOR_nameDef] a souhaité à [RECIPIENT_nameDef] encore de nombreux heureux anniversaires.</Nelim_BirthdayWish.logRulesInitiator.rulesStrings.3>
+  <Nelim_BirthdayWish.logRulesInitiator.rulesStrings.4>r_logentry(p=0.5)->[INITIATOR_nameDef] a demandé à [RECIPIENT_nameDef] ce que ça fait d'avoir un an de plus.</Nelim_BirthdayWish.logRulesInitiator.rulesStrings.4>
 
 </LanguageData>

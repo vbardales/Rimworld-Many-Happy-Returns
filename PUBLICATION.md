@@ -1,11 +1,9 @@
 # Publishing Many Happy Returns
 
 What the Workshop page asks for and the repository holds nowhere else. Written before the first
-upload, and kept for whoever picks this mod up later.
+upload (kept as history where it describes it), and updated for whoever picks this mod up later.
 
-**The first item exists, created private on 2026-09-23 as 0.1.0 (id 3806762201).** The messages below are not posted: an item has to be public first. The mod is at `done` in the workflow: the in-game gate of
-`done -> tested` has not been passed, so the first upload is not due yet. This file exists so
-that when it is, none of it is discovered at the form.
+**Current state (2026-10-12).** The item exists (id 3806762201, created private on 2026-09-23 as 0.1.0). 1.0.0 was uploaded on 2026-09-29 by `publish-tag.yml` (run 36560128134, tag `v1.0.0`, release on `6abe7432`). Its public visibility is **not established here**: the item stays private until the owner switches it, and no session has read the public page. The mod is at `writeTests[1.0.0]` in the workflow (`STATUS.md`). The messages below are not posted: the item has to be public first.
 
 ## The one-way parts
 
@@ -13,10 +11,12 @@ Three things do not get a second chance, and two of them are silent when they go
 
 - **The description.** `Verse.Steam.Workshop.SetWorkshopItemDataFrom` calls `SetItemDescription`
   only when `creating` is true. Every later update leaves the page's text alone, so a correction
-  after the first upload is made by hand on Steam and never from `About.xml`. Read it once more
-  in the file before clicking — it already carries the Workshop-link convention on every citation
-  of Gifts and Birthdays, Birthday Variety and Wing's Meaningful Parties, and ends with the source
-  link.
+  after the first upload used to be made by hand on Steam. That is no longer the instruction: the repository now
+  has `publish-tag.yml` and `.github/publish.config.json` (`aboutFromDescription: true`, description source
+  `Mod/README.template.md`, markdown). A run with `update_description` on, after the approval of steam-production,
+  sends it, and its dry-run prints the diff against the live page first. The text already carries the
+  Workshop-link convention on every citation of Gifts and Birthdays, Birthday Variety and Wing's Meaningful
+  Parties, and ends with the source link.
 - **The packageId.** `nelim.manyhappyreturns`. It is written into every subscriber's
   `ModsConfig.xml` and into other mods' `loadAfter`. Changing it after publication disables the
   mod for everyone.
@@ -27,7 +27,7 @@ Three things do not get a second chance, and two of them are silent when they go
 And one that surprises people: **Steam creates every item private.** RimWorld never calls
 `SetItemVisibility`, so the item has to be switched to public by hand once it has been checked.
 
-## Screenshots, in upload order
+## Screenshots, in upload order (written before the first upload)
 
 Steam shows the first one large. **Every gallery starts with a copy of the Preview, at position `00`**
 (owner's rule, 2026-09-29, numbering from zero): `00-` is a byte-for-byte copy of `Mod/About/Preview.png`,
@@ -110,7 +110,7 @@ on its own line. Steam's comment limit is 1000 characters; each of these is well
 > it's the mod that made a colonist's birthday feel like an occasion in the first place, and I
 > wanted the quiet, everyday half of it to exist alongside your party.
 >
-> https://steamcommunity.com/sharedfiles/filedetails/?id=PUBLISHED_FILE_ID
+> https://steamcommunity.com/sharedfiles/filedetails/?id=3806762201
 
 ### Birthday Variety (`Axolki.BirthdayVariety`, id 3770972092)
 
@@ -121,7 +121,7 @@ on its own line. Steam's comment limit is 1000 characters; each of these is well
 > in the first place. Without it every starting colonist shares the same day, and the whole point
 > of my mod is that the day should feel like theirs.
 >
-> https://steamcommunity.com/sharedfiles/filedetails/?id=PUBLISHED_FILE_ID
+> https://steamcommunity.com/sharedfiles/filedetails/?id=3806762201
 
 ### Wing's Meaningful Parties (`winggar.meaningfulparties`, id 3504909699)
 
@@ -132,7 +132,7 @@ on its own line. Steam's comment limit is 1000 characters; each of these is well
 > party as far as my mod (and the base game) is concerned. I love the idea of a party finally
 > explaining itself — thank you for it.
 >
-> https://steamcommunity.com/sharedfiles/filedetails/?id=PUBLISHED_FILE_ID
+> https://steamcommunity.com/sharedfiles/filedetails/?id=3806762201
 
 Claude (Anthropic) is credited in the description under `AI-GENERATED`, not by comment.
 
@@ -155,7 +155,7 @@ Colonists notice their own birthday, and whether anyone said anything about it. 
 
 Works with Gifts and Birthdays, Birthday Variety and Wing's Meaningful Parties. None required. Mod settings for the letter, the forgotten-birthday memory, and a mood scale, under Mod options. English and French. No Harmony.
 ```
-## Right after the upload, in this order
+## Right after the first upload, in this order (historical: the item exists, the 1.0.0 is uploaded; kept as the checklist of a first upload)
 
 1. Commit and push `Mod/About/PublishedFileId.txt`. Before anything else.
 2. Subscribe to your own item and load it, as a subscriber sees it.

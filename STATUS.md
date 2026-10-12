@@ -32,6 +32,7 @@ tested_on:    2026-10-02 audit: gate 9 (done -> tested) is NOT met under the AUD
               boxes answered with both images opened (2026-09-13).
 workshop:     3806762201
 remaining:
+  - unverified: in-game rendering of `{INITIATOR_gender ? ...}` in the social log ("s'est souvenu" for Male, Female, None). Feature 18 written, tickets 20261012-053445-830-9973 (French) and -053446-617-4c30 (English) filed 2026-10-12; not played yet. Carried until a green report is read at `playTests`.
   - unverified: French review by Virginie. The 2026-09-30 gender-agreement rule reset
     `translation_fr` to `unchecked`; the session's first read found no French text in this mod
     that agrees with a pawn's gender; that was wrong, see the 2026-10-12 corrections in the audit section (the letter's

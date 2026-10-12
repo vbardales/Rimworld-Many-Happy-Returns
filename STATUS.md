@@ -8,7 +8,7 @@ packageId:    nelim.manyhappyreturns
 repo:         Rimworld-Many-Happy-Returns
 visibility:   public
 detached:     yes
-workflow_stage: playTests[1.0.0]
+workflow_stage: writeTests[1.0.0]
 licence:      original
 licence_at:   written from scratch, MIT; only the general idea is shared
 upstream_mod_remotes: N/A
@@ -223,5 +223,23 @@ create a settings page for a mod with no such text — none is added.
 `translation_fr` stays `partial`: only Virginie's own reading of `FRENCH_REVIEW.md` can set it to
 `complete`, per TRANSLATIONS.md's "Systematic French review" section.
 
+
+## Audit — 2026-10-12 (up to `playTests`)
+
+Revision `96b249a`. Chain re-read against AUDIT.md, gates 1 to 7. `workflow_stage` set to `writeTests[1.0.0]`: gate 7.g
+(leaving `writeTests`) is not met, so `playTests` is not established.
+
+- **Met, re-run today.** 7.b automated tests `Tests/Run.ps1`: 15 passed, 0 failed; 7.c XML tests green; tested DLL equals
+  `Mod/Assemblies/ManyHappyReturns.dll` (hashes in `Tests/Results/manifest.json`). `Check-ModBasics.ps1` PASS,
+  `Check-DefInjected.ps1` 18 keys, 0 errors, `Check-Status.ps1` 0 error.
+- **Not met: 6.g / 7.g.** `translation_fr: partial`: Virginie's sign-off of `FRENCH_REVIEW.md` on this revision is outstanding.
+- **defect (6.c).** `Check-Translations.ps1` FAILS: `ManyHappyReturns.BirthdayLetterText` uses `{PAWN_pronoun}` once in English
+  and twice in French ("... se souviendra de la journée qu'{PAWN_pronoun} aura passée"). Not changed: the French text was
+  read by Virginie, and a text change forces a new review (8.b). Also a WARN: French path `InteractionDef/Nelim_BirthdayWish.logRulesInitiator.rulesStrings`
+  outside the text inventory.
+- **Pending housekeeping.** `.build/` to `build/` (rename after the four queued Pickle tickets return);
+  `Tests/Check-Xml.ps1` generic sections to replace by the shared `Check-ModBasics.ps1` / `Check-Translations.ps1` (LOCAL_SCRIPTS.md);
+  `scripts/cutout-icon.cjs` obsolete (needs `modIconSource`, owner's art work); `Mod/About/About.xml` em dashes (WARN).
+- **Pickle (early, not a gate).** Four tickets filed 2026-10-12: RIMMSQOL 08, RIMMSQOL 09-11, Gifts and Birthdays 12+01, without-Anomaly 01.
 
 Older journal (Pickle suite 2026-09-23, audits 2026-09-13 and 2026-09-23, delivery, corrections, historical sweep notes): `docs/runs/STATUS-journal-2026-09.md`.

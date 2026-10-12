@@ -1,14 +1,14 @@
 ---
 localization: complete
 translation_en: complete
-translation_fr: partial
+translation_fr: complete
 settings_audit: complete
 mod:          Many Happy Returns
 packageId:    nelim.manyhappyreturns
 repo:         Rimworld-Many-Happy-Returns
 visibility:   public
 detached:     yes
-workflow_stage: writeTests[1.0.0]
+workflow_stage: playTests[1.0.0]
 licence:      original
 licence_at:   written from scratch, MIT; only the general idea is shared
 upstream_mod_remotes: N/A
@@ -132,7 +132,7 @@ remaining:
     toward DayQualityBonus like any other party. Not confirmed live.
 session:      2026-09-23, first Workshop item created private by the owner (0.1.0)
 updated:      2026-09-23, workshop id 3806762201 recorded; stage left at done pending the in-game gate
-protocols_read_sha: 7e2994b43fb5b05d704694cbedc2e08ce4ea08e2
+protocols_read_sha: a12ca46f140973594383f15f9dea4fdf83b64764
 ---
 
 # Many Happy Returns — status
@@ -163,7 +163,7 @@ Revision audited: `3dc4e3a` (main, working tree clean at the start). Previous `s
   "Evidence to keep".
 - **Work needed for `tested`.** Play the RIMMSQOL (08, then 09 with 10 and 11), Gifts and Birthdays (12) and Anomaly-less
   passes; clear S15 or list it not applicable; the final full EN and FR passes (non-regression, last, on the final
-  revision). The French sign-off by Virginie (`translation_fr: partial`) is a separate open item.
+  revision). The French sign-off by Virginie (`translation_fr: complete`) is a separate open item.
 
 ## Translation audit — 2026-09-30
 
@@ -191,13 +191,15 @@ here without her decision.
 
 ## Audit — 2026-10-12 (up to `playTests`)
 
+**Update 2026-10-12, later:** Virginie validated the French on revisions `ee8cba1` / `7d7c80f` (`FRENCH_REVIEW.md`, her corrections of the day applied, the neutral `s'est souvenux` included). `translation_fr: complete`; gate 7.g met; `workflow_stage: playTests[1.0.0]`. Still open: `Check-Translations.ps1` reports `BirthdayLetterText` (shared checker counts the English pronoun tokens the French switch replaces; to report to the Audit session), and the in-game checks in `remaining`.
+
 Revision `96b249a`. Chain re-read against AUDIT.md, gates 1 to 7. `workflow_stage` set to `writeTests[1.0.0]`: gate 7.g
 (leaving `writeTests`) is not met, so `playTests` is not established.
 
 - **Met, re-run today.** 7.b automated tests `Tests/Run.ps1`: 15 passed, 0 failed; 7.c XML tests green; tested DLL equals
   `Mod/Assemblies/ManyHappyReturns.dll` (hashes in `Tests/Results/manifest.json`). `Check-ModBasics.ps1` PASS,
   `Check-DefInjected.ps1` 18 keys, 0 errors, `Check-Status.ps1` 0 error.
-- **Not met: 6.g / 7.g.** `translation_fr: partial`: Virginie's sign-off of `FRENCH_REVIEW.md` on this revision is outstanding.
+- **Not met: 6.g / 7.g.** `translation_fr: complete`: Virginie's sign-off of `FRENCH_REVIEW.md` on this revision is outstanding.
 - **Corrections from Virginie's review (2026-10-12), applied.** `BirthdayLetterText` FR: `{PAWN_gender ? lui : elle : lu}` and `{PAWN_gender ? il : elle : al}` x2 (`passée` unchanged: it agrees with the day). Social log rule 1 (`s'est souvenu`) agrees with the initiator: three forms `{INITIATOR_gender ? s'est souvenu : s'est souvenue : s'est souvenux}` (the game's own French rule packs read `{INITIATOR_gender ? ...}`, so the gender is available); the XML comment saying no rule agrees was wrong and is fixed; the five rules are now injected as `rulesStrings.0` to `.4` (one review row per rule). `ForgottenThoughtTip` FR, `nice_birthday` and `unforgettable_birthday` FR reworded as she proposed; `lovely_birthday` EN is now `everyone made it special`. **Unverified: the al-system neutral ending of `souvenu` (written `souvenux`): Virginie to confirm.** `Check-Translations.ps1` still reports `BirthdayLetterText` as a token difference and WARNs on the `.N` paths: the checker removes the French gender switches but counts the English `{PAWN_pronoun}`/`{PAWN_objective}`, so a correct French agreement fails it (to report to the Audit session). The mod's own `Tests/Check-Xml.ps1` was adjusted for that and for the `.N` rule keys. Texts changed: 8.b needs a new French reading and `FRENCH_REVIEW.md` regenerated from a committed revision.
 - **Pending housekeeping.** `.build/` renamed `build/` on 2026-10-12 (paths updated);
   `Tests/Check-Xml.ps1` generic sections to replace by the shared `Check-ModBasics.ps1` / `Check-Translations.ps1` (LOCAL_SCRIPTS.md);

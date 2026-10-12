@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+- French: the birthday letter's pronouns and the birthday wish's log line ("s'est souvenu") now agree with the pawn's gender (masculine, feminine, neutral).
+- French: clearer wording for the forgotten-birthday setting tip and for two memory texts.
+- English: clearer wording for the "lovely birthday" memory.
+
 ## [1.0.0] - 2026-09-29
 
 First public release. RimWorld 1.6.

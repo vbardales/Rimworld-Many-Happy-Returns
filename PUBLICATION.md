@@ -24,7 +24,7 @@ Three things do not get a second chance, and two of them are silent when they go
   **Commit it immediately.** Lost, the next upload creates a second item, and the first one stays
   up with nobody able to update it.
 
-And one that surprises people: **Steam creates every item private.** RimWorld never calls
+And one that surprises people: **The initial upload created this item privately.** RimWorld never calls
 `SetItemVisibility`, so the item has to be switched to public by hand once it has been checked.
 
 ## Screenshots, in upload order (written before the first upload)

@@ -1,3 +1,4 @@
+using System;
 using System.Reflection;
 using RimWorld;
 using RimWorks.Pickle;
@@ -102,6 +103,46 @@ namespace ManyHappyReturns.PickleSteps
             int actual = BirthdayUtility.CountWishers(Driver.Celebrant(ctx), out _);
             ctx.Assert(actual == expected,
                 $"BirthdayUtility.CountWishers reports {actual} wisher(s) for the celebrant, expected {expected}");
+        }
+
+
+        [Given("the wisher's gender is {word}")]
+        public void SetWisherGender(PickleContext ctx, string gender)
+        {
+            Pawn wisher = Driver.Wisher(ctx);
+            ctx.Require(Enum.TryParse(gender, out Gender parsed), $"'{gender}' is not a Gender (Male, Female or None)");
+            wisher.gender = parsed;
+        }
+
+        /// <summary>
+        /// The French rule "s'est souvenu(e/x) que c'était l'anniversaire de ..." agrees with the initiator through
+        /// {INITIATOR_gender ? m : f : n}. A comment in the XML proves nothing: the line is built by the game's own
+        /// PlayLogEntry_Interaction (its grammar resolver, its INITIATOR_gender constant), over seeds until the
+        /// remembered-birthday rule is the one drawn, then read.
+        /// </summary>
+        [Then("the wisher's remembered-birthday log line agrees with the wisher's gender")]
+        public void AssertLogAgreement(PickleContext ctx)
+        {
+            Pawn wisher = Driver.Wisher(ctx);
+            Pawn celebrant = Driver.Celebrant(ctx);
+            string language = LanguageDatabase.activeLanguage.folderName;
+            string marker = language == "French" ? "que c'était l'anniversaire de" : "remembered it was";
+            string expected = language != "French" ? "remembered it was"
+                : wisher.gender == Gender.Male ? "s'est souvenu que"
+                : wisher.gender == Gender.Female ? "s'est souvenue que"
+                : "s'est souvenux que";
+            FieldInfo seed = Driver.Field(ctx, typeof(LogEntry), "randSeed", BindingFlags.Instance | BindingFlags.NonPublic);
+            string found = null;
+            for (int i = 0; i < 400 && found == null; i++)
+            {
+                var entry = new PlayLogEntry_Interaction(MHRDefOf.Nelim_BirthdayWish, wisher, celebrant, null);
+                seed.SetValue(entry, i);
+                string text = entry.ToGameStringFromPOV(wisher);
+                if (text != null && text.Contains(marker)) found = text;
+            }
+            ctx.Require(found != null, $"no seed of 400 drew the remembered-birthday rule ('{marker}') in {language}");
+            ctx.Assert(found.Contains(expected),
+                $"{language}, initiator gender {wisher.gender}: the game wrote \"{found}\", expected it to contain \"{expected}\"");
         }
 
         private static float Weight(PickleContext ctx) =>

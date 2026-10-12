@@ -33,6 +33,7 @@ What is left needs a game, and needs it for a concrete reason:
 | 12 Gifts and Birthdays | Its real congratulation counted once, its real `LordJob_BirthdayParty` recognised as a party by `DayQualityBonus`, and the resulting stage against the day's own tally (S13) |
 | 13 exemptions | `Evaluate`'s early returns and `TryGiveForgotten`'s witness floor against real pawns: a celebrant Downed, away in a real caravan, and the floor of two witnesses played on both sides (S10) |
 | 15 publication shots | The five images of the Workshop page, taken on the owner's showcase colony, in English, with the interface hidden or not as each image needs; a person opens every one (`@review`) |
+| 18 wish log gender | The French "s'est souvenu" line the game writes for a male, a female and a genderless initiator (and the plain English line), built by the game's own PlayLogEntry_Interaction and read (S06) |
 | 17 new colony | S16's other half, played once in the final pass: a new colony started from the main menu, a birthday played through on it, then the log read (Nelim's Pickle Tools' NewColony and LoadAudit) |
 | 16 existing-save regression | A birthday played through on the saved colony from the letter to the verdict, both settings routes, then the game log read for this mod by Nelim's Pickle Tools' LoadAudit (S16, its "existing save" half) |
 | 14 newborn | A baby generated the way the game generates one, born today, on the calendar and refused by `CanCelebrate`; needs Biotech (S10) |

@@ -132,7 +132,7 @@ remaining:
     toward DayQualityBonus like any other party. Not confirmed live.
 session:      2026-09-23, first Workshop item created private by the owner (0.1.0)
 updated:      2026-09-23, workshop id 3806762201 recorded; stage left at done pending the in-game gate
-protocols_read_sha: a12ca46f140973594383f15f9dea4fdf83b64764
+protocols_read_sha: 2f4e0002e2543fcde57999c51ff8b2f0dfc8efdb
 ---
 
 # Many Happy Returns — status

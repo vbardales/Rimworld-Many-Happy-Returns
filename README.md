@@ -99,7 +99,7 @@ The textures are regenerated from SVG into `Mod/Textures/` with `scripts/build.s
 headless as rasteriser). `Art/` holds the artwork the icon and the preview come from:
 `Preview-source.png` (the preserved original illustration), `ModIcon-source.png` (the mascot
 and cake on plain near-black; `Mod/About/ModIcon.png` is it downscaled to 128 x 128 and
-`Art/ModIcon.ico` is the local folder icon), `echo.png` (hand-made line art) and
+`Art/ModIcon.ico` is the local folder icon), `echo-preview.png` (hand-made line art) and
 `Preview.config.json` (title, copy and layout of the Preview, rendered by the shared
 `Render-Preview.cjs`; the Preview's palette and contrast come from that renderer).
 `Art/Gallery/` holds the Workshop images (`0-preview.png` is a byte copy of

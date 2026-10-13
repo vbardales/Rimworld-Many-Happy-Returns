@@ -96,8 +96,22 @@ folder entirely — without it, `obj/` would carry the publicised `Assembly-CSha
 6 MB of Ludeon's own code, to every subscriber.
 
 The textures are regenerated from SVG into `Mod/Textures/` with `scripts/build.sh` (Chrome
-headless as rasteriser). `Art/` holds the full-resolution artwork the icon and the
-preview are downscaled from.
+headless as rasteriser). `Art/` holds the artwork the icon and the preview come from:
+`Preview-source.png` (the preserved original illustration), `ModIcon-source.png` (the mascot
+and cake on plain near-black; `Mod/About/ModIcon.png` is it downscaled to 128 x 128 and
+`Art/ModIcon.ico` is the local folder icon), `echo.png` (hand-made line art) and
+`Preview.config.json` (title, copy and layout of the Preview, rendered by the shared
+`Render-Preview.cjs`; the Preview's palette and contrast come from that renderer).
+`Art/Gallery/` holds the Workshop images (`0-preview.png` is a byte copy of
+`Mod/About/Preview.png`) and `Art/.render/` the renderer's QA output, not committed.
+
+The icon source was made by editing the earlier ribbon-and-gift icon with this prompt: "Remove
+the entire bottom ribbon and all letters. Preserve the distinctive orange round winking mascot
+with ponytail, thick near-black outline and cake to its left. Simplify for a 128x128 RimWorld
+mod icon readable at 32 pixels: retain only the mascot and the birthday cake, remove gift box
+and scattered confetti; retain one small four-point sparkle. Plain near-black background, flat
+cel shading, no glow, no gradients, no text, no frame, no extra characters. Recenter the
+mascot and cake to occupy most of the square with a modest margin. Output square icon."
 
 ## Testing it
 

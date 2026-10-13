@@ -31,8 +31,8 @@ And one that surprises people: **The initial upload created this item privately.
 
 Steam shows the first one large. **Every gallery starts with a copy of the Preview, at position `00`**
 (owner's rule, 2026-09-29, numbering from zero): `00-` is a byte-for-byte copy of `Mod/About/Preview.png`,
-applies to every mod from now on. The captures follow in `01-` onward. **Six exist**, in `Art/Workshop/`
-(`00-` the Preview copy, `01-` to `05-` the captures, in upload order, nothing else in that folder), the
+applies to every mod from now on. The captures follow in `01-` onward. **Six exist**, in `Art/Gallery/`
+(`0-` the Preview copy, `1-` to `5-` the captures, in upload order, nothing else in that folder), the
 captures cropped from the showcase pass (`Tests/Pickle/Mod/Pickle/Features/15-publication-shots.feature`,
 run `docs/runs/2026-09-25-gallery-en.md`). Each capture was opened by the session and validated one at a
 time by the owner on 2026-09-25; `00-` is regenerated with the Preview whenever that changes
@@ -85,7 +85,7 @@ on 2026-09-29 after the Preview changed:
 - `Mod/About/Preview.png` — an overhead dining-room scene, warm lamp light over a table set for a
   small gathering, cool ambient elsewhere, small rear-facing colonists with no readable faces.
   Title, tagline, a `1.6` corner badge and, since 2026-09-29, the cut-out mascot icon bottom-left,
-  tilted, bleeding off the edge (`Art/README.md`).
+  tilted, bleeding off the edge (`README.md`, "Art").
 - `Mod/About/ModIcon.png` — the mascot head alone, on plain near-black, no ribbon or gift box (the
   ribbon-and-gift version was dropped 2026-09-28; see `STATUS.md`).
 

@@ -32,7 +32,7 @@ tested_on:    2026-10-02 audit: gate 9 (done -> tested) is NOT met under the AUD
               boxes answered with both images opened (2026-09-13).
 workshop:     3806762201
 remaining:
-  - unverified: in-game rendering of `{INITIATOR_gender ? ...}` in the social log ("s'est souvenu" for Male, Female, None). Feature 18 written, tickets 20261012-053445-830-9973 (French) and -053446-617-4c30 (English) filed 2026-10-12; not played yet. Carried until a green report is read at `playTests`.
+  - unverified: in-game rendering of `{INITIATOR_gender ? ...}` in the social log ("s'est souvenu" for Male, Female, None). Feature 18: the 2026-10-12 runs (tickets 20261012-053445-830-9973 French, -053446-617-4c30 English) failed 0/3 on a suite defect, `LogEntry.randSeed` no longer exists; step fixed to `logID` (715fb90); refiled 2026-10-13 as 20261013-153835-534-dcd7 (English) and -153836-679-c32b (French). Carried until a green report is read at `playTests`.
   - unverified: French review by Virginie. The 2026-09-30 gender-agreement rule reset
     `translation_fr` to `unchecked`; the session's first read found no French text in this mod
     that agrees with a pawn's gender; that was wrong, see the 2026-10-12 corrections in the audit section (the letter's
@@ -204,6 +204,6 @@ Revision `96b249a`. Chain re-read against AUDIT.md, gates 1 to 7. `workflow_stag
 - **Pending housekeeping.** `.build/` renamed `build/` on 2026-10-12 (paths updated);
   `Tests/Check-Xml.ps1` generic sections to replace by the shared `Check-ModBasics.ps1` / `Check-Translations.ps1` (LOCAL_SCRIPTS.md);
   `scripts/cutout-icon.cjs` obsolete (needs `modIconSource`, owner's art work); `Mod/About/About.xml` em dashes (WARN).
-- **Pickle (early, not a gate).** Four tickets filed 2026-10-12: RIMMSQOL 08, RIMMSQOL 09-11, Gifts and Birthdays 12+01, without-Anomaly 01.
+- **Pickle (early, not a gate).** 2026-10-12 results (`Tests/Pickle/Evidence/2026-10-12-*`): RIMMSQOL 08 passed 4/4; without-Anomaly 01 passed 3/3; RIMMSQOL 09-11 not green (seq2 ran features 10 and 11 in one launch, so no restart was tested); Gifts and Birthdays 12+01 no report (launcher exit 139). Refiled 2026-10-13: Gifts and Birthdays 20261013-153837-575-c7a8, RIMMSQOL chain `-Filter 09 -Then 10,11` 20261013-153838-585-d903.
 
 Older journal (Pickle suite 2026-09-23, audits 2026-09-13 and 2026-09-23, delivery, corrections, historical sweep notes): `docs/runs/STATUS-journal-2026-09.md`.

@@ -131,7 +131,7 @@ namespace ManyHappyReturns.PickleSteps
                 : wisher.gender == Gender.Male ? "s'est souvenu que"
                 : wisher.gender == Gender.Female ? "s'est souvenue que"
                 : "s'est souvenux que";
-            FieldInfo seed = Driver.Field(ctx, typeof(LogEntry), "randSeed", BindingFlags.Instance | BindingFlags.NonPublic);
+            FieldInfo seed = Driver.Field(ctx, typeof(LogEntry), "logID", BindingFlags.Instance | BindingFlags.NonPublic);
             string found = null;
             for (int i = 0; i < 400 && found == null; i++)
             {

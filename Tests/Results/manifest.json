@@ -1,6 +1,6 @@
 {
-  "executed_at": "2026-10-12T05:29:06.9325952+02:00",
-  "base_revision": "d6c6a14600f98d00e362adff84896983328600d3",
+  "executed_at": "2026-10-13T20:32:53.8728823+02:00",
+  "base_revision": "e7c4391030549676c5fbe3b8e288271fc9913e6f",
   "scope": "Working tree; behavior and XML checks, not in-game validation",
   "game_assembly": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\RimWorldWin64_Data\\Managed",
   "game_assembly_sha256": "5CF1B5BE399D5B1C9C56CA72C9D35B4ECF307FEACF5859D04AC5A1AA5926356A",
@@ -12,7 +12,7 @@
     },
     {
       "path": "Mod/About/About.xml",
-      "sha256": "B8E986E5CEA171470B83EDE1CAA38F9A5FDA542DB929EDC1A9276EB8C8E5710A"
+      "sha256": "1469895BEAA55508A96D1B94A40F077C11C7EC6AB21853FB24B2DF6E28E1EA06"
     },
     {
       "path": "Mod/About/ModIcon.png",
@@ -68,7 +68,7 @@
     },
     {
       "path": "Mod/README.template.md",
-      "sha256": "DF1E78FF87CFF97DEB6308BA188E565BB3379709AF0EA3AA26BD527F2CB57094"
+      "sha256": "670B8694867FCC9E4FAB6494599EDDC7EEA25072BDD9A0BF60A2BBC0E7392BBF"
     },
     {
       "path": "Mod/Textures/ManyHappyReturns/BirthdayWish.dds",

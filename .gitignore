@@ -31,3 +31,4 @@ Tests/Pickle/Evidence/
 
 node_modules/
 .npm/
+Art/.render/

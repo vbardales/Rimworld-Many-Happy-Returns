@@ -1,0 +1,57 @@
+{
+  "title": "Many Happy Returns",
+  "titleSize": 46,
+  "titleParts": [
+    {
+      "text": "Many Happy"
+    },
+    {
+      "text": "Returns",
+      "breakBefore": true
+    }
+  ],
+  "suffix": "",
+  "tag": "",
+  "copyLines": [
+    "Colonists notice their birthday,",
+    "and whether anyone else did."
+  ],
+  "layout": "panel",
+  "panelAnchor": "top-left",
+  "backgroundFile": "Preview-source.png",
+  "backgroundPosition": "center",
+  "backgroundSize": "cover",
+  "echo": {
+    "file": "echo.png",
+    "preSized": true,
+    "mode": "alpha",
+    "color": "var(--accent)",
+    "width": 190,
+    "height": 150,
+    "opacity": 1,
+    "veil": false,
+    "panelTop": 2,
+    "panelRight": 1,
+    "panelWidth": 37,
+    "flipX": true
+  },
+  "iconBadge": {
+    "file": "ModIcon-source.png",
+    "corner": "bottom-left",
+    "width": 180,
+    "translate": "12%, -12%",
+    "rotate": 15,
+    "outline": false,
+    "veil": "radial",
+    "veilSize": 250,
+    "veilLeft": -45,
+    "veilBottom": -45
+  },
+  "palette": {
+    "veil": "#211D19",
+    "inkPrimary": "#F2ECE1",
+    "inkSecondary": "#E4B16F",
+    "accent": "#64D3E5",
+    "badgeInk": "#17120E"
+  }
+}

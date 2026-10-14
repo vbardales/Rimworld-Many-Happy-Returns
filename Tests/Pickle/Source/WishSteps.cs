@@ -126,8 +126,9 @@ namespace ManyHappyReturns.PickleSteps
             Pawn wisher = Driver.Wisher(ctx);
             Pawn celebrant = Driver.Celebrant(ctx);
             string language = LanguageDatabase.activeLanguage.folderName;
-            string marker = language == "French" ? "que c'était l'anniversaire de" : "remembered it was";
-            string expected = language != "French" ? "remembered it was"
+            bool isFrench = language.StartsWith("French");
+            string marker = isFrench ? "que c'était l'anniversaire de" : "remembered it was";
+            string expected = !isFrench ? "remembered it was"
                 : wisher.gender == Gender.Male ? "s'est souvenu que"
                 : wisher.gender == Gender.Female ? "s'est souvenue que"
                 : "s'est souvenux que";

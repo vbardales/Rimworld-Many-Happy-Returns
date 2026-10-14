@@ -32,7 +32,7 @@ tested_on:    2026-10-02 audit: gate 9 (done -> tested) is NOT met under the AUD
               boxes answered with both images opened (2026-09-13).
 workshop:     3806762201
 remaining:
-  - unverified: in-game rendering of `{INITIATOR_gender ? ...}` in the social log ("s'est souvenu" for Male, Female, None). Feature 18: the 2026-10-12 runs (tickets 20261012-053445-830-9973 French, -053446-617-4c30 English) failed 0/3 on a suite defect, `LogEntry.randSeed` no longer exists; step fixed to `logID` (715fb90); refiled 2026-10-13 as 20261013-153835-534-dcd7 (English) and -153836-679-c32b (French). Carried until a green report is read at `playTests`.
+  - verified 2026-10-14: in-game rendering of `{INITIATOR_gender ? ...}` in the social log ("s'est souvenu", "souvenue", "souvenux"). Feature 18 green, 3 of 3 in English (2026-10-13-log-gender-en) and 3 of 3 in French (2026-10-14-log-gender-fr), after two suite fixes (step read `LogEntry.randSeed`, now `logID`; French was detected by `folderName == "French"`, the game reports `French (Français)`). The neutral ending `souvenux` still awaits Virginie./
   - unverified: French review by Virginie. The 2026-09-30 gender-agreement rule reset
     `translation_fr` to `unchecked`; the session's first read found no French text in this mod
     that agrees with a pawn's gender; that was wrong, see the 2026-10-12 corrections in the audit section (the letter's
@@ -178,6 +178,6 @@ Revision `96b249a`. Chain re-read against AUDIT.md, gates 1 to 7. `workflow_stag
 - **Pending housekeeping.** `.build/` renamed `build/` on 2026-10-12 (paths updated);
   `Tests/Check-Xml.ps1` generic sections to replace by the shared `Check-ModBasics.ps1` / `Check-Translations.ps1` (LOCAL_SCRIPTS.md);
   `scripts/cutout-icon.cjs` removed 2026-10-13. Still open: `Mod/About/About.xml` em dashes (WARN; the description is the Steam description, so a change reopens the PUBLICATION.md and CHANGELOG.md review and must follow PUBLICATION.md and `Mod/README.template.md`).
-- **Pickle (early, not a gate).** 2026-10-12 results (`Tests/Pickle/Evidence/2026-10-12-*`): RIMMSQOL 08 passed 4/4; without-Anomaly 01 passed 3/3; RIMMSQOL 09-11 not green (seq2 ran features 10 and 11 in one launch, so no restart was tested); Gifts and Birthdays 12+01 no report (launcher exit 139). Refiled 2026-10-13: Gifts and Birthdays 20261013-153837-575-c7a8, RIMMSQOL chain `-Filter 09 -Then 10,11` 20261013-153838-585-d903.
+- **Pickle (early, not a gate).** All conditional passes now green: RIMMSQOL 08 4/4 (2026-10-12), RIMMSQOL restart chain 09, 10, 11 one launch each (2026-10-14-rimmsqol-09-11-en, three seq, 1/1 each), without-Anomaly 01 3/3 (2026-10-12), Gifts and Birthdays 12 6/6 (five in 2026-10-13-gifts-en, the sixth replayed 2026-10-14 after the suite brought the wisher back next to the celebrant). The failures before were suite defects, none of the mod.
 
 Older journal (Pickle suite 2026-09-23, audits 2026-09-13 and 2026-09-23, delivery, corrections, historical sweep notes): `docs/runs/STATUS-journal-2026-09.md`.

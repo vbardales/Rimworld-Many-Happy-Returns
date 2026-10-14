@@ -28,6 +28,7 @@ Feature: Gifts and Birthdays' congratulation and party count towards the verdict
     And Many Happy Returns counts the celebrant as wished by 1 colonist today
     And the wish's selection weight from the wisher to the celebrant is zero
     When I wait 130 ticks
+    And the wisher is brought next to the celebrant
     And the wisher exchanges the birthday wish with the celebrant
     Then Many Happy Returns counts the celebrant as wished by 1 colonist today
     And no errors were logged

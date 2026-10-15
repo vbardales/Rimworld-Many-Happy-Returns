@@ -14,7 +14,7 @@ licence_at:   written from scratch, MIT; only the general idea is shared
 upstream_mod_remotes: N/A
 dependencies: none
 showcase:     complete
-tested_on:    2026-10-02 audit: gate 9 (done -> tested) is NOT met under the AUDIT.md of that day (the RIMMSQOL, Gifts and
+tested_on:    2026-10-14 (conditional passes and feature 18 green, docs/runs/2026-10-14-conditional-passes-and-feature-18.md; code reviewed whole, no defect). 2026-10-02 audit: gate 9 (done -> tested) is NOT met under the AUDIT.md of that day (the RIMMSQOL, Gifts and
               Birthdays and without-Anomaly conditional scenarios never ran; S15 interface review not cleared), so
               stage is back to done. The 1.0.0 was nevertheless sent privately on 2026-09-29 under fail fast; that is an
               act, not a state. See "Audit — 2026-10-02". Replaced claim, kept as written:
@@ -132,6 +132,7 @@ remaining:
     toward DayQualityBonus like any other party. Not confirmed live.
 session:      2026-09-23, first Workshop item created private by the owner (0.1.0)
 updated:      2026-09-23, workshop id 3806762201 recorded; stage left at done pending the in-game gate
+code_review_sha: 33adf0183f4546c5a0db640fcdf03d6b49ba0ece
 protocols_read_sha: 92cd25e11ff11424d3d28b4170ea845fa4f2e227
 ---
 

@@ -32,6 +32,7 @@ tested_on:    2026-10-14 (conditional passes and feature 18 green, docs/runs/202
               boxes answered with both images opened (2026-09-13).
 workshop:     3806762201
 remaining:
+  - 2026-10-26: ticket 20261026-123156-014-6ec1 queued (minimal English full pass, 4efa4a6, evidence Tests/Pickle/Inbox/minimal-en-4efa4a6). Next: full French pass (-Language French), then 1.7 diagnostic ticket (tested_1_7). Preview validated by owner 2026-10-26 (icon bottom-left), social preview uploaded.
   - verified 2026-10-14: in-game rendering of `{INITIATOR_gender ? ...}` in the social log ("s'est souvenu", "souvenue", "souvenux"). Feature 18 green, 3 of 3 in English (2026-10-13-log-gender-en) and 3 of 3 in French (2026-10-14-log-gender-fr), after two suite fixes (step read `LogEntry.randSeed`, now `logID`; French was detected by `folderName == "French"`, the game reports `French (Français)`). The neutral ending `souvenux` still awaits Virginie./
   - unverified: French review by Virginie. The 2026-09-30 gender-agreement rule reset
     `translation_fr` to `unchecked`; the session's first read found no French text in this mod

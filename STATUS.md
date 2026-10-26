@@ -133,7 +133,7 @@ remaining:
 session:      2026-09-23, first Workshop item created private by the owner (0.1.0)
 updated:      2026-09-23, workshop id 3806762201 recorded; stage left at done pending the in-game gate
 code_review_sha: 33adf0183f4546c5a0db640fcdf03d6b49ba0ece
-protocols_read_sha: 92cd25e11ff11424d3d28b4170ea845fa4f2e227
+protocols_read_sha: 43dd90d4b7873c500347fba1be01275a48d5795b
 ---
 
 # Many Happy Returns — status

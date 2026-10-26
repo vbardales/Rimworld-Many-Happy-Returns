@@ -25,7 +25,9 @@
   },
   "icon": {
     "file": "ModIcon-source.png",
-    "corner": "bottom-left"
+    "corner": "bottom-left",
+    "translate": "4%,5%",
+    "rotate": 15
   },
   "palette": {
     "veil": "#211D19",

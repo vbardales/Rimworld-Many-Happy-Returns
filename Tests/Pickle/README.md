@@ -174,7 +174,7 @@ produced without one did not test the fix.
 ## Checking the steps before a run
 
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File Tests/Pickle/Check-Steps.ps1
+powershell.exe -ExecutionPolicy Bypass -File ../scripts/Check-Steps.ps1 -Mod ManyHappyReturns
 ```
 
 Run offline on 2026-09-24: 60 patterns declared, all 60 compile, compared against 840 other

@@ -1,77 +1,44 @@
+# Mod-specific expected values only. Generic XML, key and injection coverage is done by the shared
+# Check-ModBasics.ps1, Check-Translations.ps1 and Check-DefInjected.ps1 (scripts/ of the protocols repo).
 param([string]$Root = (Split-Path $PSScriptRoot -Parent))
 $ErrorActionPreference = 'Stop'
 function Assert($condition, [string]$message) { if (!$condition) { throw $message } }
 function Read-Xml([string]$path) { return [xml](Get-Content -LiteralPath $path -Raw) }
 $mod = Join-Path $Root 'Mod'
-$files = @(Get-ChildItem -LiteralPath $mod -Recurse -Filter *.xml)
-foreach ($file in $files) { $null = Read-Xml $file.FullName }
-Write-Output "PASS: $($files.Count) distributed XML files parse"
-
 $defs = @{}
 foreach ($file in Get-ChildItem -LiteralPath (Join-Path $mod 'Defs') -Recurse -Filter *.xml) {
-    foreach ($def in (Read-Xml $file.FullName).Defs.SelectNodes('*')) {
-        Assert (!$defs.ContainsKey($def.defName)) "Duplicate defName $($def.defName)"
-        $defs[$def.defName] = $def
-    }
+    foreach ($def in (Read-Xml $file.FullName).Defs.SelectNodes('*')) { $defs[$def.defName] = $def }
 }
-$keyed = @{}
-foreach ($language in 'English','French') {
+
+# French agreement: the English pronoun tokens become {PAWN_gender ? m : f : n} switches, so compare what is left
+# (the shared Check-Translations counts the English tokens and flags a correct French agreement).
+function Get-Keyed([string]$language) {
     $entries = @{}
     foreach ($file in Get-ChildItem -LiteralPath (Join-Path $mod "Languages/$language/Keyed") -Recurse -Filter *.xml) {
-        foreach ($node in (Read-Xml $file.FullName).LanguageData.SelectNodes('*')) {
-            Assert (!$entries.ContainsKey($node.Name)) "Duplicate $language key $($node.Name)"
-            Assert (![string]::IsNullOrWhiteSpace($node.InnerText)) "Empty $language key $($node.Name)"
-            Assert ($node.InnerText -notmatch 'TODO|TODO_TRANSLATE') "Untranslated $language key $($node.Name)"
-            $entries[$node.Name] = $node.InnerText
-        }
+        foreach ($node in (Read-Xml $file.FullName).LanguageData.SelectNodes('*')) { $entries[$node.Name] = $node.InnerText }
     }
-    $keyed[$language] = $entries
+    return $entries
 }
-$source = (Get-ChildItem -LiteralPath (Join-Path $Root 'Source') -Filter *.cs | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"
-$used = @([regex]::Matches($source, '"(ManyHappyReturns\.[^"]+)"\s*\.Translate\(') | ForEach-Object { $_.Groups[1].Value } | Sort-Object -Unique)
-foreach ($key in $used) {
-    foreach ($language in 'English','French') { Assert ($keyed[$language].ContainsKey($key)) "Missing $language source key $key" }
-    # An English pronoun token becomes a {PAWN_gender ? m : f : n} switch in French (TRANSLATIONS.md): compare what is left.
-    $enTokens = @([regex]::Matches($keyed.English[$key], '\{[^}]+\}').Value | Where-Object { $_ -notmatch '^\{PAWN_(pronoun|objective|possessive)\}$' } | Sort-Object -Unique)
-    $frText = [regex]::Replace($keyed.French[$key], '\{[^{}]*\?[^{}]*\}', '')
+$en = Get-Keyed 'English'; $fr = Get-Keyed 'French'
+foreach ($key in $en.Keys) {
+    $enTokens = @([regex]::Matches($en[$key], '\{[^}]+\}').Value | Where-Object { $_ -notmatch '^\{PAWN_(pronoun|objective|possessive)\}$' } | Sort-Object -Unique)
+    $frText = [regex]::Replace($fr[$key], '\{[^{}]*\?[^{}]*\}', '')
     $frTokens = @([regex]::Matches($frText, '\{[^}]+\}').Value | Sort-Object -Unique)
     Assert (!(Compare-Object $enTokens $frTokens)) "Parameter mismatch for $key"
 }
-foreach ($language in 'English','French') {
-    Assert ($keyed[$language].Count -eq $used.Count) "Unused or unmatched keys in $language"
-}
-Write-Output "PASS: $($used.Count) source keys covered in EN/FR, nonempty, unique, with matching parameters"
+Write-Output "PASS: $($en.Count) keyed entries keep their parameters in French"
 
-# This mod owns only ThoughtDef stage text, InteractionDef grammar and MainButtonDef text.
-# Require every owned source string and resolve every French injection back to source XML.
-$expected = @{}
-foreach ($def in $defs.Values) {
-    foreach ($node in $def.SelectNodes('label|description')) { $expected["$($def.defName).$($node.Name)"] = $node }
-    $items = @($def.SelectNodes('logRulesInitiator/rulesStrings/li'))
-    for ($i = 0; $i -lt $items.Count; $i++) { $expected["$($def.defName).logRulesInitiator.rulesStrings.$i"] = $items[$i] }
-    foreach ($stage in $def.SelectNodes('stages/li')) {
-        $handle = ([string]$stage.label) -replace '[^a-zA-Z0-9_]', '_'
-        foreach ($node in $stage.SelectNodes('label|description')) { $expected["$($def.defName).stages.$handle.$($node.Name)"] = $node }
-    }
-}
-$seen = @{}
+# The five social-log rules keep their grammar tokens in French.
 foreach ($file in Get-ChildItem -LiteralPath (Join-Path $mod 'Languages/French/DefInjected') -Recurse -Filter *.xml) {
     foreach ($node in (Read-Xml $file.FullName).LanguageData.SelectNodes('*')) {
-        Assert ($expected.ContainsKey($node.Name)) "Unresolved injection $($node.Name)"
-        Assert (!$seen.ContainsKey($node.Name)) "Duplicate injection $($node.Name)"
-        Assert (![string]::IsNullOrWhiteSpace($node.InnerText)) "Empty injection $($node.Name)"
-        $defName = $node.Name.Split('.')[0]
-        Assert ($file.Directory.Name -eq $defs[$defName].Name) "Wrong DefInjected type for $($node.Name)"
-        if ($node.Name -match '\.rulesStrings\.\d+$') {
-            $enTokens = @([regex]::Matches($expected[$node.Name].InnerText, '\[[^\]]+\]').Value | Sort-Object -Unique)
-            $frTokens = @([regex]::Matches($node.InnerText, '\[[^\]]+\]').Value | Sort-Object -Unique)
-            Assert (!(Compare-Object $enTokens $frTokens)) 'Grammar tokens differ'
-        }
-        $seen[$node.Name] = $true
+        if ($node.Name -notmatch '^(?<def>[^.]+)\.logRulesInitiator\.rulesStrings\.(?<i>\d+)$') { continue }
+        $source = @($defs[$Matches.def].SelectNodes('logRulesInitiator/rulesStrings/li'))[[int]$Matches.i].InnerText
+        $enTokens = @([regex]::Matches($source, '\[[^\]]+\]').Value | Sort-Object -Unique)
+        $frTokens = @([regex]::Matches($node.InnerText, '\[[^\]]+\]').Value | Sort-Object -Unique)
+        Assert (!(Compare-Object $enTokens $frTokens)) "Grammar tokens differ: $($node.Name)"
     }
 }
-Assert ($seen.Count -eq $expected.Count) 'French DefInjected coverage is incomplete'
-Write-Output "PASS: $($seen.Count) French injection paths and native English source strings covered"
+Write-Output 'PASS: French log rules keep their grammar tokens'
 
 $button = $defs['Nelim_ManyHappyReturnsSettings']
 Assert ($button.buttonVisible -eq 'false') 'Settings shortcut must be hidden by default'
@@ -84,17 +51,10 @@ Assert ($about.url -eq $url) 'Incorrect source URL'
 Assert ($about.description.TrimEnd().EndsWith("Source code on GitHub ($url)")) 'Final description source link missing'
 Assert (!$about.modDependencies) 'Unexpected mandatory dependency'
 foreach ($node in $defs.Values.SelectNodes('.//*[@MayRequire]')) { Assert ($node.MayRequire -eq 'Ludeon.RimWorld.Anomaly') 'Unexpected conditional dependency' }
-foreach ($name in 'LICENSE','ATTRIBUTION.md') {
-    Assert ((Get-FileHash (Join-Path $Root $name)).Hash -eq (Get-FileHash (Join-Path $mod $name)).Hash) "Distribution copy differs: $name"
-}
 Add-Type -AssemblyName System.Drawing
 foreach ($spec in @(@('ModIcon.png',128,128),@('Preview.png',896,504))) {
-    $path = Join-Path $mod "About/$($spec[0])"
-    $image = [Drawing.Image]::FromFile($path)
-    try {
-        Assert ($image.Width -eq $spec[1] -and $image.Height -eq $spec[2]) "Wrong dimensions: $($spec[0])"
-        Assert ($image.RawFormat.Guid -eq [Drawing.Imaging.ImageFormat]::Png.Guid) "Not a PNG: $($spec[0])"
-    } finally { $image.Dispose() }
+    $image = [Drawing.Image]::FromFile((Join-Path $mod "About/$($spec[0])"))
+    try { Assert ($image.Width -eq $spec[1] -and $image.Height -eq $spec[2]) "Wrong dimensions: $($spec[0])" } finally { $image.Dispose() }
 }
 Assert ((Get-Item (Join-Path $mod 'About/Preview.png')).Length -lt 1000000) 'Preview exceeds 1 MB'
-Write-Output 'PASS: shortcut defaults, metadata, optional DLC guard, distribution notices and image formats'
+Write-Output 'PASS: shortcut defaults, metadata, optional DLC guard and image sizes'

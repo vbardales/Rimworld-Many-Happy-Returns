@@ -5,10 +5,9 @@ $results = Join-Path $PSScriptRoot 'Results'
 New-Item -ItemType Directory -Force -Path $results | Out-Null
 Push-Location $root
 try {
-    & dotnet build Tests/ManyHappyReturns.Tests.csproj "-p:GameManaged=$GameManaged" -v:minimal *> (Join-Path $results 'build.txt')
-    if ($LASTEXITCODE -ne 0) { throw 'Build failed; see Tests/Results/build.txt' }
-    & ./build/tests/bin/ManyHappyReturns.Tests.exe $GameManaged *> (Join-Path $results 'automated.txt')
-    if ($LASTEXITCODE -ne 0) { throw 'Behavior tests failed; see Tests/Results/automated.txt' }
+    # Build and run of the test project: the shared script (scripts/ of the protocols repo), not repeated here.
+    & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $root '../scripts/Run-UnitTests.ps1') -ModRoot $root -ManagedPath $GameManaged -PassManagedToExe *> (Join-Path $results 'automated.txt')
+    if ($LASTEXITCODE -ne 0) { throw 'Build or behavior tests failed; see Tests/Results/automated.txt' }
     & ./Tests/Check-Xml.ps1 *> (Join-Path $results 'xml.txt')
     $testedHash = (Get-FileHash build/tests/bin/ManyHappyReturns.dll).Hash
     $deliveredHash = (Get-FileHash Mod/Assemblies/ManyHappyReturns.dll).Hash

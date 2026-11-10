@@ -1,6 +1,6 @@
 # Verification results — 2026-09-13
 
-Run `powershell -ExecutionPolicy Bypass -File Tests/Run.ps1` from the repository.
+Run `powershell -ExecutionPolicy Bypass -File ../scripts/Run-UnitTests.ps1 -ModRoot . -PassManagedToExe -CompareDll Mod/Assemblies/ManyHappyReturns.dll`, then `Tests/Rule-OwnValues.ps1 -ModRoot .` from the repository.
 Requires .NET SDK 8, .NET Framework 4.8, and installed RimWorld 1.6 assemblies. Override
 `-GameManaged` if necessary. The project pins compilation references to Krafs.Rimworld.Ref
 1.6.4871. No test doubles or redistributed game DLLs are included.

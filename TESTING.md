@@ -10,7 +10,8 @@ and the exact revision tested. 15 behavior cases, 8 XML documents, 16 Keyed keys
 DefInjected paths checked. Re-run any time with:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File Tests/Run.ps1
+powershell -ExecutionPolicy Bypass -File ../scripts/Run-UnitTests.ps1 -ModRoot . -PassManagedToExe -CompareDll Mod/Assemblies/ManyHappyReturns.dll
+powershell -ExecutionPolicy Bypass -File Tests/Rule-OwnValues.ps1 -ModRoot .
 ```
 
 ## Pickle (`Tests/Pickle/`)

@@ -115,7 +115,7 @@ mascot and cake to occupy most of the square with a modest margin. Output square
 
 ## Testing it
 
-Automated checks: `powershell -ExecutionPolicy Bypass -File Tests/Run.ps1`.
+Automated checks: `powershell -ExecutionPolicy Bypass -File ../scripts/Run-UnitTests.ps1 -ModRoot . -PassManagedToExe -CompareDll Mod/Assemblies/ManyHappyReturns.dll`, then `Tests/Rule-OwnValues.ps1 -ModRoot .`.
 See `Tests/RESULTS.md` for results and limits, and `TEST_SCENARIOS.md` for the pending
 functional validation in game. Successful automated tests do not certify in-game behavior.
 

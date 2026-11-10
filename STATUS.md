@@ -32,7 +32,7 @@ tested_on:    2026-10-14 (conditional passes and feature 18 green, docs/runs/202
               boxes answered with both images opened (2026-09-13).
 workshop:     3806762201
 remaining:
-  - 2026-11-02: ticket 20261026-123156-014-6ec1 was abandoned by a power cut (no result); the TM refiled it as 20261102-145902-668-d1e6 (minimal English full pass, 49 tests, owner id local_6c483db2 kept, result relayed by the TM to this session, evidence Tests/Pickle/Inbox/minimal-en-4efa4a6), queued. My own duplicate was cancelled. Same day: Tests/Pickle/Check-Steps.ps1 replaced by the shared script, Tests/Check-Xml.ps1 and Tests/Run.ps1 cut to mod values (Audit validating), Tests/Pickle/Evidence emptied (stale, no RELEASE.md). Dry replay-audit 2026-11-02: stage stays playTests, first open 8.c. Also open: 8.m refresh code_review_sha to HEAD (only Mod/About/Preview.png changed since 33adf01, "revue du diff : images et texte seuls"). Next: full French pass (-Language French), then 1.7 diagnostic ticket (tested_1_7). Preview redone 2026-10-26 at owner request (icon bottom-left pushed in, translate 4%,5%, cake whole, aa41365), social preview re-uploaded and sha recorded; GitHub crops the card 2:1 so the icon bottom is partly cut there.
+  - 2026-11-02: ticket 20261026-123156-014-6ec1 was abandoned by a power cut (no result); the TM refiled it as 20261102-145902-668-d1e6 (minimal English full pass, 49 tests, owner id local_6c483db2 kept, result relayed by the TM to this session, evidence Tests/Pickle/Inbox/minimal-en-4efa4a6), queued. My own duplicate was cancelled. Same day: Tests/Pickle/Check-Steps.ps1 replaced by the shared script, Tests/Check-Xml.ps1 and Tests/Run.ps1 cut to mod values (Audit validating), Tests/Pickle/Evidence emptied (stale, no RELEASE.md). Dry replay-audit 2026-11-02: stage stays playTests, first open 8.c. 8.m done 2026-11-10: code_review_sha refreshed to bf74920 (diff since 33adf01 holds no Source/ or Mod/ code, only images, Tests scripts, docs; "revue du diff : images et texte seuls"). Preview rerendered 2026-11-10 from the nested Preview.config.json (bf74920). Next: full French pass (-Language French), then 1.7 diagnostic ticket (tested_1_7). Preview redone 2026-10-26 at owner request (icon bottom-left pushed in, translate 4%,5%, cake whole, aa41365), social preview re-uploaded and sha recorded; GitHub crops the card 2:1 so the icon bottom is partly cut there.
   - verified 2026-10-14: in-game rendering of `{INITIATOR_gender ? ...}` in the social log ("s'est souvenu", "souvenue", "souvenux"). Feature 18 green, 3 of 3 in English (2026-10-13-log-gender-en) and 3 of 3 in French (2026-10-14-log-gender-fr), after two suite fixes (step read `LogEntry.randSeed`, now `logID`; French was detected by `folderName == "French"`, the game reports `French (Français)`). The neutral ending `souvenux` still awaits Virginie./
   - unverified: French review by Virginie. The 2026-09-30 gender-agreement rule reset
     `translation_fr` to `unchecked`; the session's first read found no French text in this mod
@@ -134,7 +134,7 @@ remaining:
 session:      2026-09-23, first Workshop item created private by the owner (0.1.0)
 updated:      2026-09-23, workshop id 3806762201 recorded; stage left at done pending the in-game gate
 social_preview_sha256: 85433c2cd690ef3eb5d949f05e4e0af9b12a6303996bd8485bd2e9ef5bd4b87b
-code_review_sha: 33adf0183f4546c5a0db640fcdf03d6b49ba0ece
+code_review_sha: bf74920ae2474dca02c29cebb92289588e4d4740
 protocols_read_sha: c314611dce140b806a50364002a5ed98b6fb3c4c
 ---
 

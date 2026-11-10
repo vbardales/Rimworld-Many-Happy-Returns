@@ -132,7 +132,7 @@ remaining:
     separate lord job), so a party it causes should still grant vanilla AttendedParty and count
     toward DayQualityBonus like any other party. Not confirmed live.
 session:      2026-09-23, first Workshop item created private by the owner (0.1.0)
-updated:      2026-09-23, workshop id 3806762201 recorded; stage left at done pending the in-game gate
+updated:      2026-11-10, replay-audit: stage playTests unchanged, first open 8.c (no full minimal English pass on current revision, ticket 6cea queued)
 social_preview_sha256: 85433c2cd690ef3eb5d949f05e4e0af9b12a6303996bd8485bd2e9ef5bd4b87b
 code_review_sha: bf74920ae2474dca02c29cebb92289588e4d4740
 protocols_read_sha: c314611dce140b806a50364002a5ed98b6fb3c4c
